@@ -1,31 +1,37 @@
 local colors = {
     black = '#06080A',
-    bg0 = '#282c34', -- r
-    bg1 = '#31353f', -- r
-    bg2 = '#393f4a', -- r
+    bg0 = '#282c34',
+    bg1 = '#31353f',
+    bg2 = '#393f4a',
     bg3 = '#392B41',
-    bg4 = '#5c6370', --r
+    bg4 = '#5c6370',
     bg5 = '#282c34',
-    bg_red = '#e06c75', --r
-    bg_green = '#a2c987', --r
-    bg_blue = '#73b8f1', --r
-    bg_yellow = '#ebd09c', --r
+    bg_red = '#e06c75',
+    bg_green = '#a2c987',
+    bg_blue = '#73b8f1',
+    bg_yellow = '#ebd09c',
+    fg = '#abb2bf',
+    purple = '#c678dd',
+    green = '#98c379',
+    orange = '#d19a66',
+    blue = '#61afef',
+    yellow = '#e5c07b',
+    cyan = '#56b6c2',
+    red = '#e86671',
+    grey = '#5c6370',
+    none = 'NONE',
+    dark_cyan = '#2b6f77',
+    dark_red = '#993939',
+    dark_yellow = '#93691d',
+    dark_purple = '#8a3fa0',
     diff_red = '#773440',
     diff_green = '#587738',
     diff_blue = '#354A77',
     diff_add = '#1E2326',
     diff_change = '#262b3d',
     diff_delete = '#281B27',
-    fg = '#abb2bf', --r
-    purple = '#c678dd', --r
-    green = '#98c379', --r
-    orange = '#d19a66', --r
-    blue = '#61afef',--r
-    yellow = '#e5c07b', --r
-    cyan = '#56b6c2', --r
-    red = '#e86671', --r
-    grey = '#5c6370', --r
-    none = 'NONE'
+
+
 }
 
 return colors

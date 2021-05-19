@@ -1,4 +1,4 @@
-<h1 align="left"><img height ='85' src="https://user-images.githubusercontent.com/20145075/118355582-53bfe300-b58e-11eb-9c30-e2589cc2ca57.png" alt="OneDark.nvim">
+<h1 align="left"><img src="https://user-images.githubusercontent.com/20145075/118355582-53bfe300-b58e-11eb-9c30-e2589cc2ca57.png" alt="OneDark.nvim">
 </h1>
 <h4>
 <div align="right">

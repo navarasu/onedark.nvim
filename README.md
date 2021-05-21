@@ -1,5 +1,7 @@
-<h1 align="left"><img src="https://user-images.githubusercontent.com/20145075/118355582-53bfe300-b58e-11eb-9c30-e2589cc2ca57.png" alt="OneDark.nvim">
+<h1 align="left">
+<img height="120" src="https://user-images.githubusercontent.com/20145075/119054213-e1635e80-b9e4-11eb-8a8a-b228c185121a.png" alt="OneDark.nvim">
 </h1>
+
 <h4>
 <div align="right">
   	<a href="https://github.com/navarasu/onedark.nvim/#installation">Installation</a>

@@ -14,7 +14,7 @@
 </div>
   </h4>
 
-A Dark Theme for neovim 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight
+A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight + 4 more color variant styles
 
 ## Features
   * 5 styles (default one dark + 4 color variants)
@@ -33,35 +33,35 @@ colorscheme onedark
 ```
 `Default` - Default one dark theme based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui)
 
-<img width="721" alt="onedark" src="https://user-images.githubusercontent.com/20145075/119232462-14236900-bb43-11eb-9eef-298b30359e40.png">
+<img alt="onedark" src="https://user-images.githubusercontent.com/20145075/119232462-14236900-bb43-11eb-9eef-298b30359e40.png">
 
 ### Darker
 ```vim
 let g:onedark_style = 'darker'
 colorscheme onedark
 ```
-<img width="720" alt="onedark-darker" src="https://user-images.githubusercontent.com/20145075/119232750-028e9100-bb44-11eb-817e-0d872facddcc.png">
+<img alt="onedark-darker" src="https://user-images.githubusercontent.com/20145075/119232750-028e9100-bb44-11eb-817e-0d872facddcc.png">
 
 ### Cool
 ```vim
 let g:onedark_style = 'cool'
 colorscheme onedark
 ```
-<img width="722" alt="onedark-cool" src="https://user-images.githubusercontent.com/20145075/119233009-a9732d00-bb44-11eb-915f-51fba1abfd3b.png">
+<img alt="onedark-cool" src="https://user-images.githubusercontent.com/20145075/119233009-a9732d00-bb44-11eb-915f-51fba1abfd3b.png">
 
 ### Warm
 ```vim
 let g:onedark_style = 'warm'
 colorscheme onedark
 ```
-<img width="720" alt="onedark-warm" src="https://user-images.githubusercontent.com/20145075/119233022-b859df80-bb44-11eb-9e05-b618b95f0cf8.png">
+<img alt="onedark-warm" src="https://user-images.githubusercontent.com/20145075/119233022-b859df80-bb44-11eb-9e05-b618b95f0cf8.png">
 
 ### Deep
 ```vim
 let g:onedark_style = 'deep'
 colorscheme onedark
 ```
-<img width="722" alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119233058-d45d8100-bb44-11eb-9c51-593eb4526e01.png">
+<img alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119233058-d45d8100-bb44-11eb-9c51-593eb4526e01.png">
 
 ## Installation
 Install via your favourite package manager

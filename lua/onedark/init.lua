@@ -12,6 +12,14 @@ local function colorscheme()
     terminal.setup()
 end
 
-function M.setup() colorscheme() end
+function M.toggle()
+    styles = { 'dark', 'darker', 'cool', 'warm', 'deep'}
+    local index={}
+    for k,v in pairs(styles) do index[v]=k end
+    vim.g.onedark_style = styles[index[vim.g.onedark_style] + 1] or 'dark'
+    vim.cmd[[colorscheme onedark]]
+ end
+
+function M.set() colorscheme() end
 
 return M

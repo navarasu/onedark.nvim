@@ -18,7 +18,7 @@ A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com
 
 ## Features
   * 5 styles (default one dark + 4 color variants)
-  * Changing the style without exiting Neovim (using key shortcut)
+  * Changing the style without exiting Neovim (using shortcut key `<leader>cs` )
   * Supported mulitple plugins
 
 ### Plugins Supported
@@ -107,6 +107,10 @@ require('lualine').setup {
   }
 }
 ```
+## Toggle style 
+
+By pressing `<leader>cs`, we can switch the style without exiting neovim
+
 
 ## Config
 To set style variant of one dark

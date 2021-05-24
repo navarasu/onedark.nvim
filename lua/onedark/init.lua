@@ -8,6 +8,7 @@ local function colorscheme()
     if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
     vim.o.background = "dark"
     vim.o.termguicolors = true
+     vim.g.colors_name = "onedark"
     highlights.setup()
     terminal.setup()
 end
@@ -20,6 +21,6 @@ function M.toggle()
     vim.cmd[[colorscheme onedark]]
  end
 
-function M.set() colorscheme() end
+function M.setup() colorscheme() end
 
 return M

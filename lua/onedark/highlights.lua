@@ -13,6 +13,19 @@ local function load_highlights(ns, highlights)
     end
 end
 
+local function vim_highlights(highlights)
+  for group_name, group_settings in pairs(highlights) do
+    local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
+    local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
+    local gui = group_settings.bold and "gui=bold"
+    gui = group_settings.underline and "gui=underline"
+    gui = group_settings.reverse and "gui=reverse"
+    gui = group_settings.italic and "gui=italic"
+    gui = "gui=NONE"
+    vim.cmd("highlight " .. group_name .. " "..gui.." "..fg .. " " .. bg)
+	end
+end
+
 colors = {
     Fg = {fg = c.fg},
     Grey = {fg = c.grey},
@@ -206,9 +219,9 @@ hl.plugins.whichkey = {
 }
 
 hl.plugins.gitgutter = {
-    GitGutterAdd = {fg = c.diff_green},
-    GitGutterChange = {fg = c.diff_blue},
-    GitGutterDelete = {fg = c.diff_red}
+    GitGutterAdd = {fg = c.green},
+    GitGutterChange = {fg = c.blue},
+    GitGutterDelete = {fg = c.red},
 }
 
 hl.plugins.diffview = {
@@ -290,13 +303,13 @@ hl.langs.scala = {
 }
 
 function M.setup()
+		vim_highlights(hl.common)
+		vim_highlights(hl.syntax)
     local ns = create_namespace("onedark")
-    load_highlights(ns, hl.common)
-    load_highlights(ns, hl.syntax)
     load_highlights(ns, hl.treesitter)
-    for _, group in pairs(hl.langs) do load_highlights(ns, group) end
-    for _, group in pairs(hl.plugins) do load_highlights(ns, group) end
     set_hl_ns(ns)
+    for _, group in pairs(hl.langs) do vim_highlights(group) end
+    for _, group in pairs(hl.plugins) do vim_highlights(group) end
 end
 
 return M

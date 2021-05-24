@@ -39,35 +39,36 @@ colorscheme onedark
 ```
 `Default` - Default one dark theme based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui)
 
-<img alt="onedark" src="https://user-images.githubusercontent.com/20145075/119232462-14236900-bb43-11eb-9eef-298b30359e40.png">
+ <img alt="onedark" src="https://user-images.githubusercontent.com/20145075/119296900-8301de80-bc77-11eb-8b50-2accd6f8ecb0.png">
 
 ### Darker
 ```vim
 let g:onedark_style = 'darker'
 colorscheme onedark
 ```
-<img alt="onedark-darker" src="https://user-images.githubusercontent.com/20145075/119232750-028e9100-bb44-11eb-817e-0d872facddcc.png">
+<img alt="onedark-darker" src="https://user-images.githubusercontent.com/20145075/119296915-872dfc00-bc77-11eb-9bd0-76c6d90f8e4f.png">
 
 ### Cool
 ```vim
 let g:onedark_style = 'cool'
 colorscheme onedark
 ```
-<img alt="onedark-cool" src="https://user-images.githubusercontent.com/20145075/119233009-a9732d00-bb44-11eb-915f-51fba1abfd3b.png">
+
+<img alt="onedark-cool" src="https://user-images.githubusercontent.com/20145075/119296912-85fccf00-bc77-11eb-83b0-bf2138c6758e.png">
 
 ### Warm
 ```vim
 let g:onedark_style = 'warm'
 colorscheme onedark
 ```
-<img alt="onedark-warm" src="https://user-images.githubusercontent.com/20145075/119233022-b859df80-bb44-11eb-9e05-b618b95f0cf8.png">
+<img alt="onedark-warm" src="https://user-images.githubusercontent.com/20145075/119296920-89905600-bc77-11eb-8cbc-0f1867cafc5f.png">
 
 ### Deep
 ```vim
 let g:onedark_style = 'deep'
 colorscheme onedark
 ```
-<img alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119233058-d45d8100-bb44-11eb-9c51-593eb4526e01.png">
+<img alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119296916-885f2900-bc77-11eb-8e96-d6054c94dda1.png">
 
 ## Installation
 Install via your favourite package manager

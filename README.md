@@ -19,12 +19,18 @@ A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com
 ## Features
   * 5 styles (default one dark + 4 color variants)
   * Changing the style without exiting Neovim (using shortcut key `<leader>cs` )
-  * Supported mulitple plugins
+  * Supported mulitple plugins with hand picked proper colors
 
 ### Plugins Supported
   + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
   + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
+  + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
   + [Git Gutter](https://github.com/airblade/vim-gitgutter)
+  + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
+  + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+  + [WhichKey](https://github.com/liuchengxu/vim-which-key)
+  + [Dashboard](https://github.com/glepnir/dashboard-nvim)
+  + [Lualine](https://github.com/hoob3rt/lualine.nvim)
 
 ## Styles
 ### Dark
@@ -94,7 +100,7 @@ colorscheme onedark
 
 ```lua
 -- Lua:
-require('onedark').set()
+require('onedark').setup()
 ```
 
 To Enable the `onedark` theme for `Lualine`, specify theme as `onedark`:
@@ -118,6 +124,13 @@ To set style variant of one dark
 let g:onedark_style = 'darker'  " We need add the configs before colorscheme line
 colorscheme onedark
 ```
+
+```lua
+-- Lua:
+vim.g.onedark_style = 'deep'
+require('onedark').setup()
+```
+
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

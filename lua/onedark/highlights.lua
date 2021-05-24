@@ -263,6 +263,34 @@ hl.plugins.gitsigns = {
     GitSignsDeleteNr = colors.Red
 }
 
+hl.plugins.nvim_tree = {
+    NvimTreeNormal = { fg = c.fg, bg = c.bg_d },
+    NvimTreeEndOfBuffer = { fg = c.bg2, bg = c.bg_d },
+    NvimTreeRootFolder = { fg = c.yellow, bold =true},
+    NvimTreeGitDirty = colors.Yellow, { fg = c.yellow },
+    NvimTreeGitNew = colors.Green,
+    NvimTreeGitDeleted = colors.Red,
+    NvimTreeSpecialFile = { fg = c.yellow, underline=true },
+    NvimTreeIndentMarker = colors.Fg,
+    NvimTreeImageFile = { fg = c.bg3 },
+    NvimTreeSymlink = colors.Purple,
+    NvimTreeFolderName= colors.Blue
+}
+hl.plugins.telescope = {
+    TelescopeBorder = colors.Green,
+    TelescopeMatching = colors.Yellow,
+    TelescopePromptPrefix = colors.Blue,
+    TelescopeSelection =  { bg =c.bg2 },
+    TelescopeSelectionCaret = colors.Blue
+}
+
+hl.plugins.dashboard = {
+    DashboardShortCut = colors.Purple,
+    DashboardHeader = colors.Red,
+    DashboardCenter = colors.Blue,
+    DashboardFooter = { fg = c.yellow, italic = true}
+}
+
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, bold = true},

@@ -88,7 +88,7 @@ hl.common = {
     TabLineFill = {fg = c.grey, bg = c.bg1},
     TabLineSel =  {fg = c.bg0, bg = c.fg},
     VertSplit = {fg = c.bg1},
-    Visual = {bg = c.bg1},
+    Visual = {bg = c.bg3},
     VisualNOS = {fg = c.none, bg = c.bg2, underline = true},
     QuickFixLine = {fg = c.blue, underline = true},
     Debug = {fg = c.yellow},
@@ -272,7 +272,7 @@ hl.plugins.nvim_tree = {
     NvimTreeGitDeleted = colors.Red,
     NvimTreeSpecialFile = { fg = c.yellow, underline=true },
     NvimTreeIndentMarker = colors.Fg,
-    NvimTreeImageFile = { fg = c.bg3 },
+    NvimTreeImageFile = { fg = c.dark_purple },
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName= colors.Blue
 }

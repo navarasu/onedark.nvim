@@ -14,7 +14,7 @@ local function colorscheme()
 end
 
 function M.toggle()
-    styles = { 'dark', 'darker', 'cool', 'warm', 'deep'}
+    styles = { 'dark', 'darker', 'cool', 'deep', 'warm' , 'warmer'}
     local index={}
     for k,v in pairs(styles) do index[v]=k end
     vim.g.onedark_style = styles[index[vim.g.onedark_style] + 1] or 'dark'

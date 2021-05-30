@@ -13,18 +13,22 @@ local function load_highlights(ns, highlights)
     end
 end
 
+local function gui(group_settings)
+   if group_settings.bold then return "bold"
+   elseif group_settings.underline then return "underline"
+   elseif group_settings.italic then return "italic"
+   elseif group_settings.reverse then return "reverse"
+   else return "NONE" end
+end
+
 local function vim_highlights(highlights)
   for group_name, group_settings in pairs(highlights) do
     local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
     local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
-    local gui = group_settings.bold and "gui=bold"
-    gui = group_settings.underline and "gui=underline"
-    gui = group_settings.reverse and "gui=reverse"
-    gui = group_settings.italic and "gui=italic"
-    gui = "gui=NONE"
-    vim.cmd("highlight " .. group_name .. " "..gui.." "..fg .. " " .. bg)
+    vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg)
 	end
 end
+
 
 colors = {
     Fg = {fg = c.fg},

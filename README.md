@@ -14,10 +14,10 @@
 </div>
   </h4>
 
-A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight + 4 more color variant styles
+A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight. Addditionly it comes with 5 more color variant styles
 
 ## Features
-  * 5 styles (default one dark + 4 color variants)
+  * 6 styles (default one dark + 5 color variants)
   * Changing the style without exiting Neovim (using shortcut key `<leader>cs` )
   * Supported mulitple plugins with hand picked proper colors
 
@@ -25,8 +25,10 @@ A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com
   + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
   + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
   + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-  + [Git Gutter](https://github.com/airblade/vim-gitgutter)
-  + [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
+  + [GitGutter](https://github.com/airblade/vim-gitgutter)
+  + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
+  + [VimFugitive](https://github.com/tpope/vim-fugitive)
+  + [DiffView](https://github.com/sindrets/diffview.nvim)
   + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
   + [WhichKey](https://github.com/liuchengxu/vim-which-key)
   + [Dashboard](https://github.com/glepnir/dashboard-nvim)
@@ -56,6 +58,13 @@ colorscheme onedark
 
 <img alt="onedark-cool" src="https://user-images.githubusercontent.com/20145075/119296912-85fccf00-bc77-11eb-83b0-bf2138c6758e.png">
 
+### Deep
+```vim
+let g:onedark_style = 'deep'
+colorscheme onedark
+```
+<img alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119296916-885f2900-bc77-11eb-8e96-d6054c94dda1.png">
+
 ### Warm
 ```vim
 let g:onedark_style = 'warm'
@@ -63,12 +72,12 @@ colorscheme onedark
 ```
 <img alt="onedark-warm" src="https://user-images.githubusercontent.com/20145075/119296920-89905600-bc77-11eb-8cbc-0f1867cafc5f.png">
 
-### Deep
+### Warmer
 ```vim
-let g:onedark_style = 'deep'
+let g:onedark_style = 'warmer'
 colorscheme onedark
 ```
-<img alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119296916-885f2900-bc77-11eb-8e96-d6054c94dda1.png">
+<img alt="onedark-warmer" src="https://user-images.githubusercontent.com/20145075/120108433-b914f600-c182-11eb-9b61-59747241839d.png">
 
 ## Installation
 Install via your favourite package manager

@@ -26,7 +26,7 @@ A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com
   + [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
   + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
   + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-  + [WhichKey](https://github.com/liuchengxu/vim-which-key)
+  + [WhichKey](https://github.com/folke/which-key.nvim)
   + [Dashboard](https://github.com/glepnir/dashboard-nvim)
   + [Lualine](https://github.com/hoob3rt/lualine.nvim)
   + [GitGutter](https://github.com/airblade/vim-gitgutter)

@@ -14,7 +14,7 @@
 </div>
   </h4>
 
-A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight. Addditionly it comes with 5 more color variant styles
+A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight. Additionally, it comes with 5 more color variant styles
 
 ## Features
   * 6 styles (default one dark + 5 color variants)
@@ -23,16 +23,16 @@ A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com
 
 ### Plugins Supported
   + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  + [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
+  + [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
   + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-  + [GitGutter](https://github.com/airblade/vim-gitgutter)
-  + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
-  + [VimFugitive](https://github.com/tpope/vim-fugitive)
-  + [DiffView](https://github.com/sindrets/diffview.nvim)
   + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
   + [WhichKey](https://github.com/liuchengxu/vim-which-key)
   + [Dashboard](https://github.com/glepnir/dashboard-nvim)
   + [Lualine](https://github.com/hoob3rt/lualine.nvim)
+  + [GitGutter](https://github.com/airblade/vim-gitgutter)
+  + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
+  + [VimFugitive](https://github.com/tpope/vim-fugitive)
+  + [DiffView](https://github.com/sindrets/diffview.nvim)
 
 ## Styles
 ### Dark
@@ -148,7 +148,7 @@ require('onedark').setup()
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome 🎉👍.
 
 ## License
 

@@ -285,10 +285,10 @@ hl.plugins.telescope = {
 }
 
 hl.plugins.dashboard = {
-    DashboardShortCut = colors.Purple,
-    DashboardHeader = colors.Red,
+    DashboardShortCut = colors.Yellow,
+    DashboardHeader = colors.Green,
     DashboardCenter = colors.Blue,
-    DashboardFooter = { fg = c.yellow, italic = true}
+    DashboardFooter = { fg = c.cyan, italic = true}
 }
 
 hl.langs.markdown = {

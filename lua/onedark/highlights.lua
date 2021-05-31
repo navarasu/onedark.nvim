@@ -329,6 +329,23 @@ hl.langs.markdown = {
     markdownUrlTitleDelimiter = colors.Green
 }
 
+hl.langs.php = {
+  phpFunctions = c.fg,
+  phpMethods = colors.Cyan,
+  phpStructure = colors.Purple,
+  phpOperator = c.fg,
+  phpMemberSelector = c.fg,
+  phpVarSelector = colors.Orange,
+  phpIdentifier = colors.Orange,
+  phpBoolean = colors.Cyan,
+  phpNumber = colors.Orange,
+  phpHereDoc = colors.Green,
+  phpNowDoc = colors.Green,
+  phpSCKeyword = colors.Purple,
+  phpFCKeyword = colors.Purple,
+  phpRegion = colors.Blue
+}
+
 hl.langs.scala = {
     scalaNameDefinition = colors.Fg,
     scalaInterpolationBoundary = colors.Purple,

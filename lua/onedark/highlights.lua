@@ -216,7 +216,10 @@ hl.plugins.lsp = {
     LspDiagnosticsUnderlineError = {underline = true, sp = c.red},
     LspDiagnosticsUnderlineHint = {underline = true, sp = c.purple},
     LspDiagnosticsUnderlineInformation = {underline = true, sp = c.blue},
-    LspDiagnosticsUnderlineWarning = {underline = true, sp = c.yellow}
+    LspDiagnosticsUnderlineWarning = {underline = true, sp = c.yellow},
+    LspReferenceText = {underline = true },
+    LspReferenceWrite = {underline = true },
+    LspReferenceRead = {underline = true }
 }
 
 hl.plugins.whichkey = {

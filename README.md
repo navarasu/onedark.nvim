@@ -35,6 +35,7 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
   + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
   + [VimFugitive](https://github.com/tpope/vim-fugitive)
   + [DiffView](https://github.com/sindrets/diffview.nvim)
+  + [Hop](https://github.com/phaazon/hop.nvim)
 
 ## Styles
 ### Dark

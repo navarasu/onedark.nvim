@@ -235,6 +235,13 @@ hl.plugins.gitgutter = {
     GitGutterDelete = {fg = c.red},
 }
 
+hl.plugins.hop = {
+    HopNextKey = {fg = c.bg0, bg = c.orange},
+    HopNextKey1 = {fg = c.bg0, bg = c.orange},
+    HopNextKey2 = {fg = c.bg0, bg = c.bg_yellow},
+    HopUnmatched = {fg = c.fg, bg = c.bg1},
+}
+
 hl.plugins.diffview = {
     DiffviewFilePanelTitle = {fg = c.blue, bold = true},
     DiffviewFilePanelCounter = {fg = c.purple, bold = true},

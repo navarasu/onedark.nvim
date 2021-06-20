@@ -33,6 +33,7 @@ A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com
   + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
   + [VimFugitive](https://github.com/tpope/vim-fugitive)
   + [DiffView](https://github.com/sindrets/diffview.nvim)
+  + [Hop](https://github.com/phaazon/hop.nvim)
 
 ## Styles
 ### Dark

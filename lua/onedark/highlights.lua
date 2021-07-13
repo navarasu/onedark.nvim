@@ -62,7 +62,7 @@ hl.common = {
     Conceal = {fg = c.grey, bg = c.bg1},
     DiffAdd = {fg = c.none, bg = c.diff_add},
     DiffChange = {fg = c.none, bg = c.diff_change},
-    DiffDelete = {fg = c.diff_delete, bg = c.diff_delete},
+    DiffDelete = {fg = c.none, bg = c.diff_delete},
     DiffText = {fg = c.none, bg= c.diff_text},
     DiffAdded = colors.Green,
     DiffRemoved = colors.Red,

@@ -43,12 +43,12 @@ colors = {
     Purple = {fg = c.purple}
 }
 hl.common = {
-    Normal = {fg = c.fg, bg = c.bg0},
-    Terminal = {fg = c.fg, bg = c.bg0},
-    EndOfBuffer = {fg = c.bg2, bg = c.bg0},
-    FoldColumn = {fg = c.fg, bg = c.bg1},
-    Folded = {fg = c.fg, bg = c.bg1},
-    SignColumn = {fg = c.fg, bg = c.bg0},
+    Normal = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
+    Terminal = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
+    EndOfBuffer = {fg = c.bg2, bg = cfg.bg and c.none or c.bg0},
+    FoldColumn = {fg = c.fg, bg = cfg.bg and c.none or c.bg1},
+    Folded = {fg = c.fg, bg = cfg.bg and c.none or c.bg1},
+    SignColumn = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
     ToolbarLine = {fg = c.fg},
     Cursor = {reverse = true},
     vCursor = {reverse = true},

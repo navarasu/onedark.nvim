@@ -5,6 +5,7 @@ local function get(setting, default)
 end
 
 local config = {
+    bg = get("transparent_background", false),
     italic_comment = get("italic_comment", true),
 }
 

@@ -142,6 +142,18 @@ colorscheme onedark
 vim.g.onedark_style = 'deep'
 require('onedark').setup()
 ```
+
+### To enable transparent background
+```vim
+let g:onedark_transparent_background = 1 " By default it is 0
+colorscheme onedark
+```
+
+```lua
+vim.g.onedark_transparent_background = true -- By default it is false
+require('onedark').setup()
+```
+
 ### To disable italic comment
 ```vim
 let g:onedark_italic_comment = 0 " By default it is 1

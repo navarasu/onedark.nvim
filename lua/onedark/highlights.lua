@@ -1,4 +1,5 @@
 local c = require('onedark.colors')
+local cfg = require('onedark.config')
 
 local M = {}
 local hl = {langs = {}, plugins = {}}
@@ -136,9 +137,9 @@ hl.syntax = {
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.Fg,
-    Comment = colors.Grey, 
-    SpecialComment = colors.Grey, 
-    Todo = colors.Red
+    Comment = {fg = c.grey, italic = cfg.italic_comment},
+    SpecialComment = {fg = c.grey, italic = cfg.italic_comment},
+    Todo = {fg = c.red, italic = cfg.italic_comment}
 }
 
 hl.treesitter = {
@@ -146,7 +147,7 @@ hl.treesitter = {
   TSAttribute = colors.Cyan,
   TSBoolean = colors.Orange,
   TSCharacter = colors.Fg,
-  TSComment = colors.Grey,
+  TSComment = {fg = c.grey, italic = cfg.italic_comment},
   TSConditional = colors.Purple,
   TSConstant = colors.Orange,
   TSConstBuiltin = colors.Orange,

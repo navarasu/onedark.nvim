@@ -132,18 +132,37 @@ By pressing `<leader>cs`, we can switch the style without exiting neovim
 
 
 ## Config
-To set style variant of one dark
+#### To change style variant of one dark
 ```vim
 let g:onedark_style = 'darker'  " We need add the configs before colorscheme line
 colorscheme onedark
 ```
 
 ```lua
--- Lua:
 vim.g.onedark_style = 'deep'
 require('onedark').setup()
 ```
+### To disable italic comment
+```vim
+let g:onedark_italic_comment = 0 " By default it is 1
+colorscheme onedark
+```
 
+```lua
+vim.g.onedark_italic_comment = false -- By default it is true
+require('onedark').setup()
+```
+
+### To disable toggle style using shortcut
+```vim
+let g:disable_toggle_style = 1 " By default it is 0
+colorscheme onedark
+```
+
+```lua
+vim.g.onedark_italic_comment = true
+require('onedark').setup()
+```
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

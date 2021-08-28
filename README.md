@@ -178,12 +178,23 @@ require('onedark').setup()
 
 ### To use underline instead of undercurl for diagnostics
 ```vim
-let g:diagnostics_undercurl = 0 " By default it is 1
+let g:onedark_diagnostics_undercurl = 0 " By default it is 1
 colorscheme onedark
 ```
 
 ```lua
-vim.g.diagnostics_undercurl = false
+vim.g.onedark_diagnostics_undercurl = false
+require('onedark').setup()
+```
+
+### To make diagnostics look brighter
+```vim
+let g:onedark_darker_diagnostics = 0 " By default it is 1
+colorscheme onedark
+```
+
+```lua
+vim.g.onedark_darker_diagnostics = false
 require('onedark').setup()
 ```
 

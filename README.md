@@ -20,7 +20,7 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
 
 ## Features
   * 6 styles (default one dark + 5 color variants)
-  * Changing the style without exiting Neovim (using shortcut key `<leader>cs` )
+  * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to disable this mapping see [configuration](#to-disable-toggle-style-using-shortcut))
   * Supported mulitple plugins with hand picked proper colors
 
 ### Plugins Supported
@@ -167,12 +167,23 @@ require('onedark').setup()
 
 ### To disable toggle style using shortcut
 ```vim
-let g:disable_toggle_style = 1 " By default it is 0
+let g:onedark_disable_toggle_style = 1 " By default it is 0
 colorscheme onedark
 ```
 
 ```lua
-vim.g.onedark_italic_comment = true
+vim.g.onedark_disable_toggle_style = true
+require('onedark').setup()
+```
+
+### To use underline instead of undercurl for diagnostics
+```vim
+let g:diagnostics_undercurl = 0 " By default it is 1
+colorscheme onedark
+```
+
+```lua
+vim.g.diagnostics_undercurl = false
 require('onedark').setup()
 ```
 

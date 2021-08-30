@@ -4,19 +4,10 @@ local cfg = require('onedark.config')
 local M = {}
 local hl = {langs = {}, plugins = {}}
 
-local highlight = vim.api.nvim_set_hl
-local set_hl_ns = vim.api.nvim__set_hl_ns or vim.api.nvim_set_hl_ns
-local create_namespace = vim.api.nvim_create_namespace
-
-local function load_highlights(ns, highlights)
-    for group_name, group_settings in pairs(highlights) do
-        highlight(ns, group_name, group_settings)
-    end
-end
-
 local function gui(group_settings)
    if group_settings.bold then return "bold"
    elseif group_settings.underline then return "underline"
+   elseif group_settings.undercurl then return "undercurl"
    elseif group_settings.italic then return "italic"
    elseif group_settings.reverse then return "reverse"
    else return "NONE" end
@@ -26,13 +17,15 @@ local function vim_highlights(highlights)
   for group_name, group_settings in pairs(highlights) do
     local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
     local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
-    vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg)
+    local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
+    vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg .. " " .. sp)
 	end
 end
 
 
-colors = {
+local colors = {
     Fg = {fg = c.fg},
+    LightGrey = {fg = c.light_grey},
     Grey = {fg = c.grey},
     Red = {fg = c.red},
     Cyan = {fg = c.cyan},
@@ -119,89 +112,89 @@ hl.syntax = {
     Constant = colors.Cyan,
     PreProc = colors.Purple,
     PreCondit = colors.Purple,
-    Include = colors.Purple,
+    Include = colors.Blue,
     Keyword = colors.Purple,
-    Define = colors.Purple,
+    Define = colors.Red,
     Typedef = colors.Purple,
     Exception = colors.Purple,
     Conditional = colors.Purple,
     Repeat = colors.Purple,
     Statement = colors.Purple,
-    Macro = colors.Red,
+    Macro = colors.Cyan,
     Error = colors.Purple,
     Label = colors.Purple,
     Special = colors.Red,
     SpecialChar = colors.Red,
     Function = colors.Blue,
-    Operator = colors.Red,
+    Operator = colors.Purple,
     Title = colors.Cyan,
     Tag = colors.Green,
-    Delimiter = colors.Fg,
+    Delimiter = colors.LightGrey,
     Comment = {fg = c.grey, italic = cfg.italic_comment},
     SpecialComment = {fg = c.grey, italic = cfg.italic_comment},
     Todo = {fg = c.red, italic = cfg.italic_comment}
 }
 
 hl.treesitter = {
-  TSAnnotation = colors.Fg,
-  TSAttribute = colors.Cyan,
-  TSBoolean = colors.Orange,
-  TSCharacter = colors.Fg,
-  TSComment = {fg = c.grey, italic = cfg.italic_comment},
-  TSConditional = colors.Purple,
-  TSConstant = colors.Orange,
-  TSConstBuiltin = colors.Orange,
-  TSConstMacro = colors.Orange,
-  TSConstructor = colors.Yellow,
-  TSError = colors.Fg,
-  TSException = colors.Purple,
-  TSField = colors.Cyan,
-  TSFloat = colors.Orange,
-  TSFunction = colors.Blue,
-  TSFuncBuiltin = colors.Cyan,
-  TSFuncMacro = colors.Fg,
-  TSInclude = colors.Purple,
-  TSKeyword = colors.Purple,
-  TSKeywordFunction = colors.Purple,
-  TSKeywordOperator = colors.Purple,
-  TSLabel = colors.Red,
-  TSMethod = colors.Blue,
-  TSNamespace = colors.Fg,
-  TSNone = colors.Fg,
-  TSNumber = colors.Orange,
-  TSOperator = colors.Fg,
-  TSParameter = colors.Red,
-  TSParameterReference = colors.Fg,
-  TSProperty = colors.Cyan,
-  TSPunctDelimiter = colors.Fg,
-  TSPunctBracket = colors.Fg,
-  TSPunctSpecial = colors.Fg,
-  TSRepeat = colors.Purple,
-  TSString = colors.Green,
-  TSStringRegex = colors.Orange,
-  TSStringEscape = colors.Red,
-  TSSymbol = colors.Cyan,
-  TSTag = colors.Red,
-  TSTagDelimiter = colors.Red,
-  TSText = colors.Fg,
-  TSStrong = colors.Fg,
-  TSEmphasis = colors.Fg,
-  TSUnderline = colors.Fg,
-  TSStrike = colors.Fg,
-  TSTitle = colors.Fg,
-  TSLiteral = colors.Green,
-  TSURI = colors.Fg,
-  TSMath = colors.Fg,
-  TSTextReference = colors.Fg,
-  TSEnviroment = colors.Fg,
-  TSEnviromentName = colors.Fg,
-  TSNote = colors.Fg,
-  TSWarning = colors.Fg,
-  TSDanger = colors.Fg,
-  TSType = colors.Yellow,
-  TSTypeBuiltin = colors.Orange,
-  TSVariable = colors.Fg,
-  TSVariableBuiltin = colors.Red
+    TSAnnotation = colors.Fg,
+    TSAttribute = colors.Cyan,
+    TSBoolean = colors.Orange,
+    TSCharacter = colors.Fg,
+    TSComment = {fg = c.grey, italic = cfg.italic_comment},
+    TSConditional = colors.Purple,
+    TSConstant = colors.Cyan,
+    TSConstBuiltin = colors.Orange,
+    TSConstMacro = colors.Red,
+    TSConstructor = {fg = c.yellow, bold = true},
+    TSError = colors.Fg,
+    TSException = colors.Purple,
+    TSField = colors.Cyan,
+    TSFloat = colors.Orange,
+    TSFunction = colors.Blue,
+    TSFuncBuiltin = colors.Cyan,
+    TSFuncMacro = colors.Fg,
+    TSInclude = colors.Blue,
+    TSKeyword = colors.Purple,
+    TSKeywordFunction = {fg = c.purple, bold = true},
+    TSKeywordOperator = colors.Purple,
+    TSLabel = colors.Red,
+    TSMethod = colors.Blue,
+    TSNamespace = colors.Yellow,
+    TSNone = colors.Fg,
+    TSNumber = colors.Orange,
+    TSOperator = colors.Purple,
+    TSParameter = colors.Red,
+    TSParameterReference = colors.Fg,
+    TSProperty = colors.Cyan,
+    TSPunctDelimiter = colors.LightGrey,
+    TSPunctBracket = colors.LightGrey,
+    TSPunctSpecial = colors.LightGrey,
+    TSRepeat = colors.Purple,
+    TSString = colors.Green,
+    TSStringRegex = colors.Orange,
+    TSStringEscape = colors.Red,
+    TSSymbol = colors.Cyan,
+    TSTag = colors.Red,
+    TSTagDelimiter = colors.Red,
+    TSText = colors.Fg,
+    TSStrong = colors.Fg,
+    TSEmphasis = colors.Fg,
+    TSUnderline = colors.Fg,
+    TSStrike = colors.Fg,
+    TSTitle = colors.Fg,
+    TSLiteral = colors.Green,
+    TSURI = colors.Fg,
+    TSMath = colors.Fg,
+    TSTextReference = colors.Fg,
+    TSEnviroment = colors.Fg,
+    TSEnviromentName = colors.Fg,
+    TSNote = colors.Fg,
+    TSWarning = colors.Fg,
+    TSDanger = colors.Fg,
+    TSType = colors.Yellow,
+    TSTypeBuiltin = colors.Orange,
+    TSVariable = colors.Fg,
+    TSVariableBuiltin = colors.Red
 }
 
 hl.plugins.lsp = {
@@ -210,14 +203,14 @@ hl.plugins.lsp = {
     LspCxxHlGroupNamespace = colors.Blue,
     LspCxxHlSkippedRegion = colors.Grey,
     LspCxxHlSkippedRegionBeginEnd = colors.Red,
-    LspDiagnosticsDefaultError = {fg = c.dark_red},
-    LspDiagnosticsDefaultHint = {fg = c.dark_purple},
-    LspDiagnosticsDefaultInformation = {fg = c.dark_cyan},
-    LspDiagnosticsDefaultWarning = {fg = c.dark_yellow},
-    LspDiagnosticsUnderlineError = {underline = true, sp = c.red},
-    LspDiagnosticsUnderlineHint = {underline = true, sp = c.purple},
-    LspDiagnosticsUnderlineInformation = {underline = true, sp = c.blue},
-    LspDiagnosticsUnderlineWarning = {underline = true, sp = c.yellow},
+    LspDiagnosticsDefaultError = {fg = cfg.darker_diagnostics and c.dark_red or c.red},
+    LspDiagnosticsDefaultHint = {fg = cfg.darker_diagnostics and c.dark_purple or c.purple},
+    LspDiagnosticsDefaultInformation = {fg = cfg.darker_diagnostics and c.dark_cyan or c.cyan},
+    LspDiagnosticsDefaultWarning = {fg = cfg.darker_diagnostics and c.dark_yellow or c.yellow},
+    LspDiagnosticsUnderlineError = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.red},
+    LspDiagnosticsUnderlineHint = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.purple},
+    LspDiagnosticsUnderlineInformation = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.blue},
+    LspDiagnosticsUnderlineWarning = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.yellow},
     LspReferenceText = {underline = true },
     LspReferenceWrite = {underline = true },
     LspReferenceRead = {underline = true }
@@ -285,7 +278,7 @@ hl.plugins.gitsigns = {
 hl.plugins.nvim_tree = {
     NvimTreeNormal = { fg = c.fg, bg = c.bg_d },
     NvimTreeEndOfBuffer = { fg = c.bg2, bg = c.bg_d },
-    NvimTreeRootFolder = { fg = c.yellow, bold =true},
+    NvimTreeRootFolder = { fg = c.green, bold =true},
     NvimTreeGitDirty = colors.Yellow,
     NvimTreeGitNew = colors.Green,
     NvimTreeGitDeleted = colors.Red,
@@ -297,6 +290,9 @@ hl.plugins.nvim_tree = {
 }
 hl.plugins.telescope = {
     TelescopeBorder = colors.Green,
+    TelescopePromptBorder = colors.Green,
+    TelescopeResultsBorder = colors.Purple,
+    TelescopePreviewBorder = colors.Cyan,
     TelescopeMatching = colors.Yellow,
     TelescopePromptPrefix = colors.Blue,
     TelescopeSelection =  { bg =c.bg2 },
@@ -341,20 +337,20 @@ hl.langs.markdown = {
 }
 
 hl.langs.php = {
-  phpFunctions = c.fg,
-  phpMethods = colors.Cyan,
-  phpStructure = colors.Purple,
-  phpOperator = c.fg,
-  phpMemberSelector = c.fg,
-  phpVarSelector = colors.Orange,
-  phpIdentifier = colors.Orange,
-  phpBoolean = colors.Cyan,
-  phpNumber = colors.Orange,
-  phpHereDoc = colors.Green,
-  phpNowDoc = colors.Green,
-  phpSCKeyword = colors.Purple,
-  phpFCKeyword = colors.Purple,
-  phpRegion = colors.Blue
+    phpFunctions = colors.Fg,
+    phpMethods = colors.Cyan,
+    phpStructure = colors.Purple,
+    phpOperator = colors.Purple,
+    phpMemberSelector = colors.Fg,
+    phpVarSelector = colors.Orange,
+    phpIdentifier = colors.Orange,
+    phpBoolean = colors.Cyan,
+    phpNumber = colors.Orange,
+    phpHereDoc = colors.Green,
+    phpNowDoc = colors.Green,
+    phpSCKeyword = colors.Purple,
+    phpFCKeyword = colors.Purple,
+    phpRegion = colors.Blue
 }
 
 hl.langs.scala = {
@@ -366,12 +362,36 @@ hl.langs.scala = {
     scalaKeywordModifier = colors.Red
 }
 
+hl.langs.vim = {
+    vimCommentTitle = {fg = c.light_grey, bold = true},
+    vimLet = colors.Purple,
+    vimFunction = colors.Blue,
+    vimIsCommand = colors.Fg,
+    vimUserFunc = colors.Blue,
+    vimFuncName = colors.Blue,
+    vimMap = colors.Purple,
+    vimMapModKey = colors.Red,
+    vimNotation = colors.Red,
+    vimMapLhs = colors.Blue,
+    vimMapRhs = colors.Blue,
+    vimOption = colors.Cyan,
+    vimUserAttrbKey = colors.Red,
+    vimUserAttrb = colors.Blue,
+    vimSynType = colors.Cyan,
+    vimHiBang = colors.Purple,
+    vimSet = colors.Yellow,
+    vimSetEqual = colors.Yellow,
+    vimSetSep = colors.LightGrey,
+    vimVar = colors.Fg,
+    vimFuncVar = colors.Fg,
+    vimContinue = colors.Grey,
+    vimAutoCmdSfxList = colors.Cyan,
+}
+
 function M.setup()
-		vim_highlights(hl.common)
-		vim_highlights(hl.syntax)
-    local ns = create_namespace("onedark")
-    load_highlights(ns, hl.treesitter)
-    set_hl_ns(ns)
+    vim_highlights(hl.common)
+    vim_highlights(hl.syntax)
+    vim_highlights(hl.treesitter)
     for _, group in pairs(hl.langs) do vim_highlights(group) end
     for _, group in pairs(hl.plugins) do vim_highlights(group) end
 end

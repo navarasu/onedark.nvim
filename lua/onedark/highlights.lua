@@ -25,6 +25,7 @@ end
 
 local colors = {
     Fg = {fg = c.fg},
+    LightGrey = {fg = c.light_grey},
     Grey = {fg = c.grey},
     Red = {fg = c.red},
     Cyan = {fg = c.cyan},
@@ -128,7 +129,7 @@ hl.syntax = {
     Operator = colors.Purple,
     Title = colors.Cyan,
     Tag = colors.Green,
-    Delimiter = colors.Fg,
+    Delimiter = colors.LightGrey,
     Comment = {fg = c.grey, italic = cfg.italic_comment},
     SpecialComment = {fg = c.grey, italic = cfg.italic_comment},
     Todo = {fg = c.red, italic = cfg.italic_comment}
@@ -144,7 +145,7 @@ hl.treesitter = {
     TSConstant = colors.Cyan,
     TSConstBuiltin = colors.Orange,
     TSConstMacro = colors.Red,
-    TSConstructor = {fg = c.cyan, bold = true},
+    TSConstructor = {fg = c.yellow, bold = true},
     TSError = colors.Fg,
     TSException = colors.Purple,
     TSField = colors.Cyan,
@@ -154,7 +155,7 @@ hl.treesitter = {
     TSFuncMacro = colors.Fg,
     TSInclude = colors.Blue,
     TSKeyword = colors.Purple,
-    TSKeywordFunction = colors.Purple,
+    TSKeywordFunction = {fg = c.purple, bold = true},
     TSKeywordOperator = colors.Purple,
     TSLabel = colors.Red,
     TSMethod = colors.Blue,
@@ -165,9 +166,9 @@ hl.treesitter = {
     TSParameter = colors.Red,
     TSParameterReference = colors.Fg,
     TSProperty = colors.Cyan,
-    TSPunctDelimiter = colors.Fg,
-    TSPunctBracket = colors.Fg,
-    TSPunctSpecial = colors.Fg,
+    TSPunctDelimiter = colors.LightGrey,
+    TSPunctBracket = colors.LightGrey,
+    TSPunctSpecial = colors.LightGrey,
     TSRepeat = colors.Purple,
     TSString = colors.Green,
     TSStringRegex = colors.Orange,
@@ -359,6 +360,32 @@ hl.langs.scala = {
     scalaTypeOperator = colors.Red,
     scalaOperator = colors.Red,
     scalaKeywordModifier = colors.Red
+}
+
+hl.langs.vim = {
+    vimCommentTitle = {fg = c.light_grey, bold = true},
+    vimLet = colors.Purple,
+    vimFunction = colors.Blue,
+    vimIsCommand = colors.Fg,
+    vimUserFunc = colors.Blue,
+    vimFuncName = colors.Blue,
+    vimMap = colors.Purple,
+    vimMapModKey = colors.Red,
+    vimNotation = colors.Red,
+    vimMapLhs = colors.Blue,
+    vimMapRhs = colors.Blue,
+    vimOption = colors.Cyan,
+    vimUserAttrbKey = colors.Red,
+    vimUserAttrb = colors.Blue,
+    vimSynType = colors.Cyan,
+    vimHiBang = colors.Purple,
+    vimSet = colors.Yellow,
+    vimSetEqual = colors.Yellow,
+    vimSetSep = colors.LightGrey,
+    vimVar = colors.Fg,
+    vimFuncVar = colors.Fg,
+    vimContinue = colors.Grey,
+    vimAutoCmdSfxList = colors.Cyan,
 }
 
 function M.setup()

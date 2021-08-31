@@ -172,7 +172,7 @@ colorscheme onedark
 ```
 
 ```lua
-vim.g.onedark_disable_toggle_style = true
+vim.g.onedark_disable_toggle_style = true -- By default it is false
 require('onedark').setup()
 ```
 
@@ -183,7 +183,7 @@ colorscheme onedark
 ```
 
 ```lua
-vim.g.onedark_diagnostics_undercurl = false
+vim.g.onedark_diagnostics_undercurl = false -- By default it is true
 require('onedark').setup()
 ```
 
@@ -194,7 +194,7 @@ colorscheme onedark
 ```
 
 ```lua
-vim.g.onedark_darker_diagnostics = false
+vim.g.onedark_darker_diagnostics = false -- By default it is true
 require('onedark').setup()
 ```
 

@@ -176,6 +176,17 @@ vim.g.onedark_disable_toggle_style = true -- By default it is false
 require('onedark').setup()
 ```
 
+### To disable terminal colors
+```vim
+let g:onedark_disable_terminal_colors = 1 " By default it is 0
+colorscheme onedark
+```
+
+```lua
+vim.g.onedark_disable_terminal_colors = true -- By default it is false
+require('onedark').setup()
+```
+
 ### To use underline instead of undercurl for diagnostics
 ```vim
 let g:onedark_diagnostics_undercurl = 0 " By default it is 1

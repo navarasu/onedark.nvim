@@ -31,6 +31,7 @@ local colors = {
     Cyan = {fg = c.cyan},
     Yellow = {fg = c.yellow},
     DarkYellow = {fg = c.dark_yellow},
+    BGYellow = {fg = c.bg_yellow},
     Orange = {fg = c.orange},
     Green = {fg = c.green},
     Blue = {fg = c.blue},
@@ -166,8 +167,6 @@ hl.treesitter = {
     TSNumber = colors.Orange,
     TSOperator = colors.Purple,
     TSParameter = colors.Red,
-    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
-    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
     TSParameterReference = colors.Fg,
     TSProperty = colors.Cyan,
     TSPunctDelimiter = colors.LightGrey,
@@ -199,8 +198,6 @@ hl.treesitter = {
     TSType = colors.Orange,
     TSTypeBuiltin = colors.Orange,
     TSVariable = colors.Fg,
-    tsxTSVariable = colors.Yellow,
-    javascriptTSVariable = colors.Yellow,
     TSVariableBuiltin = colors.Red
 }
 
@@ -293,12 +290,12 @@ hl.plugins.nvim_tree = {
     NvimTreeIndentMarker = colors.Fg,
     NvimTreeImageFile = { fg = c.dark_purple },
     NvimTreeSymlink = colors.Purple,
-    NvimTreeFolderName= colors.Blue
+    NvimTreeFolderName= colors.Fg
 }
 hl.plugins.telescope = {
-    TelescopeBorder = colors.Green,
-    TelescopePromptBorder = colors.Green,
-    TelescopeResultsBorder = colors.Purple,
+    TelescopeBorder = colors.Cyan,
+    TelescopePromptBorder = colors.Cyan,
+    TelescopeResultsBorder = colors.Cyan,
     TelescopePreviewBorder = colors.Cyan,
     TelescopeMatching = colors.Yellow,
     TelescopePromptPrefix = colors.Blue,
@@ -311,6 +308,26 @@ hl.plugins.dashboard = {
     DashboardHeader = colors.Green,
     DashboardCenter = colors.Blue,
     DashboardFooter = { fg = c.cyan, italic = true}
+}
+
+hl.langs.javascript = {
+    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    javascriptTSPunctBracket = {fg = c.fg, bold = true},
+    javascriptTSConstant = colors.Orange,
+    --javascriptTSVariable = colors.BGYellow,
+}
+
+hl.langs.typescript = {
+    tsxTSType = colors.Orange,
+    typescriptTSType = colors.Orange,
+    --tsxTSVariable = colors.BGYellow,
+    --typescriptTSVariable = colors.BGYellow,
+    typescriptTSConstant = colors.Orange,
+    tsxTSConstant = colors.Orange,
+    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    tsxTSPunctBracket = {fg = c.fg, bold = true},
+    typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
 hl.langs.markdown = {

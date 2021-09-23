@@ -34,6 +34,7 @@ local colors = {
     Orange = {fg = c.orange},
     Green = {fg = c.green},
     Blue = {fg = c.blue},
+    BGBlue = {fg = c.bg_blue},
     Purple = {fg = c.purple}
 }
 hl.common = {
@@ -151,7 +152,7 @@ hl.treesitter = {
     TSException = colors.Purple,
     TSField = colors.Cyan,
     TSFloat = colors.Orange,
-    TSFunction = colors.Blue,
+    TSFunction = colors.BGBlue,
     TSFuncBuiltin = colors.Cyan,
     TSFuncMacro = colors.Fg,
     TSInclude = {fg = c.purple, italic = cfg.italic_comment},
@@ -165,6 +166,8 @@ hl.treesitter = {
     TSNumber = colors.Orange,
     TSOperator = colors.Purple,
     TSParameter = colors.Red,
+    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
     TSParameterReference = colors.Fg,
     TSProperty = colors.Cyan,
     TSPunctDelimiter = colors.LightGrey,
@@ -177,7 +180,7 @@ hl.treesitter = {
     TSSymbol = colors.Cyan,
     TSTag = colors.Red,
     TSTagDelimiter = colors.Red,
-    TSTagAttribute= colors.Red,
+    TSTagAttribute= colors.Orange,
     TSText = colors.Fg,
     TSStrong = colors.Fg,
     TSEmphasis = colors.Fg,
@@ -196,6 +199,8 @@ hl.treesitter = {
     TSType = colors.Orange,
     TSTypeBuiltin = colors.Orange,
     TSVariable = colors.Fg,
+    tsxTSVariable = colors.Yellow,
+    javascriptTSVariable = colors.Yellow,
     TSVariableBuiltin = colors.Red
 }
 

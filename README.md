@@ -37,6 +37,10 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
   + [DiffView](https://github.com/sindrets/diffview.nvim)
   + [Hop](https://github.com/phaazon/hop.nvim)
 
+### Languages Supported
+  * JavaScript
+  * TypeScript 
+
 ## Styles
 ### Dark
 ```vim

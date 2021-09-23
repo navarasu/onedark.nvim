@@ -381,6 +381,26 @@ hl.langs.cpp = {
     cppTSConstMacro = colors.Purple,
 }
 
+hl.langs.javascript = {
+    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    javascriptTSPunctBracket = {fg = c.fg, bold = true},
+    javascriptTSConstant = colors.Orange,
+    --javascriptTSVariable = colors.BGYellow,
+}
+
+hl.langs.typescript = {
+    tsxTSType = colors.Orange,
+    typescriptTSType = colors.Orange,
+    --tsxTSVariable = colors.BGYellow,
+    --typescriptTSVariable = colors.BGYellow,
+    typescriptTSConstant = colors.Orange,
+    tsxTSConstant = colors.Orange,
+    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    tsxTSPunctBracket = {fg = c.fg, bold = true},
+    typescriptTSPunctBracket = {fg = c.fg, bold = true},
+}
+
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, bold = true},

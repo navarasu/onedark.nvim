@@ -4,11 +4,11 @@
 
 <h4>
 <div align="center">
-  	<a href="https://github.com/navarasu/onedark.nvim/#installation">Installation</a>
+  	<a href="https://github.com/TdfGomes/onedark.nvim/#installation">Installation</a>
     <span> | </span>
-	<a href="https://github.com/navarasu/onedark.nvim/#features">Features</a>
+	<a href="https://github.com/TdfGomes/onedark.nvim/#features">Features</a>
 	    <span> | </span>
-  	<a href="https://github.com/navarasu/onedark.nvim/#styles">Styles</a>
+  	<a href="https://github.com/TdfGomes/onedark.nvim/#styles">Styles</a>
 
   <p></p>
 </div>
@@ -86,16 +86,16 @@ colorscheme onedark
 Install via your favourite package manager
 ```vim
 " Using Vim-Plug
-Plug 'navarasu/onedark.nvim'
+Plug 'TdfGomes/onedark.nvim'
 ```
 
 ```lua
 -- Using Packer
-use 'navarasu/onedark.nvim'
+use 'TdfGomes/onedark.nvim'
 ```
 Install manually
 ```bash
-git clone https://github.com/navarasu/onedark.nvim ~/.config/nvim
+git clone https://github.com/TdfGomes/onedark.nvim ~/.config/nvim
 nvim +PackerSync
 ```
 

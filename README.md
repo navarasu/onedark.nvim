@@ -20,7 +20,7 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
 
 ## Features
   * 6 styles (default one dark + 5 color variants)
-  * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to disable this mapping see [configuration](#to-disable-toggle-style-using-shortcut))
+  * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to disable this mapping see `onedark_disable_toggle_style` in [configuration](#configuration))
   * Supported mulitple plugins with hand picked proper colors
 
 ### Plugins Supported
@@ -127,87 +127,40 @@ require('lualine').setup {
 }
 ```
 ## Toggle style 
+By pressing `<leader>cs`, we can switch the style without exiting neovim.
+If you want to disable this behavior take a look at [configuration](#configuration).
 
-By pressing `<leader>cs`, we can switch the style without exiting neovim
 
+## Configuration
+**Important:** you need to add the configs before changing colorscheme
 
-## Config
-#### To change style variant of one dark
+### Configure onedark.nvim using vimscript:
 ```vim
-let g:onedark_style = 'darker'  " We need add the configs before colorscheme line
+let g:onedark_style = 'darker'
 colorscheme onedark
 ```
+When using vimscript to configure onedark settings **be sure** to use `v:true` and `v:false` to set booleand values!
+``` vim
+let g:onedark_italic_comment = v:true        " don't use 0 or 1
+```
 
+### Configure onedark.nvim using lua:
 ```lua
 vim.g.onedark_style = 'deep'
 require('onedark').setup()
 ```
 
-### To enable transparent background
-```vim
-let g:onedark_transparent_background = 1 " By default it is 0
-colorscheme onedark
-```
-
-```lua
-vim.g.onedark_transparent_background = true -- By default it is false
-require('onedark').setup()
-```
-
-### To disable italic comment
-```vim
-let g:onedark_italic_comment = 0 " By default it is 1
-colorscheme onedark
-```
-
-```lua
-vim.g.onedark_italic_comment = false -- By default it is true
-require('onedark').setup()
-```
-
-### To disable toggle style using shortcut
-```vim
-let g:onedark_disable_toggle_style = 1 " By default it is 0
-colorscheme onedark
-```
-
-```lua
-vim.g.onedark_disable_toggle_style = true -- By default it is false
-require('onedark').setup()
-```
-
-### To disable terminal colors
-```vim
-let g:onedark_disable_terminal_colors = 1 " By default it is 0
-colorscheme onedark
-```
-
-```lua
-vim.g.onedark_disable_terminal_colors = true -- By default it is false
-require('onedark').setup()
-```
-
-### To use underline instead of undercurl for diagnostics
-```vim
-let g:onedark_diagnostics_undercurl = 0 " By default it is 1
-colorscheme onedark
-```
-
-```lua
-vim.g.onedark_diagnostics_undercurl = false -- By default it is true
-require('onedark').setup()
-```
-
-### To make diagnostics look brighter
-```vim
-let g:onedark_darker_diagnostics = 0 " By default it is 1
-colorscheme onedark
-```
-
-```lua
-vim.g.onedark_darker_diagnostics = false -- By default it is true
-require('onedark').setup()
-```
+### Onedark options
+| Variable name                     | Default value | Description                                                                   |
+| -------------                     | ------------- | -------------                                                                 |
+| `onedark_style`                   | `'dark'`      | change style variant of one dark                                              |
+| `onedark_transparent_background`  | `false`       | enable transparent background                                                 |
+| `onedark_italic_comment`          | `true`        | enable italic comments                                                        |
+| `onedark_disable_toggle_style`    | `false`       | disable toggle style using a shortcut (`<leader>cs`)                          |
+| `onedark_disable_terminal_colors` | `false`       | disable terminal colors                                                       |
+| `onedark_diagnostics_undercurl`   | `true`        | use curly underline (undercurl) instead of standard underline for diagnostics |
+| `onedark_darker_diagnostics`      | `true`        | show diagnostics using a darker color                                         |
+| `onedark_hide_ending_tildes`      | `false`       | hide end of buffer tildes                                                     |
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

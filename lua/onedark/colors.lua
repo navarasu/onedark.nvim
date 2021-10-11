@@ -28,7 +28,7 @@ local colors = {
 }
 
 
-local styles = { dark = 1, darker = 2 , cool = 3, deep = 4, warm=5, warmer =6 }
+local styles = { dark = 1, darker = 2 , cool = 3, deep = 4, warm=5, warmer = 6 }
 
 local function select_colors()
     local index = styles[vim.g.onedark_style]

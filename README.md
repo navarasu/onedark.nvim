@@ -134,22 +134,6 @@ If you want to disable this behavior take a look at [configuration](#configurati
 ## Configuration
 **Important:** you need to add the configs before changing colorscheme
 
-### Configure onedark.nvim using vimscript:
-```vim
-let g:onedark_style = 'darker'
-colorscheme onedark
-```
-When using vimscript to configure onedark settings **be sure** to use `v:true` and `v:false` to set booleand values!
-``` vim
-let g:onedark_italic_comment = v:true        " don't use 0 or 1
-```
-
-### Configure onedark.nvim using lua:
-```lua
-vim.g.onedark_style = 'deep'
-require('onedark').setup()
-```
-
 ### Onedark options
 | Variable name                     | Default value | Description                                                                   |
 | -------------                     | ------------- | -------------                                                                 |
@@ -161,6 +145,24 @@ require('onedark').setup()
 | `onedark_diagnostics_undercurl`   | `true`        | use curly underline (undercurl) instead of standard underline for diagnostics |
 | `onedark_darker_diagnostics`      | `true`        | show diagnostics using a darker color                                         |
 | `onedark_hide_ending_tildes`      | `false`       | hide end of buffer tildes                                                     |
+
+### Configure onedark.nvim using vimscript:
+```vim
+let g:onedark_style = 'darker'
+let g:<onedark_option> = 'value'
+colorscheme onedark
+```
+When using vimscript to configure onedark settings **be sure** to use `v:true` and `v:false` to set booleand values!
+``` vim
+let g:onedark_italic_comment = v:true        " don't use 0 or 1
+```
+
+### Configure onedark.nvim using lua:
+```lua
+vim.g.onedark_style = 'deep'
+vim.g.<onedark_option> = 'value'
+require('onedark').setup()
+```
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

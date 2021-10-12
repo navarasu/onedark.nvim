@@ -216,6 +216,15 @@ hl.plugins.lsp = {
     LspReferenceRead = {underline = true }
 }
 
+hl.plugins.cmp = {
+	CmpItemAbbr = colors.Fg,
+	CmpItemAbbrDeprecated = colors.Fg,
+	CmpItemAbbrMatch = colors.Cyan,
+	CmpItemAbbrMatchFuzzy = {fg = c.cyan, underline = true},
+	CmpItemKind = colors.Red,
+	CmpItemMenu = colors.LightGrey,
+}
+
 hl.plugins.whichkey = {
     WhichKey = colors.Red,
     WhichKeyDesc = colors.Blue,

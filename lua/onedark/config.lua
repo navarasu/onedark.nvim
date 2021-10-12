@@ -9,7 +9,8 @@ local config = {
     italic_comment = get("italic_comment", true),
     diagnostics_undercurl = get("diagnostics_undercurl", true),
     darker_diagnostics = get("darker_diagnostics", true),
-    disable_terminal_colors = get("disable_terminal_colors", false)
+    disable_terminal_colors = get("disable_terminal_colors", false),
+    hide_ending_tildes = get("hide_ending_tildes", false),
 }
 
 return config

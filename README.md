@@ -20,7 +20,7 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
 
 ## Features
   * 6 styles (default one dark + 5 color variants)
-  * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to change or disable this mapping see `onedark_toggle_style_keymap` in [configuration](#configuration))
+  * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to change or disable this mapping see [toggle style](#toggle-style))
   * Supported mulitple plugins with hand picked proper colors
 
 ### Plugins Supported
@@ -132,6 +132,7 @@ require('lualine').setup {
 ```
 ## Toggle style 
 By pressing `<leader>cs`, we can switch the style without exiting Neovim.
+
 If you want to change this mapping:
 ``` lua
 vim.g.onedark_toggle_style_keymap = '<space>tc'

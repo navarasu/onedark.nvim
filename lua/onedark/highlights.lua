@@ -142,7 +142,7 @@ hl.treesitter = {
     TSAnnotation = colors.Fg,
     TSAttribute = colors.Cyan,
     TSBoolean = colors.Orange,
-    TSCharacter = colors.Fg,
+    TSCharacter = colors.Orange,
     TSComment = {fg = c.grey, italic = cfg.italic_comment},
     TSConditional = colors.Purple,
     TSConstant = colors.Cyan,
@@ -310,12 +310,13 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName= colors.Fg
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Cyan,
     TelescopePromptBorder = colors.Cyan,
     TelescopeResultsBorder = colors.Cyan,
     TelescopePreviewBorder = colors.Cyan,
-    TelescopeMatching = colors.Yellow,
+    TelescopeMatching = { fg = c.yellow, bold = true },
     TelescopePromptPrefix = colors.Blue,
     TelescopeSelection =  { bg =c.bg2 },
     TelescopeSelectionCaret = colors.Blue
@@ -346,6 +347,10 @@ hl.langs.typescript = {
     typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
     tsxTSPunctBracket = {fg = c.fg, bold = true},
     typescriptTSPunctBracket = {fg = c.fg, bold = true},
+}
+
+hl.plugins.symbols_outline = {
+    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
 }
 
 hl.langs.markdown = {

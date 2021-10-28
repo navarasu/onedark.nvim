@@ -139,7 +139,7 @@ hl.treesitter = {
     TSAnnotation = colors.Fg,
     TSAttribute = colors.Cyan,
     TSBoolean = colors.Orange,
-    TSCharacter = colors.Fg,
+    TSCharacter = colors.Orange,
     TSComment = {fg = c.grey, italic = cfg.italic_comment},
     TSConditional = colors.Purple,
     TSConstant = colors.Cyan,
@@ -311,7 +311,7 @@ hl.plugins.telescope = {
     TelescopePromptBorder = colors.Green,
     TelescopeResultsBorder = colors.Purple,
     TelescopePreviewBorder = colors.Cyan,
-    TelescopeMatching = colors.Yellow,
+    TelescopeMatching = { fg = c.yellow, bold = true },
     TelescopePromptPrefix = colors.Blue,
     TelescopeSelection =  { bg =c.bg2 },
     TelescopeSelectionCaret = colors.Blue
@@ -322,6 +322,10 @@ hl.plugins.dashboard = {
     DashboardHeader = colors.Green,
     DashboardCenter = colors.Blue,
     DashboardFooter = { fg = c.cyan, italic = true}
+}
+
+hl.plugins.symbols_outline = {
+    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
 }
 
 hl.langs.markdown = {

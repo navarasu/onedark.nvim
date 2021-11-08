@@ -117,19 +117,19 @@ hl.syntax = {
     PreCondit = colors.Purple,
     Include = colors.Purple,
     Keyword = colors.Purple,
-    Define = colors.Red,
+    Define = colors.Purple,
     Typedef = colors.Purple,
     Exception = colors.Purple,
     Conditional = colors.Purple,
     Repeat = colors.Purple,
-    Statement = colors.Purple,
-    Macro = colors.Cyan,
+    Statement = {fg = colors.purple, bold = true},
+    Macro = colors.Red,
     Error = colors.Purple,
     Label = colors.Purple,
     Special = colors.Red,
     SpecialChar = colors.Red,
     Function = colors.Blue,
-    Operator = colors.Purple,
+    Operator = colors.Red,
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.LightGrey,
@@ -145,9 +145,9 @@ hl.treesitter = {
     TSCharacter = colors.Orange,
     TSComment = {fg = c.grey, italic = cfg.italic_comment},
     TSConditional = colors.Purple,
-    TSConstant = colors.Cyan,
+    TSConstant = colors.Orange,
     TSConstBuiltin = colors.Orange,
-    TSConstMacro = colors.Red,
+    TSConstMacro = colors.Orange,
     TSConstructor = {fg = c.yellow, bold = true},
     TSError = colors.Fg,
     TSException = colors.Purple,
@@ -299,8 +299,9 @@ hl.plugins.gitsigns = {
 
 hl.plugins.nvim_tree = {
     NvimTreeNormal = { fg = c.fg, bg = c.bg_d },
+    NvimTreeVertSplit = { fg = c.bg_d, bg = c.bg_d },
     NvimTreeEndOfBuffer = { fg = cfg.hide_ending_tildes and c.bg_d or c.bg2, bg = c.bg_d },
-    NvimTreeRootFolder = { fg = c.green, bold =true},
+    NvimTreeRootFolder = { fg = c.orange, bold = true },
     NvimTreeGitDirty = colors.Yellow,
     NvimTreeGitNew = colors.Green,
     NvimTreeGitDeleted = colors.Red,
@@ -310,6 +311,7 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName= colors.Fg
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Cyan,
     TelescopePromptBorder = colors.Cyan,
@@ -352,19 +354,35 @@ hl.plugins.symbols_outline = {
     FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
 }
 
+hl.langs.c = {
+    cInclude = colors.Blue,
+    cStorageClass = colors.Purple,
+    cTypedef = colors.Purple,
+    cDefine = colors.Cyan,
+    cTSInclude = colors.Blue,
+    cTSConstant = colors.Cyan,
+    cTSConstMacro = colors.Purple,
+}
+
+hl.langs.cpp = {
+    cppTSInclude = colors.Blue,
+    cppTSConstant = colors.Cyan,
+    cppTSConstMacro = colors.Purple,
+}
+
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, bold = true},
     markdownBoldDelimiter = colors.Grey,
-    markdownCode = colors.Yellow,
-    markdownCodeBlock = colors.Yellow,
-    markdownCodeDelimiter = colors.Green,
+    markdownCode = colors.Green,
+    markdownCodeBlock = colors.Green,
+    markdownCodeDelimiter = colors.Yellow,
     markdownH1 = {fg = c.red, bold = true},
-    markdownH2 = {fg = c.red, bold = true},
-    markdownH3 = {fg = c.red, bold = true},
+    markdownH2 = {fg = c.purple, bold = true},
+    markdownH3 = {fg = c.orange, bold = true},
     markdownH4 = {fg = c.red, bold = true},
-    markdownH5 = {fg = c.red, bold = true},
-    markdownH6 = {fg = c.red, bold = true},
+    markdownH5 = {fg = c.purple, bold = true},
+    markdownH6 = {fg = c.orange, bold = true},
     markdownHeadingDelimiter = colors.Grey,
     markdownHeadingRule = colors.Grey,
     markdownId = colors.Yellow,

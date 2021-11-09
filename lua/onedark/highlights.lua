@@ -5,21 +5,21 @@ local M = {}
 local hl = {langs = {}, plugins = {}}
 
 local function gui(group_settings)
-   if group_settings.bold then return "bold"
-   elseif group_settings.underline then return "underline"
-   elseif group_settings.undercurl then return "undercurl"
-   elseif group_settings.italic then return "italic"
-   elseif group_settings.reverse then return "reverse"
-   else return "NONE" end
+    if group_settings.bold then return "bold"
+    elseif group_settings.underline then return "underline"
+    elseif group_settings.undercurl then return "undercurl"
+    elseif group_settings.italic then return "italic"
+    elseif group_settings.reverse then return "reverse"
+    else return "NONE" end
 end
 
 local function vim_highlights(highlights)
-  for group_name, group_settings in pairs(highlights) do
-    local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
-    local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
-    local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
-    vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg .. " " .. sp)
-	end
+    for group_name, group_settings in pairs(highlights) do
+        local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
+        local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
+        local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
+        vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg .. " " .. sp)
+    end
 end
 
 
@@ -122,7 +122,7 @@ hl.syntax = {
     Exception = colors.Purple,
     Conditional = colors.Purple,
     Repeat = colors.Purple,
-    Statement = {fg = colors.purple, bold = true},
+    Statement = colors.Purple,
     Macro = colors.Red,
     Error = colors.Purple,
     Label = colors.Purple,
@@ -234,7 +234,7 @@ hl.plugins.cmp = {
     CmpItemAbbrDeprecated = colors.Fg,
     CmpItemAbbrMatch = colors.Cyan,
     CmpItemAbbrMatchFuzzy = { fg = c.cyan, underline = true },
-    CmpItemKind = colors.Red,
+    CmpItemKind = colors.Purple,
     CmpItemMenu = colors.LightGrey,
 }
 
@@ -365,6 +365,7 @@ hl.langs.c = {
 }
 
 hl.langs.cpp = {
+    cppStatement = { fg = c.purple, bold = true },
     cppTSInclude = colors.Blue,
     cppTSConstant = colors.Cyan,
     cppTSConstMacro = colors.Purple,
@@ -426,19 +427,42 @@ hl.langs.scala = {
     scalaKeywordModifier = colors.Red
 }
 
+hl.langs.tex = {
+    latexTSInclude = colors.Blue,
+    latexTSFuncMacro = colors.Purple,
+    latexTSEnvironment = { fg = c.cyan, bold = true },
+    latexTSEnvironmentName = colors.Yellow,
+    texCmdEnv = colors.Cyan,
+    texEnvArgName = colors.Yellow,
+    latexTSTitle = colors.Green,
+    latexTSType = colors.Blue,
+    latexTSMath   = colors.Orange,
+    texMathZoneX  = colors.Orange,
+    texMathZoneXX = colors.Orange,
+    texMathDelimZone = colors.LightGrey,
+    texMathDelim = colors.Purple,
+    texMathOper = colors.Red,
+    texCmd = colors.Purple,
+    texCmdPart = colors.Blue,
+    texCmdPackage = colors.Blue,
+    texPgfType = colors.Yellow,
+}
+
 hl.langs.vim = {
+    vimTSFuncMacro = {fg = c.cyan, bold = true},
     vimCommentTitle = {fg = c.light_grey, bold = true},
+    vimCommand =  {fg = c.cyan, bold = true},
     vimLet = colors.Purple,
     vimFunction = colors.Blue,
     vimIsCommand = colors.Fg,
     vimUserFunc = colors.Blue,
     vimFuncName = colors.Blue,
     vimMap = colors.Purple,
-    vimMapModKey = colors.Red,
+    vimMapModKey = colors.Orange,
     vimNotation = colors.Red,
     vimMapLhs = colors.Blue,
     vimMapRhs = colors.Blue,
-    vimOption = colors.Cyan,
+    vimOption = colors.Red,
     vimUserAttrbKey = colors.Red,
     vimUserAttrb = colors.Blue,
     vimSynType = colors.Cyan,

@@ -339,6 +339,16 @@ hl.plugins.ts_rainbow = {
     rainbowcol7 = colors.Red
 }
 
+hl.plugins.indent_blankline = {
+    IndentBlankLineIndent4 = colors.LightGrey,
+    IndentBlankLineIndent1 = colors.Blue,
+    IndentBlankLineIndent2 = colors.Green,
+    IndentBlankLineIndent3 = colors.Cyan,
+    IndentBlankLineIndent5 = colors.Purple,
+    IndentBlankLineIndent6 = colors.Red,
+    IndentBlankLineContext = {fg = c.orange, bg = c.bg3, bold = true},
+}
+
 hl.langs.c = {
     cInclude = colors.Blue,
     cStorageClass = colors.Purple,

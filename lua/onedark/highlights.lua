@@ -354,6 +354,16 @@ hl.plugins.symbols_outline = {
     FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
 }
 
+hl.plugins.ts_rainbow = {
+    rainbowcol1 = colors.Grey,
+    rainbowcol2 = colors.Yellow,
+    rainbowcol3 = colors.Blue,
+    rainbowcol4 = colors.Orange,
+    rainbowcol5 = colors.Purple,
+    rainbowcol6 = colors.Green,
+    rainbowcol7 = colors.Red
+}
+
 hl.langs.c = {
     cInclude = colors.Blue,
     cStorageClass = colors.Purple,

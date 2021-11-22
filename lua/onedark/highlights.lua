@@ -5,21 +5,21 @@ local M = {}
 local hl = {langs = {}, plugins = {}}
 
 local function gui(group_settings)
-   if group_settings.bold then return "bold"
-   elseif group_settings.underline then return "underline"
-   elseif group_settings.undercurl then return "undercurl"
-   elseif group_settings.italic then return "italic"
-   elseif group_settings.reverse then return "reverse"
-   else return "NONE" end
+    if group_settings.bold then return "bold"
+    elseif group_settings.underline then return "underline"
+    elseif group_settings.undercurl then return "undercurl"
+    elseif group_settings.italic then return "italic"
+    elseif group_settings.reverse then return "reverse"
+    else return "NONE" end
 end
 
 local function vim_highlights(highlights)
-  for group_name, group_settings in pairs(highlights) do
-    local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
-    local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
-    local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
-    vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg .. " " .. sp)
-	end
+    for group_name, group_settings in pairs(highlights) do
+        local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
+        local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
+        local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
+        vim.cmd("highlight " .. group_name .. " ".."gui="..gui(group_settings).." "..fg .. " " .. bg .. " " .. sp)
+    end
 end
 
 
@@ -41,7 +41,7 @@ local colors = {
 hl.common = {
     Normal = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
     Terminal = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
-    EndOfBuffer = {fg = c.bg2, bg = cfg.bg and c.none or c.bg0},
+    EndOfBuffer = {fg = cfg.hide_ending_tildes and (cfg.bg and c.none or c.bg0) or c.bg2, bg = cfg.bg and c.none or c.bg0},
     FoldColumn = {fg = c.fg, bg = cfg.bg and c.none or c.bg1},
     Folded = {fg = c.fg, bg = cfg.bg and c.none or c.bg1},
     SignColumn = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
@@ -117,19 +117,19 @@ hl.syntax = {
     PreCondit = colors.Purple,
     Include = colors.Purple,
     Keyword = colors.Purple,
-    Define = colors.Red,
+    Define = colors.Purple,
     Typedef = colors.Purple,
     Exception = colors.Purple,
     Conditional = colors.Purple,
     Repeat = colors.Purple,
     Statement = colors.Purple,
-    Macro = colors.Cyan,
+    Macro = colors.Red,
     Error = colors.Purple,
     Label = colors.Purple,
     Special = colors.Red,
     SpecialChar = colors.Red,
     Function = colors.Blue,
-    Operator = colors.Purple,
+    Operator = colors.Red,
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.LightGrey,
@@ -142,12 +142,12 @@ hl.treesitter = {
     TSAnnotation = colors.Fg,
     TSAttribute = colors.Cyan,
     TSBoolean = colors.Orange,
-    TSCharacter = colors.Fg,
+    TSCharacter = colors.Orange,
     TSComment = {fg = c.grey, italic = cfg.italic_comment},
     TSConditional = colors.Purple,
-    TSConstant = colors.Cyan,
+    TSConstant = colors.Orange,
     TSConstBuiltin = colors.Orange,
-    TSConstMacro = colors.Red,
+    TSConstMacro = colors.Orange,
     TSConstructor = {fg = c.yellow, bold = true},
     TSError = colors.Fg,
     TSException = colors.Purple,
@@ -207,17 +207,35 @@ hl.plugins.lsp = {
     LspCxxHlGroupNamespace = colors.Blue,
     LspCxxHlSkippedRegion = colors.Grey,
     LspCxxHlSkippedRegionBeginEnd = colors.Red,
-    LspDiagnosticsDefaultError = {fg = cfg.darker_diagnostics and c.dark_red or c.red},
-    LspDiagnosticsDefaultHint = {fg = cfg.darker_diagnostics and c.dark_purple or c.purple},
-    LspDiagnosticsDefaultInformation = {fg = cfg.darker_diagnostics and c.dark_cyan or c.cyan},
-    LspDiagnosticsDefaultWarning = {fg = cfg.darker_diagnostics and c.dark_yellow or c.yellow},
-    LspDiagnosticsUnderlineError = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.red},
-    LspDiagnosticsUnderlineHint = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.purple},
-    LspDiagnosticsUnderlineInformation = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.blue},
-    LspDiagnosticsUnderlineWarning = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.yellow},
+    DiagnosticError = {fg = cfg.darker_diagnostics and c.dark_red or c.red},
+    DiagnosticHint = {fg = cfg.darker_diagnostics and c.dark_purple or c.purple},
+    DiagnosticInfo = {fg = cfg.darker_diagnostics and c.dark_cyan or c.cyan},
+    DiagnosticWarn = {fg = cfg.darker_diagnostics and c.dark_yellow or c.yellow},
+    DiagnosticUnderlineError = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.red},
+    DiagnosticUnderlineHint = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.purple},
+    DiagnosticUnderlineInfo = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.blue},
+    DiagnosticUnderlineWarn = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.yellow},
     LspReferenceText = {underline = true },
     LspReferenceWrite = {underline = true },
     LspReferenceRead = {underline = true }
+}
+
+hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError
+hl.plugins.lsp.LspDiagnosticsDefaultHint = hl.plugins.lsp.DiagnosticHint
+hl.plugins.lsp.LspDiagnosticsDefaultInformation = hl.plugins.lsp.DiagnosticInfo
+hl.plugins.lsp.LspDiagnosticsDefaultWarning = hl.plugins.lsp.DiagnosticWarn
+hl.plugins.lsp.LspDiagnosticsUnderlineError = hl.plugins.lsp.DiagnosticUnderlineError
+hl.plugins.lsp.LspDiagnosticsUnderlineHint = hl.plugins.lsp.DiagnosticUnderlineHint
+hl.plugins.lsp.LspDiagnosticsUnderlineInformation = hl.plugins.lsp.DiagnosticUnderlineInfo
+hl.plugins.lsp.LspDiagnosticsUnderlineWarning = hl.plugins.lsp.DiagnosticUnderlineWarn
+
+hl.plugins.cmp = {
+    CmpItemAbbr = colors.Fg,
+    CmpItemAbbrDeprecated = colors.Fg,
+    CmpItemAbbrMatch = colors.Cyan,
+    CmpItemAbbrMatchFuzzy = { fg = c.cyan, underline = true },
+    CmpItemKind = colors.Purple,
+    CmpItemMenu = colors.LightGrey,
 }
 
 hl.plugins.whichkey = {
@@ -281,8 +299,9 @@ hl.plugins.gitsigns = {
 
 hl.plugins.nvim_tree = {
     NvimTreeNormal = { fg = c.fg, bg = c.bg_d },
-    NvimTreeEndOfBuffer = { fg = c.bg2, bg = c.bg_d },
-    NvimTreeRootFolder = { fg = c.green, bold =true},
+    NvimTreeVertSplit = { fg = c.bg_d, bg = c.bg_d },
+    NvimTreeEndOfBuffer = { fg = cfg.hide_ending_tildes and c.bg_d or c.bg2, bg = c.bg_d },
+    NvimTreeRootFolder = { fg = c.orange, bold = true },
     NvimTreeGitDirty = colors.Yellow,
     NvimTreeGitNew = colors.Green,
     NvimTreeGitDeleted = colors.Red,
@@ -292,12 +311,13 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName= colors.Fg
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Cyan,
     TelescopePromptBorder = colors.Cyan,
     TelescopeResultsBorder = colors.Cyan,
     TelescopePreviewBorder = colors.Cyan,
-    TelescopeMatching = colors.Yellow,
+    TelescopeMatching = { fg = c.yellow, bold = true },
     TelescopePromptPrefix = colors.Blue,
     TelescopeSelection =  { bg =c.bg2 },
     TelescopeSelectionCaret = colors.Blue
@@ -330,19 +350,70 @@ hl.langs.typescript = {
     typescriptTSPunctBracket = {fg = c.fg, bold = true},
 }
 
+hl.plugins.symbols_outline = {
+    FocusedSymbol = { fg = c.bg1, bg = c.yellow, bold = true },
+}
+
+hl.plugins.ts_rainbow = {
+    rainbowcol1 = colors.Grey,
+    rainbowcol2 = colors.Yellow,
+    rainbowcol3 = colors.Blue,
+    rainbowcol4 = colors.Orange,
+    rainbowcol5 = colors.Purple,
+    rainbowcol6 = colors.Green,
+    rainbowcol7 = colors.Red
+}
+
+hl.langs.c = {
+    cInclude = colors.Blue,
+    cStorageClass = colors.Purple,
+    cTypedef = colors.Purple,
+    cDefine = colors.Cyan,
+    cTSInclude = colors.Blue,
+    cTSConstant = colors.Cyan,
+    cTSConstMacro = colors.Purple,
+}
+
+hl.langs.cpp = {
+    cppStatement = { fg = c.purple, bold = true },
+    cppTSInclude = colors.Blue,
+    cppTSConstant = colors.Cyan,
+    cppTSConstMacro = colors.Purple,
+}
+
+hl.langs.javascript = {
+    javascriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    javascriptTSPunctBracket = {fg = c.fg, bold = true},
+    javascriptTSConstant = colors.Orange,
+    --javascriptTSVariable = colors.BGYellow,
+}
+
+hl.langs.typescript = {
+    tsxTSType = colors.Orange,
+    typescriptTSType = colors.Orange,
+    --tsxTSVariable = colors.BGYellow,
+    --typescriptTSVariable = colors.BGYellow,
+    typescriptTSConstant = colors.Orange,
+    tsxTSConstant = colors.Orange,
+    tsxTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    typescriptTSParameter = {fg = c.red, italic = cfg.italic_comment},
+    tsxTSPunctBracket = {fg = c.fg, bold = true},
+    typescriptTSPunctBracket = {fg = c.fg, bold = true},
+}
+
 hl.langs.markdown = {
     markdownBlockquote = colors.Grey,
     markdownBold = {fg = c.none, bold = true},
     markdownBoldDelimiter = colors.Grey,
-    markdownCode = colors.Yellow,
-    markdownCodeBlock = colors.Yellow,
-    markdownCodeDelimiter = colors.Green,
+    markdownCode = colors.Green,
+    markdownCodeBlock = colors.Green,
+    markdownCodeDelimiter = colors.Yellow,
     markdownH1 = {fg = c.red, bold = true},
-    markdownH2 = {fg = c.red, bold = true},
-    markdownH3 = {fg = c.red, bold = true},
+    markdownH2 = {fg = c.purple, bold = true},
+    markdownH3 = {fg = c.orange, bold = true},
     markdownH4 = {fg = c.red, bold = true},
-    markdownH5 = {fg = c.red, bold = true},
-    markdownH6 = {fg = c.red, bold = true},
+    markdownH5 = {fg = c.purple, bold = true},
+    markdownH6 = {fg = c.orange, bold = true},
     markdownHeadingDelimiter = colors.Grey,
     markdownHeadingRule = colors.Grey,
     markdownId = colors.Yellow,
@@ -386,19 +457,42 @@ hl.langs.scala = {
     scalaKeywordModifier = colors.Red
 }
 
+hl.langs.tex = {
+    latexTSInclude = colors.Blue,
+    latexTSFuncMacro = colors.Purple,
+    latexTSEnvironment = { fg = c.cyan, bold = true },
+    latexTSEnvironmentName = colors.Yellow,
+    texCmdEnv = colors.Cyan,
+    texEnvArgName = colors.Yellow,
+    latexTSTitle = colors.Green,
+    latexTSType = colors.Blue,
+    latexTSMath   = colors.Orange,
+    texMathZoneX  = colors.Orange,
+    texMathZoneXX = colors.Orange,
+    texMathDelimZone = colors.LightGrey,
+    texMathDelim = colors.Purple,
+    texMathOper = colors.Red,
+    texCmd = colors.Purple,
+    texCmdPart = colors.Blue,
+    texCmdPackage = colors.Blue,
+    texPgfType = colors.Yellow,
+}
+
 hl.langs.vim = {
+    vimTSFuncMacro = {fg = c.cyan, bold = true},
     vimCommentTitle = {fg = c.light_grey, bold = true},
+    vimCommand =  {fg = c.cyan, bold = true},
     vimLet = colors.Purple,
     vimFunction = colors.Blue,
     vimIsCommand = colors.Fg,
     vimUserFunc = colors.Blue,
     vimFuncName = colors.Blue,
     vimMap = colors.Purple,
-    vimMapModKey = colors.Red,
+    vimMapModKey = colors.Orange,
     vimNotation = colors.Red,
     vimMapLhs = colors.Blue,
     vimMapRhs = colors.Blue,
-    vimOption = colors.Cyan,
+    vimOption = colors.Red,
     vimUserAttrbKey = colors.Red,
     vimUserAttrb = colors.Blue,
     vimSynType = colors.Cyan,

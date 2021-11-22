@@ -38,6 +38,7 @@ local colors = {
     BGBlue = {fg = c.bg_blue},
     Purple = {fg = c.purple}
 }
+
 hl.common = {
     Normal = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
     Terminal = {fg = c.fg, bg = cfg.bg and c.none or c.bg0},
@@ -207,6 +208,10 @@ hl.plugins.lsp = {
     LspCxxHlGroupNamespace = colors.Blue,
     LspCxxHlSkippedRegion = colors.Grey,
     LspCxxHlSkippedRegionBeginEnd = colors.Red,
+    LspDiagnosticsSignError = colors.Red,
+    LspDiagnosticsSignWarning = colors.Yellow,
+    LspDiagnosticsSignInformation = colors.Blue,
+    LspDiagnosticsSignHint = colors.Purple,
     DiagnosticError = {fg = cfg.darker_diagnostics and c.dark_red or c.red},
     DiagnosticHint = {fg = cfg.darker_diagnostics and c.dark_purple or c.purple},
     DiagnosticInfo = {fg = cfg.darker_diagnostics and c.dark_cyan or c.cyan},

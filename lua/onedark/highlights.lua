@@ -308,21 +308,21 @@ hl.plugins.nvim_tree = {
     NvimTreeFolderName = colors.Blue,
 }
 hl.plugins.telescope = {
-    TelescopeBorder = colors.Green,
-    TelescopePromptBorder = colors.Green,
-    TelescopeResultsBorder = colors.Purple,
+    TelescopeBorder = colors.Red,
+    TelescopePromptBorder = colors.Cyan,
+    TelescopeResultsBorder = colors.Cyan,
     TelescopePreviewBorder = colors.Cyan,
-    TelescopeMatching = { fg = c.yellow, bold = true },
-    TelescopePromptPrefix = colors.Blue,
+    TelescopeMatching = { fg = c.orange, bold = true },
+    TelescopePromptPrefix = colors.Green,
     TelescopeSelection =  { bg =c.bg2 },
-    TelescopeSelectionCaret = colors.Blue
+    TelescopeSelectionCaret = colors.Yellow
 }
 
 hl.plugins.dashboard = {
-    DashboardShortCut = colors.Yellow,
-    DashboardHeader = colors.Green,
-    DashboardCenter = colors.Blue,
-    DashboardFooter = { fg = c.cyan, italic = true}
+    DashboardShortCut = colors.Blue,
+    DashboardHeader = colors.Yellow,
+    DashboardCenter = colors.Cyan,
+    DashboardFooter = { fg = c.dark_red, italic = true}
 }
 
 hl.plugins.symbols_outline = {

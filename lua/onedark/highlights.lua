@@ -1,5 +1,6 @@
 local c = require('onedark.colors')
 local cfg = require('onedark.config')
+local util = require("onedark.util")
 
 local M = {}
 local hl = {langs = {}, plugins = {}}
@@ -203,14 +204,26 @@ hl.plugins.lsp = {
     LspCxxHlGroupNamespace = colors.Blue,
     LspCxxHlSkippedRegion = colors.Grey,
     LspCxxHlSkippedRegionBeginEnd = colors.Red,
-    DiagnosticError = {fg = cfg.darker_diagnostics and c.dark_red or c.red},
-    DiagnosticHint = {fg = cfg.darker_diagnostics and c.dark_purple or c.purple},
-    DiagnosticInfo = {fg = cfg.darker_diagnostics and c.dark_cyan or c.cyan},
-    DiagnosticWarn = {fg = cfg.darker_diagnostics and c.dark_yellow or c.yellow},
+
+    DiagnosticError = {fg = c.red },
+    DiagnosticHint = {fg = c.purple},
+    DiagnosticInfo = {fg = c.cyan},
+    DiagnosticWarn = {fg = c.yellow},
+
+    DiagnosticVirtualTextError = { bg = cfg.diagnostics_text_bg and util.darken(cfg.darker_diagnostics and c.dark_red or c.red, 0.1, c.bg0) or c.none,
+                                   fg = cfg.darker_diagnostics and c.dark_red or c.red },
+    DiagnosticVirtualTextWarn = { bg = cfg.diagnostics_text_bg and util.darken(cfg.darker_diagnostics and c.dark_yellow or c.yellow, 0.1, c.bg0) or c.none,
+                                  fg = cfg.darker_diagnostics and c.dark_yellow or c.yellow },
+    DiagnosticVirtualTextInfo = { bg = cfg.diagnostics_text_bg and util.darken(cfg.darker_diagnostics and c.dark_cyan or c.cyan, 0.1, c.bg0) or c.none,
+                                  fg = cfg.darker_diagnostics and c.dark_cyan or c.cyan },
+    DiagnosticVirtualTextHint = { bg = cfg.diagnostics_text_bg and util.darken(cfg.darker_diagnostics and c.dark_purple or c.purple, 0.1, c.bg0) or c.none,
+                                  fg = cfg.darker_diagnostics and c.dark_purple or c.purple },
+
     DiagnosticUnderlineError = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.red},
     DiagnosticUnderlineHint = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.purple},
     DiagnosticUnderlineInfo = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.blue},
     DiagnosticUnderlineWarn = {underline = not cfg.diagnostics_undercurl, undercurl = cfg.diagnostics_undercurl, sp = c.yellow},
+
     LspReferenceText = {underline = true },
     LspReferenceWrite = {underline = true },
     LspReferenceRead = {underline = true }
@@ -224,6 +237,10 @@ hl.plugins.lsp.LspDiagnosticsUnderlineError = hl.plugins.lsp.DiagnosticUnderline
 hl.plugins.lsp.LspDiagnosticsUnderlineHint = hl.plugins.lsp.DiagnosticUnderlineHint
 hl.plugins.lsp.LspDiagnosticsUnderlineInformation = hl.plugins.lsp.DiagnosticUnderlineInfo
 hl.plugins.lsp.LspDiagnosticsUnderlineWarning = hl.plugins.lsp.DiagnosticUnderlineWarn
+hl.plugins.lsp.LspDiagnosticsVirtualTextError = hl.plugins.lsp.DiagnosticVirtualTextError
+hl.plugins.lsp.LspDiagnosticsVirtualTextWarning = hl.plugins.lsp.DiagnosticVirtualTextWarn
+hl.plugins.lsp.LspDiagnosticsVirtualTextInformation = hl.plugins.lsp.DiagnosticVirtualTextInfo
+hl.plugins.lsp.LspDiagnosticsVirtualTextHint = hl.plugins.lsp.DiagnosticVirtualTextHint
 
 hl.plugins.cmp = {
     CmpItemAbbr = colors.Fg,

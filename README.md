@@ -11,7 +11,7 @@
   	<a href="https://github.com/navarasu/onedark.nvim/#styles">Styles</a>
 			    <span> | </span>
   	<a href="https://github.com/navarasu/onedark.nvim/#configuration">Configuration</a>
-					    <span> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; </span>
+					    <span> &nbsp;  &nbsp;  &nbsp;  &nbsp; </span>
 
   <p></p>
 	</div></h4>

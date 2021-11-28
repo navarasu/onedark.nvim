@@ -2,13 +2,15 @@
 <h1 align="left">
 <img height="90" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
 </h1>
-<h4><div align="right">
+<h4>
 	<div align="right">
   	<a href="https://github.com/navarasu/onedark.nvim/#installation">Installation</a>
     <span> | </span>
 	<a href="https://github.com/navarasu/onedark.nvim/#features">Features</a>
 	    <span> | </span>
   	<a href="https://github.com/navarasu/onedark.nvim/#styles">Styles</a>
+			    <span> | </span>
+  	<a href="https://github.com/navarasu/onedark.nvim/#configuration">Configuration</a>
 
   <p></p>
 	</div></h4>

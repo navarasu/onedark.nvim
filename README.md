@@ -28,8 +28,8 @@
 
 ## Themes
 <p float="left">
-<img alt="onedark-cool"  width="450px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
-<img alt="onedark-cool" width="450px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+<img alt="onedark-cool"  width="400px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+<img alt="onedark-cool" width="400px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
 </div></p>
 
 ## Installation

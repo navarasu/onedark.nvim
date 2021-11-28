@@ -1,9 +1,8 @@
-<h1 align="center">
-<img height="130" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
-</h1>
 
-<h4>
-<div align="center">
+<h1 align="left">
+<img height="100" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
+<sub><sup><div align="right">
+	<div align="right">
   	<a href="https://github.com/navarasu/onedark.nvim/#installation">Installation</a>
     <span> | </span>
 	<a href="https://github.com/navarasu/onedark.nvim/#features">Features</a>
@@ -11,8 +10,7 @@
   	<a href="https://github.com/navarasu/onedark.nvim/#styles">Styles</a>
 
   <p></p>
-</div>
-  </h4>
+</div></sup></sub></h1>
 
 A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight. Additionally, it comes with 5 more color variant styles
 
@@ -22,6 +20,16 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
   * 6 styles (default one dark + 5 color variants)
   * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to change or disable this mapping see [toggle style](#toggle-style))
   * Supported mulitple plugins with hand picked proper colors
+	
+
+## Styles
+	
+<p float="left">
+<img alt="onedark-cool"  width="49%" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+<img alt="onedark-cool" width="49%" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+</p>
+
+![carbon (2) (2)](https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png) |  ![carbon (2) (2)](https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png)
 
 ### Plugins Supported
   + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)

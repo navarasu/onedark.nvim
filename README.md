@@ -1,6 +1,6 @@
 
 <h1 align="left">
-	 <span> &nbsp;  &nbsp; </span>
+	 <span> &nbsp;&nbsp;&nbsp; </span>
 <img height="90" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
 </h1>
 <h4>

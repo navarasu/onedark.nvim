@@ -1,6 +1,6 @@
 
 <h1 align="left">
-<img height="100" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
+<img height="90" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
 <sub><sup><div align="right">
 	<div align="right">
   	<a href="https://github.com/navarasu/onedark.nvim/#installation">Installation</a>
@@ -28,8 +28,6 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
 <img alt="onedark-cool"  width="49%" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
 <img alt="onedark-cool" width="49%" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
 </p>
-
-![carbon (2) (2)](https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png) |  ![carbon (2) (2)](https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png)
 
 ### Plugins Supported
   + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)

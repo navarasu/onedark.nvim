@@ -25,8 +25,8 @@ For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdic
 ## Styles
 	
 <p float="left">
-<img alt="onedark-cool"  width="49%" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
-<img alt="onedark-cool" width="49%" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+<img alt="onedark-cool"  width="480px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+<img alt="onedark-cool" width="480px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
 </p>
 
 ### Plugins Supported

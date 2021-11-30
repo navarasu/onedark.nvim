@@ -27,8 +27,8 @@
 
 ## Themes
 <p float="left">
-<img width="414" alt="Screenshot 2021-12-01 at 4 15 44 AM" src="https://user-images.githubusercontent.com/20145075/144140457-400c5495-6b1f-4605-bee0-fc23fd52186a.png">
-<img width="414" alt="Screenshot 2021-12-01 at 4 11 15 AM" src="https://user-images.githubusercontent.com/20145075/144140558-2a4a1ca4-c8c0-4bad-b9c3-17d6f205e430.png">
+<img width="413" alt="Screenshot 2021-12-01 at 4 15 44 AM" src="https://user-images.githubusercontent.com/20145075/144140457-400c5495-6b1f-4605-bee0-fc23fd52186a.png">
+<img width="413" alt="Screenshot 2021-12-01 at 4 11 15 AM" src="https://user-images.githubusercontent.com/20145075/144140558-2a4a1ca4-c8c0-4bad-b9c3-17d6f205e430.png">
 </div></p>
 
 ## Installation

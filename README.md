@@ -1,4 +1,3 @@
-
 <h1 align="left">
 	 <span> &nbsp;&nbsp;&nbsp; </span>
 <img height="90" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
@@ -28,7 +27,8 @@
 
 ## Themes
 <p float="left">
-<img alt="onedark-cool" height= "500px" src="https://user-images.githubusercontent.com/20145075/143786545-c49d9870-5d8d-4020-bc13-f96e1f8664fe.png">
+<img width="480" alt="Screenshot 2021-12-01 at 4 15 44 AM" src="https://user-images.githubusercontent.com/20145075/144140457-400c5495-6b1f-4605-bee0-fc23fd52186a.png">
+<img width="480" alt="Screenshot 2021-12-01 at 4 11 15 AM" src="https://user-images.githubusercontent.com/20145075/144140558-2a4a1ca4-c8c0-4bad-b9c3-17d6f205e430.png">
 </div></p>
 
 ## Installation

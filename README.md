@@ -51,50 +51,35 @@ use 'navarasu/onedark.nvim'
 ## Configuration
 
 ### Enable theme
-
-
-<table><tr><td><b><i>Lua</i></b>
     
 ```lua
-    
+-- Lua
 require('onedark').setup {}
-    
 ```
-    
-</td><td><b><i>Vim</i></b>
     
 ```vim
-    
+" Vim
 colorscheme onedark 
-     
 ```
 
-</td></tr></table>
-
 ### Change default style
-
-> **Options:** dark, darker, cool, deep, warm, warmer*
-
-<table><tr><td><b><i>Lua</i></b>
     
 ```lua
+-- Lua
 require('onedark').setup {
-    style = 'darker' 
+    style = 'darker'
 }
 ```
     
-</td><td><b><i>Vim</i></b>
-    
 ```vim
+" Vim
 let g:onedark_style = 'darker'
 colorscheme onedark
-    
 ```
 
-</td></tr></table>
+> **Options:**  dark, darker, cool, deep, warm, warmer
 
-
-### Deafult Configuration
+## Default Configuration
 
 ```lua 
 -- Lua
@@ -106,8 +91,8 @@ require('onedark').setup  {
      ending_tilde = false, -- show the end-of-buffer tildes. By default they are hidden
      
      -- toggle theme style ---
-     toggle_style_key = '<leader>tts', -- Default keybinding to toggle theme style
-     toggle_style_list = ['dark', 'darker', 'cool', 'deep', 'warm', 'warmer'], -- list of theme styles to toggle between
+     toggle_style_key = '<leader>tts', -- Default keybinding to toggle
+     toggle_style_list = ['dark', 'darker', 'cool', 'deep', 'warm', 'warmer'], --list of styles to toggle amoung
 
      -- Changing Formats --
      code_style = {
@@ -144,7 +129,6 @@ require('lualine').setup {
   }
 }
 ```
-
 
 ## Customization
 

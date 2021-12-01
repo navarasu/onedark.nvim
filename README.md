@@ -1,4 +1,5 @@
 <h1 align="left">
+<span> &nbsp;&nbsp;&nbsp; </span>
 <img height="100" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
 </h1>
 <h4><div align="right">
@@ -9,7 +10,6 @@
     <a href="#configuration">Configuration</a>
     <span> | </span>
     <a href="#features">Customization</a>
-   <span> &nbsp;  &nbsp; </span>
 </div></h4>
 
 **Dark** and **Light** Themes for neovim >= 0.5 based on [Atom One Dark](https://github.com/atom/atom/tree/master/packages/one-dark-ui) & [Atom One Light](https://github.com/atom/atom/tree/master/packages/one-light-ui) theme written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight.

@@ -90,15 +90,20 @@ require('onedark').setup  {
      term_colors = true, -- Change terminal color as per the selected theme style
      ending_tilde = false, -- show the end-of-buffer tildes. By default they are hidden
      
-     -- toggle theme style ---
-     toggle_style_key = '<leader>tts', -- Default keybinding to toggle
-     toggle_style_list = ['dark', 'darker', 'cool', 'deep', 'warm', 'warmer'], --list of styles to toggle amoung
-
-     -- Changing Formats --
+     -- Plugins Config --
+     diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true,   -- use undercurl for diagnostics
+        background = true,    -- use background color for virtual text
+     },
+     
+     -- Change code style ---
+     -- Options are italic, bold, underline, NONE
+     -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
      code_style = {
-       comment = 'italic', -- Style of the comment section. 
-       keywords = 'NONE',
-       functions = 'NONE',
+       comment = 'italic'
+       keywords = 'NONE', 
+       functions = 'NONE', 
        strings = 'NONE',
        variables = 'NONE'
      },
@@ -107,12 +112,9 @@ require('onedark').setup  {
      colors = {}, -- Override default colors
      highlights = {}, -- Override highlight groups
 
-    -- Plugins Config --
-     diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl for diagnostics
-        background = true,    -- use background color for virtual text
-     },
+     -- toggle theme style ---
+     toggle_style_key = '<leader>tts', -- Default keybinding to toggle
+     toggle_style_list = ['dark', 'darker', 'cool', 'deep', 'warm', 'warmer'], --list of styles to toggle amoung
  }
  ```
 
@@ -131,6 +133,8 @@ require('lualine').setup {
 ```
 
 ## Customization
+
+> TODO
 
 
 ## Plugins Supported

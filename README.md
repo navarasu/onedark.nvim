@@ -20,7 +20,7 @@
   * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
   * Supporting multiple plugins with hand picked proper colors
   * Customize `Colors`, `Highlights` and `Code style` of the theme as you like (Refer [Customization](#customization))
-  * Toggle the theme style without exiting Neovim using keybinding (Refer [Keybinding](#keybinding))
+  * Toggle the theme style without exiting Neovim using shortcut `<leader>tts` (Refer [Configuration](#configuration))
 
 ## Themes
 <p float="left">
@@ -50,7 +50,7 @@ use 'navarasu/onedark.nvim'
 
 ## Configuration
 
-Enable the colorscheme:
+### Enable theme
 
 ```lua
 -- Lua:
@@ -62,9 +62,7 @@ require('onedark').setup {}
 colorscheme onedark
 ```
 
-### Change theme
-
-> **Options:** dark, darker, cool, deep, warm, warmer*
+### Change default style
 
 ```lua
 -- Lua 
@@ -79,7 +77,9 @@ let g:onedark_style = 'darker'
 colorscheme onedark
 ```
 
-### Default configuration
+> **Options:** dark, darker, cool, deep, warm, warmer*
+
+### Deafult Configuration
 
 ```lua 
 -- Lua

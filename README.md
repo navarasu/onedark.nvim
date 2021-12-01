@@ -30,7 +30,10 @@
 <img width="412" alt="Screenshot 2021-12-01 at 4 15 44 AM" src="https://user-images.githubusercontent.com/20145075/144289835-cbbbcb22-4eae-41f1-a5a3-e1800a37ae41.png">
 <img width="412" alt="Screenshot 2021-12-01 at 4 11 15 AM" src="https://user-images.githubusercontent.com/20145075/144293945-ee3b7dca-b119-4709-96d3-50391c7b8aba.png">
 </div></p>
-
+<p float="left">
+<img width="412" alt="Screenshot 2021-12-01 at 4 15 44 AM" src="https://user-images.githubusercontent.com/20145075/144298826-5c51eb3a-5529-4fe7-bce2-56508eda93d7.png">
+<img width="412" alt="Screenshot 2021-12-01 at 4 11 15 AM" src="https://user-images.githubusercontent.com/20145075/144298843-a1016dc4-3cef-4c0a-8304-f2675c62e9eb.png">
+</div></p>
 ## Installation
 Install via your favourite package manager
 ```vim

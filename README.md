@@ -52,32 +52,47 @@ use 'navarasu/onedark.nvim'
 
 ### Enable theme
 
+
+<table><tr><td><b><i>Lua</i></b>
+    
 ```lua
--- Lua:
-require('onedark').setup {}
+    
+require('onedark').setup {}                   
+    
+```
+    
+</td><td><b><i>Vim</i></b>
+    
+```vim
+    
+colorscheme onedark                        
+     
 ```
 
-```vim
-" Vim-Script:
-colorscheme onedark
-```
+</td></tr></table>
 
 ### Change default style
 
+> **Options:** dark, darker, cool, deep, warm, warmer*
+
+<table><tr><td><b><i>Lua</i></b>
+    
 ```lua
--- Lua 
-require('onedark').setup {
+require('onedark').setup {                   
     style = 'darker' 
 }
 ```
-
+    
+</td><td><b><i>Vim</i></b>
+    
 ```vim
-" Vim
-let g:onedark_style = 'darker'
+let g:onedark_style = 'darker'                
 colorscheme onedark
+    
 ```
 
-> **Options:** dark, darker, cool, deep, warm, warmer*
+</td></tr></table>
+
 
 ### Deafult Configuration
 

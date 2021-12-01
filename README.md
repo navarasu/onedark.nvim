@@ -9,7 +9,7 @@
     <a href="#configuration">Configuration</a>
     <span> | </span>
     <a href="#features">Customization</a>
-    <span> &nbsp;&nbsp;&nbsp; </span>
+    <span> &nbsp;&nbsp;&nbsp; &nbsp; </span>
 </div></h4>
 
 **Dark** and **Light** Themes for neovim >= 0.5 based on [Atom One Dark](https://github.com/atom/atom/tree/master/packages/one-dark-ui) & [Atom One Light](https://github.com/atom/atom/tree/master/packages/one-light-ui) theme written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight.

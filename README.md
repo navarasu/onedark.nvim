@@ -4,8 +4,6 @@
 </h1>
 
 <h4><div align="right">
-    <a href="#themes">Themes</a> 
-    <span> | </span>
     <a href="#installation">Installation</a>
     <span> | </span>
     <a href="#configuration">Configuration</a>

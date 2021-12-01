@@ -78,7 +78,7 @@ colorscheme onedark
 <table><tr><td><b><i>Lua</i></b>
     
 ```lua
-require('onedark').setup {                   
+require('onedark').setup {
     style = 'darker' 
 }
 ```
@@ -86,7 +86,7 @@ require('onedark').setup {
 </td><td><b><i>Vim</i></b>
     
 ```vim
-let g:onedark_style = 'darker'                
+let g:onedark_style = 'darker'
 colorscheme onedark
     
 ```

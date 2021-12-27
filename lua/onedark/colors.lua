@@ -27,8 +27,9 @@ local colors = {
     diff_text   = { '#2c5372', '#274964' , '#265478' , '#1c4a6e' , '#32526c' , '#2c485f', '#2c485f' }
 }
 
+local styles = { dark = 1, darker = 2, cool = 3, deep = 4, warm = 5, warmer = 6 , light = 7 }
 local function select_colors()
-    local index = require('onedark').styles[vim.g.onedark_config.style]
+    local index = styles[vim.g.onedark_config.style]
     local selected = {}
     for k, v in pairs(colors) do selected[k] = v[index] end
     selected['none'] = 'NONE'

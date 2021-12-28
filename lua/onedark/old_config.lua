@@ -25,7 +25,7 @@ local function load_old_config()
             transparent = cfg.transparent_background,
             term_colors = cfg.disable_terminal_colors,
             ending_tildes = cfg.hide_ending_tildes,
-            format = {
+            code_style = {
                 comment = cfg.italic_comment,
             },
             diagnostics = {

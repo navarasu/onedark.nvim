@@ -60,6 +60,7 @@ hl.common = {
     MoreMsg = {fg = c.blue, fmt = "bold"},
     IncSearch = {fg = c.bg0, bg = c.orange},
     Search = {fg = c.bg0, bg = c.bg_yellow},
+    Substitute = {fg = c.bg0, bg = c.green},
     MatchParen = {fg = c.none, bg = c.grey},
     NonText = {fg = c.grey},
     Whitespace = {fg = c.grey},
@@ -122,9 +123,9 @@ hl.syntax = {
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.LightGrey,
-    Comment = {fg = c.grey, fmt = cfg.format.comment},
-    SpecialComment = {fg = c.grey, fmt = cfg.format.comment},
-    Todo = {fg = c.red, fmt = cfg.format.comment}
+    Comment = {fg = c.grey, fmt = cfg.code_style.comment},
+    SpecialComment = {fg = c.grey, fmt = cfg.code_style.comment},
+    Todo = {fg = c.red, fmt = cfg.code_style.comment}
 }
 
 hl.treesitter = {
@@ -132,7 +133,7 @@ hl.treesitter = {
     TSAttribute = colors.Cyan,
     TSBoolean = colors.Orange,
     TSCharacter = colors.Orange,
-    TSComment = {fg = c.grey, fmt = cfg.format.comment},
+    TSComment = {fg = c.grey, fmt = cfg.code_style.comment},
     TSConditional = colors.Purple,
     TSConstant = colors.Orange,
     TSConstBuiltin = colors.Orange,
@@ -508,6 +509,7 @@ function M.setup()
     vim_highlights(hl.treesitter)
     for _, group in pairs(hl.langs) do vim_highlights(group) end
     for _, group in pairs(hl.plugins) do vim_highlights(group) end
+    vim_highlights(vim.g.onedark_config.highlights)
 end
 
 return M

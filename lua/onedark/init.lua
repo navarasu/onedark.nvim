@@ -51,7 +51,7 @@ local default_config = {
     ending_tildes = false,    -- show the end-of-buffer tildes
 
     -- Changing Formats --
-    format = {
+    code_style = {
         comment = 'italic',
         keywords = 'none',
         functions = 'none',
@@ -75,11 +75,7 @@ local default_config = {
 ---@param opts table: a table containing options
 function M.setup(opts)
     if not vim.g.onedark_config or not vim.g.onedark_config.loaded then    -- if it's the first time setup() is called
-        if not vim.g.onedark_config then
-            vim.g.onedark_config = default_config
-        else
-            vim.g.onedark_config = vim.tbl_deep_extend('keep', vim.g.onedark_config, default_config)
-        end
+        vim.g.onedark_config = vim.tbl_deep_extend('keep', vim.g.onedark_config or {}, default_config)
         local old_config = require('onedark.old_config')
         if old_config then opts = old_config end
         M.set_options('loaded', true)
@@ -89,6 +85,28 @@ function M.setup(opts)
         vim.g.onedark_config = vim.tbl_deep_extend('force', vim.g.onedark_config, opts)
         if opts.toggle_style_list then    -- this table cannot be extended, it has to be replaced
             M.set_options('toggle_style_list', opts.toggle_style_list)
+        end
+        if opts.highlights then    -- user custom highlights
+            local colors = require('onedark.colors')
+            local function replace_color(color_name)
+                if not color_name then return nil end
+                if color_name:sub(1, 1) ~= '$' then return color_name end
+                local name = color_name:sub(2, -1)
+                if not colors[name] then
+                    vim.schedule(function()
+                        vim.notify('onedark.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR, { title = "onedark.nvim" })
+                    end)
+                end
+                return colors[name]
+            end
+
+            for group_name, group_settings in pairs(opts.highlights) do
+                group_settings.fg = replace_color(group_settings.fg)
+                group_settings.bg = replace_color(group_settings.bg)
+                group_settings.sp = replace_color(group_settings.sp)
+                opts.highlights[group_name] = group_settings
+            end
+            M.set_options('highlights', opts.highlights)
         end
     end
     vim.api.nvim_set_keymap('n', vim.g.onedark_config.toggle_style_key, '<cmd>lua require("onedark").toggle()<cr>', { noremap = true, silent = true })

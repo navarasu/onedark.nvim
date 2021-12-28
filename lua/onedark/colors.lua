@@ -30,9 +30,9 @@ local colors = {
 local styles = { dark = 1, darker = 2, cool = 3, deep = 4, warm = 5, warmer = 6 , light = 7 }
 local function select_colors()
     local index = styles[vim.g.onedark_config.style]
-    local selected = {}
+    local selected = { none = 'none' }
     for k, v in pairs(colors) do selected[k] = v[index] end
-    selected['none'] = 'NONE'
+    selected = vim.tbl_extend('force', selected, vim.g.onedark_config.colors)
     return selected
 end
 

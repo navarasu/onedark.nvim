@@ -93,7 +93,7 @@ hl.common = {
 }
 
 hl.syntax = {
-    String = colors.Green,
+    String = {fg = c.green, fmt = cfg.code_style.strings},
     Character = colors.Orange,
     Number = colors.Orange,
     Float = colors.Orange,
@@ -106,26 +106,26 @@ hl.syntax = {
     PreProc = colors.Purple,
     PreCondit = colors.Purple,
     Include = colors.Purple,
-    Keyword = colors.Purple,
+    Keyword = {fg = c.purple, fmt = cfg.code_style.keyword},
     Define = colors.Purple,
     Typedef = colors.Purple,
     Exception = colors.Purple,
-    Conditional = colors.Purple,
-    Repeat = colors.Purple,
+    Conditional = {fg = c.purple, fmt = cfg.code_style.keyword},
+    Repeat = {fg = c.purple, fmt = cfg.code_style.keyword},
     Statement = colors.Purple,
     Macro = colors.Red,
     Error = colors.Purple,
     Label = colors.Purple,
     Special = colors.Red,
     SpecialChar = colors.Red,
-    Function = colors.Blue,
+    Function = {fg = c.blue, fmt = cfg.code_style.functions},
     Operator = colors.Fg,
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.LightGrey,
-    Comment = {fg = c.grey, fmt = cfg.code_style.comment},
-    SpecialComment = {fg = c.grey, fmt = cfg.code_style.comment},
-    Todo = {fg = c.red, fmt = cfg.code_style.comment}
+    Comment = {fg = c.grey, fmt = cfg.code_style.comments},
+    SpecialComment = {fg = c.grey, fmt = cfg.code_style.comments},
+    Todo = {fg = c.red, fmt = cfg.code_style.comments}
 }
 
 hl.treesitter = {
@@ -133,8 +133,8 @@ hl.treesitter = {
     TSAttribute = colors.Cyan,
     TSBoolean = colors.Orange,
     TSCharacter = colors.Orange,
-    TSComment = {fg = c.grey, fmt = cfg.code_style.comment},
-    TSConditional = colors.Purple,
+    TSComment = {fg = c.grey, fmt = cfg.code_style.comments},
+    TSConditional = {fg = c.purple, fmt = cfg.code_style.keyword},
     TSConstant = colors.Orange,
     TSConstBuiltin = colors.Orange,
     TSConstMacro = colors.Orange,
@@ -143,13 +143,13 @@ hl.treesitter = {
     TSException = colors.Purple,
     TSField = colors.Cyan,
     TSFloat = colors.Orange,
-    TSFunction = colors.Blue,
-    TSFuncBuiltin = colors.Cyan,
-    TSFuncMacro = colors.Cyan,
+    TSFunction = {fg = c.blue, fmt = cfg.code_style.functions},
+    TSFuncBuiltin = {fg = c.cyan, fmt = cfg.code_style.functions},
+    TSFuncMacro = {fg = c.cyan, fmt = cfg.code_style.functions},
     TSInclude = colors.Purple,
-    TSKeyword = colors.Purple,
-    TSKeywordFunction = {fg = c.purple, fmt = "bold"},
-    TSKeywordOperator = colors.Purple,
+    TSKeyword = {fg = c.purple, fmt = cfg.code_style.keyword},
+    TSKeywordFunction = {fg = c.purple, fmt = cfg.code_style.functions},
+    TSKeywordOperator =  {fg = c.purple, fmt = cfg.code_style.keyword},
     TSLabel = colors.Red,
     TSMethod = colors.Blue,
     TSNamespace = colors.Yellow,
@@ -162,10 +162,10 @@ hl.treesitter = {
     TSPunctDelimiter = colors.LightGrey,
     TSPunctBracket = colors.LightGrey,
     TSPunctSpecial = colors.Red,
-    TSRepeat = colors.Purple,
-    TSString = colors.Green,
-    TSStringRegex = colors.Orange,
-    TSStringEscape = colors.Red,
+    TSRepeat = {fg = c.purple, fmt = cfg.code_style.keyword},
+    TSString = {fg = c.green, fmt = cfg.code_style.strings},
+    TSStringRegex = {fg = c.orange, fmt = cfg.code_style.strings},
+    TSStringEscape = {fg = c.red, fmt = cfg.code_style.strings},
     TSSymbol = colors.Cyan,
     TSTag = colors.Red,
     TSTagDelimiter = colors.Red,
@@ -186,8 +186,8 @@ hl.treesitter = {
     TSDanger = colors.Fg,
     TSType = colors.Yellow,
     TSTypeBuiltin = colors.Orange,
-    TSVariable = colors.Fg,
-    TSVariableBuiltin = colors.Red
+    TSVariable = {fg = c.fg, fmt = cfg.code_style.variables},
+    TSVariableBuiltin = {fg = c.red, fmt = cfg.code_style.variables},
 }
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
@@ -253,12 +253,12 @@ hl.plugins.cmp = {
     CmpItemKindEnum = colors.Purple,
     CmpItemKindEnumMember = colors.Yellow,
     CmpItemKindEvent = colors.Yellow,
-    CmpItemKindField = colors.Cyan,
+    CmpItemKindField = colors.Purple,
     CmpItemKindFile = colors.Blue,
     CmpItemKindFolder = colors.Orange,
     CmpItemKindFunction = colors.Blue,
     CmpItemKindInterface = colors.Green,
-    CmpItemKindKeyword = colors.Purple,
+    CmpItemKindKeyword = colors.Cyan,
     CmpItemKindMethod = colors.Blue,
     CmpItemKindModule = colors.Orange,
     CmpItemKindOperator = colors.Red,
@@ -429,19 +429,19 @@ hl.langs.markdown = {
 }
 
 hl.langs.php = {
-    phpFunctions = colors.Fg,
+    phpFunctions = {fg = c.fg, fmt = cfg.code_style.functions},
     phpMethods = colors.Cyan,
     phpStructure = colors.Purple,
     phpOperator = colors.Purple,
     phpMemberSelector = colors.Fg,
-    phpVarSelector = colors.Orange,
+    phpVarSelector = {fg = c.orange, fmt = cfg.code_style.variables},
     phpIdentifier = colors.Orange,
     phpBoolean = colors.Cyan,
     phpNumber = colors.Orange,
     phpHereDoc = colors.Green,
     phpNowDoc = colors.Green,
-    phpSCKeyword = colors.Purple,
-    phpFCKeyword = colors.Purple,
+    phpSCKeyword = {fg = c.purple, fmt = cfg.code_style.keyword},
+    phpFCKeyword = {fg = c.purple, fmt = cfg.code_style.keyword},
     phpRegion = colors.Blue
 }
 
@@ -451,12 +451,12 @@ hl.langs.scala = {
     scalaInterpolation = colors.Purple,
     scalaTypeOperator = colors.Red,
     scalaOperator = colors.Red,
-    scalaKeywordModifier = colors.Red
+    scalaKeywordModifier = {fg = c.red, fmt = cfg.code_style.keyword},
 }
 
 hl.langs.tex = {
     latexTSInclude = colors.Blue,
-    latexTSFuncMacro = colors.Purple,
+    latexTSFuncMacro = {fg = c.fg, fmt = cfg.code_style.functions},
     latexTSEnvironment = { fg = c.cyan, fmt = "bold" },
     latexTSEnvironmentName = colors.Yellow,
     texCmdEnv = colors.Cyan,
@@ -476,31 +476,15 @@ hl.langs.tex = {
 }
 
 hl.langs.vim = {
-    vimTSFuncMacro = {fg = c.cyan, fmt = "bold"},
-    vimCommentTitle = {fg = c.light_grey, fmt = "bold"},
-    vimCommand =  {fg = c.cyan, fmt = "bold"},
-    vimLet = colors.Purple,
-    vimFunction = colors.Blue,
-    vimIsCommand = colors.Fg,
-    vimUserFunc = colors.Blue,
-    vimFuncName = colors.Blue,
+    vimOption = colors.Red,
+    vimSetEqual = colors.Yellow,
     vimMap = colors.Purple,
     vimMapModKey = colors.Orange,
     vimNotation = colors.Red,
-    vimMapLhs = colors.Blue,
+    vimMapLhs = colors.Fg,
     vimMapRhs = colors.Blue,
-    vimOption = colors.Red,
-    vimUserAttrbKey = colors.Red,
-    vimUserAttrb = colors.Blue,
-    vimSynType = colors.Cyan,
-    vimHiBang = colors.Purple,
-    vimSet = colors.Yellow,
-    vimSetEqual = colors.Yellow,
-    vimSetSep = colors.LightGrey,
-    vimVar = colors.Fg,
-    vimFuncVar = colors.Fg,
-    vimContinue = colors.Grey,
-    vimAutoCmdSfxList = colors.Cyan,
+    vimVar = {fg = c.fg, fmt = cfg.code_style.variables},
+    vimCommentTitle = {fg = c.light_grey, fmt = cfg.code_style.comments},
 }
 
 function M.setup()

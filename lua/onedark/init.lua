@@ -52,7 +52,7 @@ local default_config = {
 
     -- Changing Formats --
     code_style = {
-        comment = 'italic',
+        comments = 'italic',
         keywords = 'none',
         functions = 'none',
         strings = 'none',

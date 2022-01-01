@@ -493,7 +493,15 @@ function M.setup()
     vim_highlights(hl.treesitter)
     for _, group in pairs(hl.langs) do vim_highlights(group) end
     for _, group in pairs(hl.plugins) do vim_highlights(group) end
-    vim_highlights(vim.g.onedark_config.highlights)
+
+    -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
+    for group_name, group_settings in pairs(vim.g.onedark_config.highlights) do
+        local fg = group_settings.fg and "guifg=" .. group_settings.fg or ""
+        local bg = group_settings.bg and "guibg=" .. group_settings.bg or ""
+        local sp = group_settings.sp and "guisp=" .. group_settings.sp or ""
+        local fmt = group_settings.fmt and "gui=" .. group_settings.fmt or ""
+        vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name, fmt, fg, bg, sp))
+    end
 end
 
 return M

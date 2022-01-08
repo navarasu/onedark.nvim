@@ -54,7 +54,7 @@ use 'navarasu/onedark.nvim'
     
 ```lua
 -- Lua
-require('onedark').setup {}
+require('onedark').load()
 ```
     
 ```vim
@@ -69,6 +69,7 @@ colorscheme onedark
 require('onedark').setup {
     style = 'darker'
 }
+require('onedark').load()
 ```
     
 ```vim

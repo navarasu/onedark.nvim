@@ -1,86 +1,40 @@
-<h1 align="center">
-<img height="130" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
+<h1 align="left">
+<span> &nbsp;&nbsp;&nbsp; </span>
+<img height="100" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
 </h1>
 
-<h4>
-<div align="center">
-  	<a href="https://github.com/navarasu/onedark.nvim/#installation">Installation</a>
+<h4><div align="right">
+    <a href="#installation">Installation</a>
     <span> | </span>
-	<a href="https://github.com/navarasu/onedark.nvim/#features">Features</a>
-	    <span> | </span>
-  	<a href="https://github.com/navarasu/onedark.nvim/#styles">Styles</a>
+    <a href="#configuration">Configuration</a>
+    <span> | </span>
+    <a href="#features">Customization</a>
+    <span> &nbsp;&nbsp;&nbsp; &nbsp; </span>
+</div></h4>
 
-  <p></p>
-</div>
-  </h4>
+**Dark** and **Light** Themes for neovim >= 0.5 based on [Atom One Dark](https://github.com/atom/atom/tree/master/packages/one-dark-ui) & [Atom One Light](https://github.com/atom/atom/tree/master/packages/one-light-ui) theme written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight.
 
-A Dark Theme for neovim >= 0.5 based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui) written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight. Additionally, it comes with 5 more color variant styles
+*For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)*
 
-For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
+### Features
+  * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
+  * Supporting multiple plugins with hand picked proper colors
+  * Customize `Colors`, `Highlights` and `Code style` of the theme as you like (Refer [Customization](#customization))
+  * Toggle the theme style without exiting Neovim using shortcut `<leader>tts` (Refer [Default Config](#deafult-configuration))
 
-## Features
-  * 6 styles (default one dark + 5 color variants)
-  * Changing the style without exiting Neovim (using shortcut key `<leader>cs`. If you want to change or disable this mapping see [toggle style](#toggle-style))
-  * Supported mulitple plugins with hand picked proper colors
-
-### Plugins Supported
-  + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  + [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
-  + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-  + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-  + [WhichKey](https://github.com/folke/which-key.nvim)
-  + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-  + [Lualine](https://github.com/hoob3rt/lualine.nvim)
-  + [GitGutter](https://github.com/airblade/vim-gitgutter)
-  + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
-  + [VimFugitive](https://github.com/tpope/vim-fugitive)
-  + [DiffView](https://github.com/sindrets/diffview.nvim)
-  + [Hop](https://github.com/phaazon/hop.nvim)
-
-## Styles
-### Dark
-```vim
-colorscheme onedark
-```
-`Default` - Default one dark theme based on [Atom One Dark Theme](https://github.com/atom/atom/tree/master/packages/one-dark-ui)
-
- <img alt="onedark" src="https://user-images.githubusercontent.com/20145075/119296900-8301de80-bc77-11eb-8b50-2accd6f8ecb0.png">
-
-### Darker
-```vim
-let g:onedark_style = 'darker'
-colorscheme onedark
-```
-<img alt="onedark-darker" src="https://user-images.githubusercontent.com/20145075/119296915-872dfc00-bc77-11eb-9bd0-76c6d90f8e4f.png">
-
-### Cool
-```vim
-let g:onedark_style = 'cool'
-colorscheme onedark
-```
-
-<img alt="onedark-cool" src="https://user-images.githubusercontent.com/20145075/119296912-85fccf00-bc77-11eb-83b0-bf2138c6758e.png">
-
-### Deep
-```vim
-let g:onedark_style = 'deep'
-colorscheme onedark
-```
-<img alt="onedark-deep" src="https://user-images.githubusercontent.com/20145075/119296916-885f2900-bc77-11eb-8e96-d6054c94dda1.png">
-
-### Warm
-```vim
-let g:onedark_style = 'warm'
-colorscheme onedark
-```
-<img alt="onedark-warm" src="https://user-images.githubusercontent.com/20145075/119296920-89905600-bc77-11eb-8cbc-0f1867cafc5f.png">
-
-### Warmer
-```vim
-let g:onedark_style = 'warmer'
-colorscheme onedark
-```
-<img alt="onedark-warmer" src="https://user-images.githubusercontent.com/20145075/120108433-b914f600-c182-11eb-9b61-59747241839d.png">
+## Themes
+<p float="left">
+<img width="412" alt="Onedark - dark" src="https://user-images.githubusercontent.com/20145075/144289835-cbbbcb22-4eae-41f1-a5a3-e1800a37ae41.png">
+<img width="412" alt="Onedark - darker" src="https://user-images.githubusercontent.com/20145075/144293945-ee3b7dca-b119-4709-96d3-50391c7b8aba.png">
+</div></p>
+<p float="left">
+<img width="412" alt="Onedark - cool" src="https://user-images.githubusercontent.com/20145075/144298826-5c51eb3a-5529-4fe7-bce2-56508eda93d7.png">
+<img width="412" alt="Onedark - deep" src="https://user-images.githubusercontent.com/20145075/144299487-a7e886c7-2cc9-4d85-9aac-8517170432fc.png">
+</div></p>
+<p float="left">
+<img width="412" alt="Onedark - warm" src="https://user-images.githubusercontent.com/20145075/144304677-abbf6cc1-4adc-48b4-b675-6f6a5a98b426.png">
+<img width="412" alt="Onedark - warmer" src="https://user-images.githubusercontent.com/20145075/144304700-1e333a12-6994-4fb2-9053-1e7f294d41a6.png">
+</div></p>
 
 ## Installation
 Install via your favourite package manager
@@ -93,29 +47,80 @@ Plug 'navarasu/onedark.nvim'
 -- Using Packer
 use 'navarasu/onedark.nvim'
 ```
-Install manually
-```bash
-git clone https://github.com/navarasu/onedark.nvim ~/.config/nvim
-nvim +PackerSync
+
+## Configuration
+
+### Enable theme
+    
+```lua
+-- Lua
+require('onedark').setup {}
+```
+    
+```vim
+" Vim
+colorscheme onedark 
 ```
 
-### Requirements
-
-+ [Neovim >= 0.5.0](https://github.com/neovim/neovim/releases/tag/nightly)
-
-## Usage
-
-Enable the colorscheme:
+### Change default style
+    
+```lua
+-- Lua
+require('onedark').setup {
+    style = 'darker'
+}
+```
+    
 ```vim
-" Vim-Script:
+" Vim
+let g:onedark_style = 'darker'
 colorscheme onedark
 ```
 
-```lua
--- Lua:
-require('onedark').setup()
-```
+> **Options:**  dark, darker, cool, deep, warm, warmer
 
+## Default Configuration
+
+```lua 
+-- Lua
+require('onedark').setup  { 
+    -- Main options --
+     style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+     transparent = false,  -- Show/hide background 
+     term_colors = true, -- Change terminal color as per the selected theme style
+     ending_tildes = false, -- show the end-of-buffer tildes. By default they are hidden
+     -- toggle theme style ---
+     toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+     toggle_style_list = ['dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'], --list of styles to toggle amoung
+     
+     -- Change code style ---
+     -- Options are italic, bold, underline, none
+     -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+     code_style = {
+       comment = 'italic'
+       keywords = 'none', 
+       functions = 'none', 
+       strings = 'none',
+       variables = 'none'
+     },
+     
+    -- Custom Highlights --
+     colors = {}, -- Override default colors
+     highlights = {}, -- Override highlight groups
+     
+     -- Plugins Config --
+     diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true,   -- use undercurl for diagnostics
+        background = true,    -- use background color for virtual text
+     },
+     
+ }
+ ```
+
+## Plugins Configuration
+
+### Enable lualine
 To Enable the `onedark` theme for `Lualine`, specify theme as `onedark`:
 
 ```lua
@@ -126,51 +131,21 @@ require('lualine').setup {
   }
 }
 ```
-## Toggle style 
-By pressing `<leader>cs`, we can switch the style without exiting Neovim.
 
-If you want to change this mapping:
-``` lua
-vim.g.onedark_toggle_style_keymap = '<space>tc'
-```
-If you want to disable this mapping completely:
-``` lua
-vim.g.onedark_toggle_style_keymap = '<nop>'
-```
 
-## Configuration
-**Important:** you need to add the configs before changing colorscheme
-
-### Onedark options
-| Variable name                     | Default value  | Description                                                                   |
-| -------------                     | -------------  | -------------                                                                 |
-| `onedark_style`                   | `'dark'`       | change style variant of one dark                                              |
-| `onedark_transparent_background`  | `false`        | enable transparent background                                                 |
-| `onedark_italic_comment`          | `true`         | enable italic comments                                                        |
-| `onedark_toggle_style_keymap`     | `'<leader>cs'` | set toggle style keymap (see [toggle style](#toggle-style))                   |
-| `onedark_disable_terminal_colors` | `false`        | disable terminal colors                                                       |
-| `onedark_diagnostics_undercurl`   | `true`         | use curly underline (undercurl) instead of standard underline for diagnostics |
-| `onedark_darker_diagnostics`      | `true`         | show diagnostics using a darker color                                         |
-| `onedark_hide_ending_tildes`      | `false`        | hide end of buffer tildes                                                     |
-
-### Configure onedark.nvim using vimscript:
-```vim
-let g:onedark_style = 'darker'
-let g:<onedark_option> = 'value'
-colorscheme onedark
-```
-When using vimscript to configure onedark settings **be sure** to use `v:true` and `v:false` to set booleand values!
-``` vim
-let g:onedark_italic_comment = v:true        " don't use 0 or 1
-```
-
-### Configure onedark.nvim using lua:
-```lua
-vim.g.onedark_style = 'deep'
-vim.g.onedark_italic_comment = false
-vim.g.<onedark_option> = 'value'
-require('onedark').setup()
-```
+## Plugins Supported
+  + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  + [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
+  + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+  + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+  + [WhichKey](https://github.com/folke/which-key.nvim)
+  + [Dashboard](https://github.com/glepnir/dashboard-nvim)
+  + [Lualine](https://github.com/hoob3rt/lualine.nvim)
+  + [GitGutter](https://github.com/airblade/vim-gitgutter)
+  + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
+  + [VimFugitive](https://github.com/tpope/vim-fugitive)
+  + [DiffView](https://github.com/sindrets/diffview.nvim)
+  + [Hop](https://github.com/phaazon/hop.nvim)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

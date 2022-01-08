@@ -6,7 +6,7 @@
 <h4><div align="right">
     <a href="#installation">Installation</a>
     <span> | </span>
-    <a href="#deafult-configuration">Configuration</a>
+    <a href="#default-configuration">Configuration</a>
     <span> | </span>
     <a href="#customization">Customization</a>
     <span> &nbsp;&nbsp;&nbsp; &nbsp; </span>
@@ -20,7 +20,7 @@
   * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
   * Supporting multiple plugins with hand picked proper colors
   * Customize `Colors`, `Highlights` and `Code style` of the theme as you like (Refer [Customization](#customization))
-  * Toggle the theme style without exiting Neovim using shortcut `<leader>tts` (Refer [Default Config](#deafult-configuration))
+  * Toggle the theme style without exiting Neovim using shortcut `<leader>tts` (Refer [Default Config](#default-configuration))
 
 ## Themes
 <p float="left">

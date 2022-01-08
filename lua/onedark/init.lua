@@ -110,6 +110,7 @@ function M.setup(opts)
         end
     end
     vim.api.nvim_set_keymap('n', vim.g.onedark_config.toggle_style_key, '<cmd>lua require("onedark").toggle()<cr>', { noremap = true, silent = true })
+    vim.api.nvim_command('colorscheme onedark')
 end
 
 return M

@@ -119,19 +119,6 @@ require('onedark').setup  {
  }
  ```
 
-## Plugins Configuration
-
-### Enable lualine
-To Enable the `onedark` theme for `Lualine`, specify theme as `onedark`:
-
-```lua
-require('lualine').setup {
-  options = {
-    theme = 'onedark'
-    -- ... your lualine config
-  }
-}
-```
 ## Customization
 
 Example custom colors and Highlights config
@@ -146,6 +133,20 @@ require('onedark').setup {
     TSKeyword = {fg = '$green'},
     TSString = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
     TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+  }
+}
+```
+
+## Plugins Configuration
+
+### Enable lualine
+To Enable the `onedark` theme for `Lualine`, specify theme as `onedark`:
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'onedark'
+    -- ... your lualine config
   }
 }
 ```

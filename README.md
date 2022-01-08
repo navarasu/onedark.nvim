@@ -132,7 +132,7 @@ require('lualine').setup {
   }
 }
 ```
-# Customization
+## Customization
 
 Example custom colors and Highlights config
 

@@ -6,9 +6,9 @@
 <h4><div align="right">
     <a href="#installation">Installation</a>
     <span> | </span>
-    <a href="#configuration">Configuration</a>
+    <a href="#deafult-configuration">Configuration</a>
     <span> | </span>
-    <a href="#features">Customization</a>
+    <a href="#customization">Customization</a>
     <span> &nbsp;&nbsp;&nbsp; &nbsp; </span>
 </div></h4>
 

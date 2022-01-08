@@ -20,7 +20,7 @@
   * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
   * Supporting multiple plugins with hand picked proper colors
   * Customize `Colors`, `Highlights` and `Code style` of the theme as you like (Refer [Customization](#customization))
-  * Toggle the theme style without exiting Neovim using shortcut `<leader>tts` (Refer [Default Config](#default-configuration))
+  * Toggle the theme style without exiting Neovim using shortcut `<leader>ts` (Refer [Default Config](#default-configuration))
 
 ## Themes
 <p float="left">

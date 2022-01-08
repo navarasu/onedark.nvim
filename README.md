@@ -78,7 +78,7 @@ let g:onedark_style = 'darker'
 colorscheme onedark
 ```
 
-> **Options:**  dark, darker, cool, deep, warm, warmer
+> **Options:**  dark, darker, cool, deep, warm, warmer, light
 
 ## Default Configuration
 

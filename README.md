@@ -74,7 +74,9 @@ require('onedark').load()
 
 ```vim
 " Vim
-let g:onedark_style = 'darker'
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
 colorscheme onedark
 ```
 
@@ -86,38 +88,56 @@ colorscheme onedark
 -- Lua
 require('onedark').setup  {
     -- Main options --
-     style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-     transparent = false,  -- Show/hide background
-     term_colors = true, -- Change terminal color as per the selected theme style
-     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-     -- toggle theme style ---
-     toggle_style_key = '<leader>ts', -- Default keybinding to toggle
-     toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = false,  -- Show/hide background
+    term_colors = true, -- Change terminal color as per the selected theme style
+    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+    -- toggle theme style ---
+    toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
 
-     -- Change code style ---
-     -- Options are italic, bold, underline, none
-     -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
-     code_style = {
-       comments = 'italic',
-       keywords = 'none',
-       functions = 'none',
-       strings = 'none',
-       variables = 'none'
-     },
+    -- Change code style ---
+    -- Options are italic, bold, underline, none
+    -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+    code_style = {
+        comments = 'italic',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none'
+    },
 
     -- Custom Highlights --
-     colors = {}, -- Override default colors
-     highlights = {}, -- Override highlight groups
+    colors = {}, -- Override default colors
+    highlights = {}, -- Override highlight groups
 
-     -- Plugins Config --
-     diagnostics = {
+    -- Plugins Config --
+    diagnostics = {
         darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl for diagnostics
+        undercurl = true,   -- use undercurl instead of underline for diagnostics
         background = true,    -- use background color for virtual text
-     },
+    },
+}
+```
 
- }
- ```
+### Vimscript configuration
+
+Onedark can be configured also with Vimscript, using the global dictionary `g:onedark_config`.
+**NOTE**: when setting boolean values use `v:true` and `v:false` instead of 0 and 1
+
+Example:
+``` vim
+let g:onedark_config = {
+  \ 'style': 'deep',
+  \ 'toggle_style_key': '<leader>ts',
+  \ 'ending_tildes': v:true,
+  \ 'diagnostics': {
+    \ 'darker': v:false,
+    \ 'background': v:false,
+  \ },
+\ }
+colorscheme onedark
+```
 
 ## Customization
 

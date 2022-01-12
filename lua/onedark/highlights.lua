@@ -322,15 +322,15 @@ hl.plugins.diffview = {
 }
 
 hl.plugins.gitsigns = {
-    GitSignsAdd = colors.Green,
-    GitSignsAddLn = colors.Green,
-    GitSignsAddNr = colors.Green,
-    GitSignsChange = colors.Blue,
-    GitSignsChangeLn = colors.Blue,
-    GitSignsChangeNr = colors.Blue,
-    GitSignsDelete = colors.Red,
-    GitSignsDeleteLn = colors.Red,
-    GitSignsDeleteNr = colors.Red
+    GitSignsAdd = {fg = c.green, bg = c.bg0},
+    GitSignsAddLn = {fg = c.green, bg = c.bg0},
+    GitSignsAddNr = {fg = c.green, bg = c.bg0},
+    GitSignsChange = {fg = c.blue, bg = c.bg0},
+    GitSignsChangeLn = {fg = c.blue, bg = c.bg0},
+    GitSignsChangeNr = {fg = c.blue, bg = c.bg0},
+    GitSignsDelete = {fg = c.red, bg = c.bg0},
+    GitSignsDeleteLn = {fg = c.red, bg = c.bg0},
+    GitSignsDeleteNr = {fg = c.red, bg = c.bg0},
 }
 
 hl.plugins.nvim_tree = {

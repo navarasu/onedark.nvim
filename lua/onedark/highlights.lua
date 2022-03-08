@@ -122,7 +122,7 @@ hl.syntax = {
     Special = colors.Red,
     SpecialChar = colors.Red,
     Function = {fg = c.blue, fmt = cfg.code_style.functions},
-    Operator = colors.Fg,
+    Operator = colors.Purple,
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.LightGrey,

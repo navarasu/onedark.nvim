@@ -61,7 +61,7 @@ hl.common = {
     IncSearch = {fg = c.bg0, bg = c.orange},
     Search = {fg = c.bg0, bg = c.bg_yellow},
     Substitute = {fg = c.bg0, bg = c.green},
-    MatchParen = {fg = c.none, bg = c.grey},
+    MatchParen = {fg = c.bg0, bg = c.bg_blue},
     NonText = {fg = c.grey},
     Whitespace = {fg = c.grey},
     SpecialKey = {fg = c.grey},
@@ -89,7 +89,10 @@ hl.common = {
     Debug = {fg = c.yellow},
     debugPC = {fg = c.bg0, bg = c.green},
     debugBreakpoint = {fg = c.bg0, bg = c.red},
-    ToolbarButton = {fg = c.bg0, bg = c.bg_blue}
+    ToolbarButton = {fg = c.bg0, bg = c.bg_blue},
+    FloatBorder = {fg = c.gray, bg = c.bg1},
+    NormalFloat = {fg = c.fg, bg = c.bg1},
+    VertSplit = {fg = c.bg3}
 }
 
 hl.syntax = {
@@ -119,7 +122,7 @@ hl.syntax = {
     Special = colors.Red,
     SpecialChar = colors.Red,
     Function = {fg = c.blue, fmt = cfg.code_style.functions},
-    Operator = colors.Fg,
+    Operator = colors.Purple,
     Title = colors.Cyan,
     Tag = colors.Green,
     Delimiter = colors.LightGrey,

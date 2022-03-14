@@ -61,7 +61,7 @@ hl.common = {
     IncSearch = {fg = c.bg0, bg = c.orange},
     Search = {fg = c.bg0, bg = c.bg_yellow},
     Substitute = {fg = c.bg0, bg = c.green},
-    MatchParen = {fg = c.bg0, bg = c.bg_blue},
+    MatchParen = {fg = c.none, bg = c.grey},
     NonText = {fg = c.grey},
     Whitespace = {fg = c.grey},
     SpecialKey = {fg = c.grey},

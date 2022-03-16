@@ -276,6 +276,13 @@ hl.plugins.cmp = {
     CmpItemKindVariable = colors.Purple,
 }
 
+hl.plugins.coc = {
+    CocErrorSign = hl.plugins.lsp.DiagnosticError,
+    CocHintSign = hl.plugins.lsp.DiagnosticHint,
+    CocInfoSign = hl.plugins.lsp.DiagnosticInfo,
+    CocWarnSign = hl.plugins.lsp.DiagnosticWarn,
+}
+
 hl.plugins.whichkey = {
     WhichKey = colors.Red,
     WhichKeyDesc = colors.Blue,

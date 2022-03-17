@@ -241,6 +241,12 @@ hl.plugins.lsp.LspDiagnosticsVirtualTextWarning = hl.plugins.lsp.DiagnosticVirtu
 hl.plugins.lsp.LspDiagnosticsVirtualTextInformation = hl.plugins.lsp.DiagnosticVirtualTextInfo
 hl.plugins.lsp.LspDiagnosticsVirtualTextHint = hl.plugins.lsp.DiagnosticVirtualTextHint
 
+hl.plugins.ale = {
+    ALEErrorSign = hl.plugins.lsp.DiagnosticError,
+    ALEInfoSign = hl.plugins.lsp.DiagnosticInfo,
+    ALEWarningSign = hl.plugins.lsp.DiagnosticWarn,
+}
+
 hl.plugins.cmp = {
     CmpItemAbbr = colors.Fg,
     CmpItemAbbrDeprecated = colors.Fg,
@@ -280,7 +286,7 @@ hl.plugins.coc = {
     CocErrorSign = hl.plugins.lsp.DiagnosticError,
     CocHintSign = hl.plugins.lsp.DiagnosticHint,
     CocInfoSign = hl.plugins.lsp.DiagnosticInfo,
-    CocWarnSign = hl.plugins.lsp.DiagnosticWarn,
+    CocWarningSign = hl.plugins.lsp.DiagnosticWarn,
 }
 
 hl.plugins.whichkey = {

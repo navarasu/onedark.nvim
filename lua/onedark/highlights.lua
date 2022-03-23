@@ -7,11 +7,11 @@ local hl = {langs = {}, plugins = {}}
 
 local function vim_highlights(highlights)
     for group_name, group_settings in pairs(highlights) do
-        local fg = group_settings.fg and "guifg=" .. group_settings.fg or "guifg=NONE"
-        local bg = group_settings.bg and "guibg=" .. group_settings.bg or "guibg=NONE"
-        local sp = group_settings.sp and "guisp=" .. group_settings.sp or "guisp=NONE"
-        local fmt = group_settings.fmt and "gui=" .. group_settings.fmt or "gui=NONE"
-        vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name, fmt, fg, bg, sp))
+        vim.api.nvim_command(string.format("highlight %s guifg=%s guibg=%s guisp=%s gui=%s", group_name,
+            group_settings.fg or "none",
+            group_settings.bg or "none",
+            group_settings.sp or "none",
+            group_settings.fmt or "none"))
     end
 end
 
@@ -82,7 +82,7 @@ hl.common = {
     TabLine = {fg = c.fg, bg = c.bg1},
     TabLineFill = {fg = c.grey, bg = c.bg1},
     TabLineSel =  {fg = c.bg0, bg = c.fg},
-    VertSplit = {fg = c.bg1},
+    VertSplit = {fg = c.bg3},
     Visual = {bg = c.bg3},
     VisualNOS = {fg = c.none, bg = c.bg2, fmt = "underline"},
     QuickFixLine = {fg = c.blue, fmt = "underline"},
@@ -90,9 +90,8 @@ hl.common = {
     debugPC = {fg = c.bg0, bg = c.green},
     debugBreakpoint = {fg = c.bg0, bg = c.red},
     ToolbarButton = {fg = c.bg0, bg = c.bg_blue},
-    FloatBorder = {fg = c.gray, bg = c.bg1},
+    FloatBorder = {fg = c.grey, bg = c.bg1},
     NormalFloat = {fg = c.fg, bg = c.bg1},
-    VertSplit = {fg = c.bg3}
 }
 
 hl.syntax = {
@@ -511,12 +510,27 @@ function M.setup()
     for _, group in pairs(hl.plugins) do vim_highlights(group) end
 
     -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
+    local function replace_color(prefix, color_name)
+        if not color_name then return "" end
+        if color_name:sub(1, 1) == '$' then
+            local name = color_name:sub(2, -1)
+            color_name = c[name]
+            if not color_name then
+                vim.schedule(function()
+                    vim.notify('onedark.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR, { title = "onedark.nvim" })
+                end)
+                return ""
+            end
+        end
+        return prefix .. "=" .. color_name
+    end
+
     for group_name, group_settings in pairs(vim.g.onedark_config.highlights) do
-        local fg = group_settings.fg and "guifg=" .. group_settings.fg or ""
-        local bg = group_settings.bg and "guibg=" .. group_settings.bg or ""
-        local sp = group_settings.sp and "guisp=" .. group_settings.sp or ""
-        local fmt = group_settings.fmt and "gui=" .. group_settings.fmt or ""
-        vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name, fmt, fg, bg, sp))
+        vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
+            replace_color("guifg", group_settings.fg),
+            replace_color("guibg", group_settings.bg),
+            replace_color("guisp", group_settings.sp),
+            replace_color("gui", group_settings.fmt)))
     end
 end
 

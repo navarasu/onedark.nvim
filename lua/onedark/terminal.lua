@@ -1,9 +1,9 @@
 local M = {}
-local cfg = require('onedark.config')
+local cfg = vim.g.onedark_config
 local c = require 'onedark.colors'
 
 function M.setup()
-    if cfg.disable_terminal_colors then return end
+    if not cfg.term_colors then return end
     vim.g.terminal_color_0 = c.grey
     vim.g.terminal_color_1 = c.red
     vim.g.terminal_color_2 = c.green

@@ -222,9 +222,9 @@ hl.plugins.lsp = {
     DiagnosticUnderlineInfo = {fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.blue},
     DiagnosticUnderlineWarn = {fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow},
 
-    LspReferenceText = {fmt = "underline"},
-    LspReferenceWrite = {fmt = "underline"},
-    LspReferenceRead = {fmt = "underline"}
+    LspReferenceText = { bg = c.bg2 },
+    LspReferenceWrite = { bg = c.bg2 },
+    LspReferenceRead = { bg = c.bg2 },
 }
 
 hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError
@@ -246,39 +246,25 @@ hl.plugins.ale = {
     ALEWarningSign = hl.plugins.lsp.DiagnosticWarn,
 }
 
+hl.plugins.barbar = {
+    BufferCurrent = { fmt = "bold" },
+    BufferCurrentMod = { fg = c.orange, fmt = "bold,italic" },
+    BufferCurrentSign = { fg = c.purple },
+    BufferInactiveMod = { fg = c.light_grey, bg = c.bg1, fmt = "italic" },
+    BufferVisible = { fg = c.light_grey, bg = c.bg0 },
+    BufferVisibleMod = { fg = c.yellow, bg = c.bg0, fmt = "italic" },
+    BufferVisibleIndex = { fg = c.light_grey, bg = c.bg0 },
+    BufferVisibleSign = { fg = c.light_grey, bg = c.bg0 },
+    BufferVisibleTarget = { fg = c.light_grey, bg = c.bg0 },
+}
+
 hl.plugins.cmp = {
     CmpItemAbbr = colors.Fg,
-    CmpItemAbbrDeprecated = colors.Fg,
+    CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
     CmpItemAbbrMatch = colors.Cyan,
     CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = "underline" },
     CmpItemMenu = colors.LightGrey,
-
-    CmpItemKindDefault = colors.Purple,
-    CmpItemKindClass = colors.Yellow,
-    CmpItemKindColor = colors.Green,
-    CmpItemKindConstant = colors.Orange,
-    CmpItemKindConstructor = colors.Blue,
-    CmpItemKindEnum = colors.Purple,
-    CmpItemKindEnumMember = colors.Yellow,
-    CmpItemKindEvent = colors.Yellow,
-    CmpItemKindField = colors.Purple,
-    CmpItemKindFile = colors.Blue,
-    CmpItemKindFolder = colors.Orange,
-    CmpItemKindFunction = colors.Blue,
-    CmpItemKindInterface = colors.Green,
-    CmpItemKindKeyword = colors.Cyan,
-    CmpItemKindMethod = colors.Blue,
-    CmpItemKindModule = colors.Orange,
-    CmpItemKindOperator = colors.Red,
-    CmpItemKindProperty = colors.Cyan,
-    CmpItemKindReference = colors.Orange,
-    CmpItemKindSnippet = colors.Red,
-    CmpItemKindStruct = colors.Purple,
-    CmpItemKindText = colors.LightGrey,
-    CmpItemKindTypeParameter = colors.Red,
-    CmpItemKindUnit = colors.Green,
-    CmpItemKindValue = colors.Orange,
-    CmpItemKindVariable = colors.Purple,
+    CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
 }
 
 hl.plugins.coc = {
@@ -380,8 +366,9 @@ hl.plugins.dashboard = {
     DashboardFooter = { fg = c.dark_red, fmt = "italic"}
 }
 
-hl.plugins.symbols_outline = {
-    FocusedSymbol = { fg = c.bg1, bg = c.yellow, fmt = "bold" },
+hl.plugins.outline = {
+    FocusedSymbol = { fg = c.purple, bg = c.bg2, fmt = "bold" },
+    AerialLine = { fg = c.purple, bg = c.bg2, fmt = "bold" },
 }
 
 hl.plugins.ts_rainbow = {
@@ -502,7 +489,42 @@ hl.langs.vim = {
     vimCommentTitle = {fg = c.light_grey, fmt = cfg.code_style.comments},
 }
 
+local lsp_kind_icons_color = {
+    Default = c.purple,
+    Class = c.yellow,
+    Color = c.green,
+    Constant = c.orange,
+    Constructor = c.blue,
+    Enum = c.purple,
+    EnumMember = c.yellow,
+    Event = c.yellow,
+    Field = c.purple,
+    File = c.blue,
+    Folder = c.orange,
+    Function = c.blue,
+    Interface = c.green,
+    Keyword = c.cyan,
+    Method = c.blue,
+    Module = c.orange,
+    Operator = c.red,
+    Property = c.cyan,
+    Reference = c.orange,
+    Snippet = c.red,
+    Struct = c.purple,
+    Text = c.light_grey,
+    TypeParameter = c.red,
+    Unit = c.green,
+    Value = c.orange,
+    Variable = c.purple,
+}
+
 function M.setup()
+    -- define cmp and aerial kind highlights with lsp_kind_icons_color
+    for kind, color in pairs(lsp_kind_icons_color) do
+        hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
+        hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
+    end
+
     vim_highlights(hl.common)
     vim_highlights(hl.syntax)
     vim_highlights(hl.treesitter)

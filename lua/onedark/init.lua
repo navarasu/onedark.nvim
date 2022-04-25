@@ -49,6 +49,7 @@ local default_config = {
     transparent = false,     -- don't set background
     term_colors = true,      -- if true enable the terminal
     ending_tildes = false,    -- show the end-of-buffer tildes
+    cmp_itemkind_reverse = false,    -- reverse item kind highlights in cmp menu
 
     -- Changing Formats --
     code_style = {

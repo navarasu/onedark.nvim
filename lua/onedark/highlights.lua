@@ -5,7 +5,23 @@ local util = require("onedark.util")
 local M = {}
 local hl = {langs = {}, plugins = {}}
 
-local function vim_highlights(highlights)
+local function vim_highlights_nvim070(highlights)
+    for group_name, group_settings in pairs(highlights) do
+        local settings = {
+            fg = group_settings.fg or "none",
+            bg = group_settings.bg or "none",
+            sp = group_settings.sp or "none",
+        }
+        if not group_settings.fmt == nil then
+            for setting in vim.split(group_settings, ",") do
+                settings[setting] =  1
+            end
+        end
+        vim.api.nvim_set_hl(0, group_name, settings)
+    end
+end
+
+local function vim_highlights_prior_to_nvim070(highlights)
     for group_name, group_settings in pairs(highlights) do
         vim.api.nvim_command(string.format("highlight %s guifg=%s guibg=%s guisp=%s gui=%s", group_name,
             group_settings.fg or "none",
@@ -13,6 +29,11 @@ local function vim_highlights(highlights)
             group_settings.sp or "none",
             group_settings.fmt or "none"))
     end
+end
+
+local vim_highlights = vim_highlights_prior_to_nvim070
+if vim.fn.has('nvim-0.7.0') then
+    vim_highlights = vim_highlights_nvim070
 end
 
 local colors = {

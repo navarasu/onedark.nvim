@@ -12,8 +12,8 @@ local function vim_highlights_nvim070(highlights)
             bg = group_settings.bg or "none",
             sp = group_settings.sp or "none",
         }
-        if not group_settings.fmt == nil then
-            for setting in vim.split(group_settings, ",") do
+        if group_settings.fmt and group_settings.fmt ~= "none" then
+            for _, setting in pairs(vim.split(group_settings.fmt, ",")) do
                 settings[setting] =  1
             end
         end

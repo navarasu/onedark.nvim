@@ -192,10 +192,10 @@ hl.treesitter = {
     TSVariableBuiltin = {fg = c.red, fmt = cfg.code_style.variables},
 }
 
-local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
-local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
-local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or c.yellow
-local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
+local diagnostics_error_color = cfg.diagnostics.error_color or cfg.diagnostics.darker and c.dark_red or c.red
+local diagnostics_hint_color = cfg.diagnostics.hint_color or cfg.diagnostics.darker and c.dark_purple or c.purple
+local diagnostics_warn_color = cfg.diagnostics.warn_color or cfg.diagnostics.darker and c.dark_yellow or c.yellow
+local diagnostics_info_color = cfg.diagnostics.info_color or cfg.diagnostics.darker and c.dark_cyan or c.cyan
 hl.plugins.lsp = {
     LspCxxHlGroupEnumConstant = colors.Orange,
     LspCxxHlGroupMemberVariable = colors.Orange,
@@ -203,10 +203,10 @@ hl.plugins.lsp = {
     LspCxxHlSkippedRegion = colors.Grey,
     LspCxxHlSkippedRegionBeginEnd = colors.Red,
 
-    DiagnosticError = {fg = c.red},
-    DiagnosticHint = {fg = c.purple},
-    DiagnosticInfo = {fg = c.cyan},
-    DiagnosticWarn = {fg = c.yellow},
+    DiagnosticError = {fg = diagnostics_error_color},
+    DiagnosticHint = {fg = diagnostics_hint_color},
+    DiagnosticInfo = {fg = diagnostics_info_color},
+    DiagnosticWarn = {fg = diagnostics_warn_color},
 
     DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
                                    fg = diagnostics_error_color },

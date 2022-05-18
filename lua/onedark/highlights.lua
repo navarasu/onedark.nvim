@@ -225,6 +225,9 @@ hl.plugins.lsp = {
     LspReferenceText = { bg = c.bg2 },
     LspReferenceWrite = { bg = c.bg2 },
     LspReferenceRead = { bg = c.bg2 },
+
+    LspCodeLens = { fg = c.grey, fmt = cfg.code_style.comments },
+    LspCodeLensSeparator = { fg = c.grey },
 }
 
 hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError

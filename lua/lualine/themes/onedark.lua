@@ -25,6 +25,7 @@ local one_dark = {
     visual = {a = {fg = colors.bg, bg = colors.purple, gui = 'bold'}},
     replace = {a = {fg = colors.bg, bg = colors.red, gui = 'bold'}},
     insert = {a = {fg = colors.bg, bg = colors.blue, gui = 'bold'}},
-    command = {a = {fg = colors.bg, bg = colors.yellow, gui = 'bold'}}
+    command = {a = {fg = colors.bg, bg = colors.yellow, gui = 'bold'}},
+    terminal = {a = {fg = colors.bg, bg = colors.cyan, gui = 'bold'}},
 }
 return one_dark;

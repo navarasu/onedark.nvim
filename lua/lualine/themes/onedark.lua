@@ -1,4 +1,5 @@
 local c = require('onedark.colors')
+local cfg = vim.g.onedark_config
 local colors = {
     bg = c.bg0,
     fg = c.fg,
@@ -15,12 +16,12 @@ local one_dark = {
     inactive = {
         a = {fg = colors.gray, bg = colors.bg, gui = 'bold'},
         b = {fg = colors.gray, bg = colors.bg},
-        c = {fg = colors.gray, bg = c.bg1},
+        c = {fg = colors.gray, bg = cfg.transparent and c.none or c.bg1},
     },
     normal = {
         a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
         b = {fg = colors.fg, bg = c.bg3},
-        c = {fg = colors.fg, bg = c.bg1},
+        c = {fg = colors.fg, bg = cfg.transparent and c.none or c.bg1},
     },
     visual = {a = {fg = colors.bg, bg = colors.purple, gui = 'bold'}},
     replace = {a = {fg = colors.bg, bg = colors.red, gui = 'bold'}},

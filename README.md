@@ -185,6 +185,7 @@ require('lualine').setup {
   + [VimFugitive](https://github.com/tpope/vim-fugitive)
   + [DiffView](https://github.com/sindrets/diffview.nvim)
   + [Hop](https://github.com/phaazon/hop.nvim)
+  + [Mini](https://github.com/echasnovski/mini.nvim)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

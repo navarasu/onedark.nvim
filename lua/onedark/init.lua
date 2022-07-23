@@ -44,6 +44,7 @@ end
 local default_config = {
     -- Main options --
     style = 'dark',    -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    toggle_enabled = true,
     toggle_style_key = '<leader>ts',
     toggle_style_list = M.styles_list,
     transparent = false,     -- don't set background
@@ -88,7 +89,9 @@ function M.setup(opts)
             M.set_options('toggle_style_list', opts.toggle_style_list)
         end
     end
-    vim.api.nvim_set_keymap('n', vim.g.onedark_config.toggle_style_key, '<cmd>lua require("onedark").toggle()<cr>', { noremap = true, silent = true })
+    if vim.g.onedark_config.toggle_enabled then
+      vim.api.nvim_set_keymap('n', vim.g.onedark_config.toggle_style_key, '<cmd>lua require("onedark").toggle()<cr>', { noremap = true, silent = true })
+    end
 end
 
 function M.load()

@@ -77,8 +77,6 @@ local default_config = {
 function M.setup(opts)
     if not vim.g.onedark_config or not vim.g.onedark_config.loaded then    -- if it's the first time setup() is called
         vim.g.onedark_config = vim.tbl_deep_extend('keep', vim.g.onedark_config or {}, default_config)
-        local old_config = require('onedark.old_config')
-        if old_config then opts = old_config end
         M.set_options('loaded', true)
         M.set_options('toggle_style_index', 0)
     end

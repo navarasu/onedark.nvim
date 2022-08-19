@@ -337,6 +337,22 @@ hl.plugins.gitsigns = {
     GitSignsDeleteNr = colors.Red
 }
 
+hl.plugins.neo_tree = {
+    NeoTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
+    NeoTreeNormalNC = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
+    NeoTreeVertSplit = { fg = c.bg1, bg = cfg.transparent and c.none or c.bg1 },
+    NeoTreeWinSeparator = { fg = c.bg1, bg = cfg.transparent and c.none or c.bg1 },
+    NeoTreeEndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
+    NeoTreeRootName = { fg = c.orange, fmt = "bold" },
+    NeoTreeGitAdded = colors.Green,
+    NeoTreeGitDeleted = colors.Red,
+    NeoTreeGitModified = colors.Yellow,
+    NeoTreeGitConflict = { fg = c.red, fmt = "bold,italic" },
+    NeoTreeGitUntracked = { fg = c.red, fmt = "italic" },
+    NeoTreeIndentMarker = colors.Grey,
+    NeoTreeSymbolicLinkTarget = colors.Purple,
+}
+
 hl.plugins.nvim_tree = {
     NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },

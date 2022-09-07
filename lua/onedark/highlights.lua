@@ -353,6 +353,25 @@ hl.plugins.neo_tree = {
     NeoTreeSymbolicLinkTarget = colors.Purple,
 }
 
+hl.plugins.neotest = {
+    NeotestAdapterName = { fg = c.purple, fmt = "bold" },
+    NeotestDir = colors.Cyan,
+    NeotestExpandMarker = colors.Grey,
+    NeotestFailed = colors.Red,
+    NeotestFile = colors.Cyan,
+    NeotestFocused = { fmt = "bold,italic" },
+    NeotestIndent = colors.Grey,
+    NeotestMarked = { fg = c.orange, fmt = "bold" },
+    NeotestNamespace = colors.Blue,
+    NeotestPassed = colors.Green,
+    NeotestRunning = colors.Yellow,
+    NeotestWinSelect = { fg = c.cyan, fmt = "bold" },
+    NeotestSkipped = colors.LightGrey,
+    NeotestTarget = colors.Purple,
+    NeotestTest = colors.Fg,
+    NeotestUnknown = colors.LightGrey,
+}
+
 hl.plugins.nvim_tree = {
     NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },

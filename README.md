@@ -188,6 +188,7 @@ require('lualine').setup {
   + [Hop](https://github.com/phaazon/hop.nvim)
   + [Mini](https://github.com/echasnovski/mini.nvim)
   + [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+  + [Neotest](https://github.com/nvim-neotest/neotest)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

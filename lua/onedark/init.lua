@@ -60,6 +60,11 @@ local default_config = {
         variables = 'none'
     },
 
+    -- Lualine options --
+    lualine = {
+        transparent = false, -- center bar (c) transparency
+    },
+
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {}, -- Override highlight groups

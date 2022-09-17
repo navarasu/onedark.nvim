@@ -109,6 +109,11 @@ require('onedark').setup  {
         variables = 'none'
     },
 
+    -- Lualine options --
+    lualine = {
+        transparent = false, -- lualine center bar transparency
+    },
+
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {}, -- Override highlight groups

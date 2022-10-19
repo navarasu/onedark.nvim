@@ -16,6 +16,8 @@
 
 *For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)*
 
+*For latest [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight, upgraded to Neovim 0.8.0 or later built with tree-sitter 0.20.3+*
+
 ### Features
   * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
   * Supporting multiple plugins with hand picked proper colors

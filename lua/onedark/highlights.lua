@@ -473,6 +473,11 @@ hl.plugins.outline = {
     AerialLine = { fg = c.purple, bg = c.bg2, fmt = "bold" },
 }
 
+hl.plugins.navic = {
+    NavicText = { fg = c.fg },
+    NavicSeparator = { fg = c.light_grey },
+}
+
 hl.plugins.ts_rainbow = {
     rainbowcol1 = colors.Grey,
     rainbowcol2 = colors.Yellow,
@@ -645,6 +650,8 @@ hl.langs.vim = {
 
 local lsp_kind_icons_color = {
     Default = c.purple,
+    Array = c.yellow,
+    Boolean = c.orange,
     Class = c.yellow,
     Color = c.green,
     Constant = c.orange,
@@ -657,13 +664,20 @@ local lsp_kind_icons_color = {
     Folder = c.orange,
     Function = c.blue,
     Interface = c.green,
+    Key = c.cyan,
     Keyword = c.cyan,
     Method = c.blue,
     Module = c.orange,
+    Namespace = c.red,
+    Null = c.grey,
+    Number = c.orange,
+    Object = c.red,
     Operator = c.red,
+    Package = c.yellow,
     Property = c.cyan,
     Reference = c.orange,
     Snippet = c.red,
+    String = c.green,
     Struct = c.purple,
     Text = c.light_grey,
     TypeParameter = c.red,
@@ -677,6 +691,7 @@ function M.setup()
     for kind, color in pairs(lsp_kind_icons_color) do
         hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
         hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
+        hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
     end
 
     vim_highlights(hl.common)

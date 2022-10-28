@@ -95,7 +95,7 @@ hl.common = {
 }
 
 hl.syntax = {
-    String = {fg = c.green, fmt = cfg.code_style.strings},
+    String = {fg = c.orange, fmt = cfg.code_style.strings},
     Character = colors.Orange,
     Number = colors.Orange,
     Float = colors.Orange,
@@ -104,7 +104,7 @@ hl.syntax = {
     Structure = colors.Yellow,
     StorageClass = colors.Yellow,
     Identifier = {fg = c.red, fmt = cfg.code_style.variables},
-    Constant = colors.Cyan,
+    Constant = colors.Yellow,
     PreProc = colors.Purple,
     PreCondit = colors.Purple,
     Include = colors.Purple,
@@ -200,35 +200,35 @@ else
         TSCharacter = colors.Orange,
         TSComment = {fg = c.grey, fmt = cfg.code_style.comments},
         TSConditional = {fg = c.purple, fmt = cfg.code_style.keywords},
-        TSConstant = colors.Orange,
-        TSConstBuiltin = colors.Orange,
+        TSConstant = c.orange,
+        TSConstBuiltin = colors.Red,
         TSConstMacro = colors.Orange,
-        TSConstructor = {fg = c.yellow, fmt = "bold"},
+        TSConstructor = {fg = c.yellow},
         TSError = colors.Fg,
         TSException = colors.Purple,
-        TSField = colors.Cyan,
+        TSField = colors.Fg,
         TSFloat = colors.Orange,
-        TSFunction = {fg = c.blue, fmt = cfg.code_style.functions},
+        TSFunction = {fg = c.cyan, fmt = cfg.code_style.functions},
         TSFuncBuiltin = {fg = c.cyan, fmt = cfg.code_style.functions},
         TSFuncMacro = {fg = c.cyan, fmt = cfg.code_style.functions},
         TSInclude = colors.Purple,
         TSKeyword = {fg = c.purple, fmt = cfg.code_style.keywords},
         TSKeywordFunction = {fg = c.purple, fmt = cfg.code_style.functions},
         TSKeywordOperator =  {fg = c.purple, fmt = cfg.code_style.keywords},
-        TSLabel = colors.Red,
-        TSMethod = colors.Blue,
+        TSLabel = colors.Blue,
+        TSMethod = colors.Cyan,
         TSNamespace = colors.Yellow,
         TSNone = colors.Fg,
         TSNumber = colors.Orange,
         TSOperator = colors.Fg,
-        TSParameter = colors.Red,
+        TSParameter = {fg = c.red, fmt = 'italic'},
         TSParameterReference = colors.Fg,
         TSProperty = colors.Cyan,
         TSPunctDelimiter = colors.LightGrey,
         TSPunctBracket = colors.LightGrey,
         TSPunctSpecial = colors.Red,
         TSRepeat = {fg = c.purple, fmt = cfg.code_style.keywords},
-        TSString = {fg = c.green, fmt = cfg.code_style.strings},
+        TSString = {fg = c.orange, fmt = cfg.code_style.strings},
         TSStringRegex = {fg = c.orange, fmt = cfg.code_style.strings},
         TSStringEscape = {fg = c.red, fmt = cfg.code_style.strings},
         TSSymbol = colors.Cyan,
@@ -343,8 +343,8 @@ hl.plugins.coc = {
 
 hl.plugins.whichkey = {
     WhichKey = colors.Red,
-    WhichKeyDesc = colors.Blue,
-    WhichKeyGroup = colors.Orange,
+    WhichKeyDesc = colors.Fg,
+    WhichKeyGroup = colors.Cyan,
     WhichKeySeperator = colors.Green
 }
 
@@ -437,7 +437,7 @@ hl.plugins.neotest = {
 }
 
 hl.plugins.nvim_tree = {
-    NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
+    NvimTreeNormal = { fg = c.fg, bg = c.bg_d },
     NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeEndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeRootFolder = { fg = c.orange, fmt = "bold" },
@@ -448,7 +448,7 @@ hl.plugins.nvim_tree = {
     NvimTreeIndentMarker = colors.Fg,
     NvimTreeImageFile = { fg = c.dark_purple },
     NvimTreeSymlink = colors.Purple,
-    NvimTreeFolderName = colors.Blue,
+    NvimTreeFolderName = colors.Blue
 }
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,

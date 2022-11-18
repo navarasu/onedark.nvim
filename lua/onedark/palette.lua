@@ -190,9 +190,9 @@ return {
 		dark_red = "#833b3b",
 		dark_yellow = "#7c5c20",
 		dark_purple = "#79428a",
-		diff_add = "#282b26",
-		diff_delete = "#2a2626",
-		diff_change = "#1a2a37",
-		diff_text = "#2c485f",
+		diff_add = "#e2fbe4",
+		diff_delete = "#fce2e5",
+		diff_change = "#e2ecfb",
+		diff_text = "#cad3e0",
 	},
 }

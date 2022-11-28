@@ -21,7 +21,7 @@ local one_dark = {
     normal = {
         a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
         b = {fg = colors.fg, bg = c.bg3},
-        c = {fg = colors.gray, bg = cfg.lualine.transparent and c.none or c.bg1},
+        c = {fg = colors.fg, bg = cfg.lualine.transparent and c.none or c.bg1},
     },
     visual = {a = {fg = colors.bg, bg = colors.purple, gui = 'bold'}},
     replace = {a = {fg = colors.bg, bg = colors.red, gui = 'bold'}},

@@ -528,7 +528,7 @@ hl.plugins.mini = {
     MiniStatuslineModeCommand = { fg = c.bg0, bg = c.yellow, fmt = "bold" },
     MiniStatuslineModeInsert = { fg = c.bg0, bg = c.blue, fmt = "bold" },
     MiniStatuslineModeNormal = { fg = c.bg0, bg = c.green, fmt = "bold" },
-    MiniStatuslineModeOther = { fg = c.bg0, bg = c.cyen, fmt = "bold" },
+    MiniStatuslineModeOther = { fg = c.bg0, bg = c.cyan, fmt = "bold" },
     MiniStatuslineModeReplace = { fg = c.bg0, bg = c.red, fmt = "bold" },
     MiniStatuslineModeVisual = { fg = c.bg0, bg = c.purple, fmt = "bold" },
 

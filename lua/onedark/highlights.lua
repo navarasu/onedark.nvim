@@ -180,6 +180,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@text.title"] = {fg = c.orange, fmt = 'bold'},
         ["@text.literal"] = colors.Green,
         ["@text.uri"] = {fg = c.cyan, fmt = 'underline'},
+        ["@text.todo"] = {fg = c.red, fmt = cfg.code_style.comments},
         ["@text.math"] = colors.Fg,
         ["@text.reference"] = colors.Blue,
         ["@text.enviroment"] = colors.Fg,

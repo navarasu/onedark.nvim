@@ -186,6 +186,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@text.reference"] = colors.Blue,
         ["@text.environment"] = colors.Fg,
         ["@text.environment.name"] = colors.Fg,
+        ["@text.diff.add"] = colors.Green,
+        ["@text.diff.delete"] = colors.Red,
         ["@note"] = colors.Fg,
         ["@warning"] = colors.Fg,
         ["@danger"] = colors.Fg,

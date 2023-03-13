@@ -9,7 +9,7 @@ return {
     separator = { fg = c.grey }, -- Conceal's or Normal's fg
     modified = { fg = c.green }, -- BufferVisibleMod's fg (a yellow color)
     dirname = {},
-    basename = {},
+    basename = { fg = c.fg },
     context = {},
     context_file = { fg = c.blue }, -- CmpItemKindFile's fg
     context_module = { fg = c.orange }, -- CmpItemKindModule's fg

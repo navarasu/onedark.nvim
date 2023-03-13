@@ -8,9 +8,9 @@ return {
     ellipsis = { fg = c.grey }, -- Conceal's or Normal's fg
     separator = { fg = c.grey }, -- Conceal's or Normal's fg
     modified = { fg = c.green }, -- BufferVisibleMod's fg (a yellow color)
-    dirname = {}, -- Conceal's or Normal's fg
-    basename = {}, -- normal's fg and bold are recommended
-    context = {}, -- normal's fg is recommended
+    dirname = {},
+    basename = {},
+    context = {},
     context_file = { fg = c.blue }, -- CmpItemKindFile's fg
     context_module = { fg = c.orange }, -- CmpItemKindModule's fg
     context_namespace = { fg = c.orange }, -- CmpItemKindModule's fg

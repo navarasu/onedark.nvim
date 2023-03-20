@@ -217,6 +217,7 @@ require('lualine').setup {
   + [Mini](https://github.com/echasnovski/mini.nvim)
   + [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
   + [Neotest](https://github.com/nvim-neotest/neotest)
+  + [Barbecue](https://github.com/utilyre/barbecue.nvim)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

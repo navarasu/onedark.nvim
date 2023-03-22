@@ -249,8 +249,8 @@ else
         TSURI = {fg = c.cyan, fmt = 'underline'},
         TSMath = colors.Fg,
         TSTextReference = colors.Blue,
-        TSEnviroment = colors.Fg,
-        TSEnviromentName = colors.Fg,
+        TSEnvironment = colors.Fg,
+        TSEnvironmentName = colors.Fg,
         TSNote = colors.Fg,
         TSWarning = colors.Fg,
         TSDanger = colors.Fg,
@@ -350,7 +350,7 @@ hl.plugins.whichkey = {
     WhichKey = colors.Red,
     WhichKeyDesc = colors.Blue,
     WhichKeyGroup = colors.Orange,
-    WhichKeySeperator = colors.Green
+    WhichKeySeparator = colors.Green
 }
 
 hl.plugins.gitgutter = {

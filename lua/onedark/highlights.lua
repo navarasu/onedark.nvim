@@ -203,6 +203,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
             ["@lsp.type.enum"] = hl.treesitter["@type"],
             ["@lsp.type.enumMember"] = hl.treesitter["@constant.builtin"],
             ["@lsp.type.interface"] = hl.treesitter["@type"],
+            ["@lsp.type.typeParameter"] = hl.treesitter["@type"],
             ["@lsp.type.keyword"] = hl.treesitter["@keyword"],
             ["@lsp.type.namespace"] = hl.treesitter["@namespace"],
             ["@lsp.type.parameter"] = hl.treesitter["@parameter"],

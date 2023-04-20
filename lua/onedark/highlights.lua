@@ -484,7 +484,7 @@ hl.plugins.navic = {
 }
 
 hl.plugins.ts_rainbow = {
-    rainbowcol1 = colors.Grey,
+    rainbowcol1 = colors.LightGrey,
     rainbowcol2 = colors.Yellow,
     rainbowcol3 = colors.Blue,
     rainbowcol4 = colors.Orange,

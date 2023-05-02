@@ -518,6 +518,16 @@ hl.plugins.ts_rainbow = {
     rainbowcol7 = colors.Red
 }
 
+hl.plugins.ts_rainbow2 = {
+    TSRainbowRed = colors.Red,
+    TSRainbowYellow = colors.Yellow,
+    TSRainbowBlue = colors.Blue,
+    TSRainbowOrange = colors.Orange,
+    TSRainbowGreen = colors.Green,
+    TSRainbowViolet = colors.Purple,
+    TSRainbowCyan = colors.Cyan,
+}
+
 hl.plugins.indent_blankline = {
     IndentBlanklineIndent1 = colors.Blue,
     IndentBlanklineIndent2 = colors.Green,

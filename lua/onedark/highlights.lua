@@ -162,6 +162,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@operator"] = colors.Fg,
         ["@parameter"] = colors.Red,
         ["@parameter.reference"] = colors.Fg,
+        ["@preproc"] = colors.Purple,
         ["@property"] = colors.Cyan,
         ["@punctuation.delimiter"] = colors.LightGrey,
         ["@punctuation.bracket"] = colors.LightGrey,

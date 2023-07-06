@@ -530,6 +530,16 @@ hl.plugins.ts_rainbow2 = {
     TSRainbowCyan = colors.Cyan,
 }
 
+hl.plugins.rainbow_delimiters = {
+    RainbowDelimiterRed = colors.Red,
+    RainbowDelimiterYellow = colors.Yellow,
+    RainbowDelimiterBlue = colors.Blue,
+    RainbowDelimiterOrange = colors.Orange,
+    RainbowDelimiterGreen = colors.Green,
+    RainbowDelimiterViolet = colors.Purple,
+    RainbowDelimiterCyan = colors.Cyan,
+}
+
 hl.plugins.indent_blankline = {
     IndentBlanklineIndent1 = colors.Blue,
     IndentBlanklineIndent2 = colors.Green,

@@ -3,4 +3,4 @@ for k in pairs(package.loaded) do
 end
 
 require('onedark').setup()
-require('onedark').colorscheme('')
+require('onedark').colorscheme('deep')

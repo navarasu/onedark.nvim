@@ -135,6 +135,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     hl.treesitter = {
         ["@annotation"] = colors.Fg,
         ["@attribute"] = colors.Cyan,
+        ["@attribute.typescript"] = colors.Blue,
         ["@boolean"] = colors.Orange,
         ["@character"] = colors.Orange,
         ["@comment"] = {fg = c.grey, fmt = cfg.code_style.comments},

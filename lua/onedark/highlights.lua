@@ -72,10 +72,10 @@ hl.common = {
     WildMenu = {fg = c.bg0, bg = c.blue},
     PmenuThumb = {fg = c.none, bg = c.grey},
     Question = {fg = c.yellow},
-    SpellBad = {fg = c.red, fmt = "underline", sp = c.red},
-    SpellCap = {fg = c.yellow, fmt = "underline", sp = c.yellow},
-    SpellLocal = {fg = c.blue, fmt = "underline", sp = c.blue},
-    SpellRare = {fg = c.purple, fmt = "underline", sp = c.purple},
+    SpellBad = {fg = c.none, fmt = "undercurl", sp = c.red},
+    SpellCap = {fg = c.none, fmt = "undercurl", sp = c.yellow},
+    SpellLocal = {fg = c.none, fmt = "undercurl", sp = c.blue},
+    SpellRare = {fg = c.none, fmt = "undercurl", sp = c.purple},
     StatusLine = {fg = c.fg, bg = cfg.transparent.statusline and c.none or c.bg1},
     StatusLineTerm = {fg = c.fg, bg = c.bg2},
     StatusLineNC = {fg = c.grey, bg = c.bg1},
@@ -135,6 +135,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     hl.treesitter = {
         ["@annotation"] = colors.Fg,
         ["@attribute"] = colors.Cyan,
+        ["@attribute.typescript"] = colors.Blue,
         ["@boolean"] = colors.Orange,
         ["@character"] = colors.Orange,
         ["@comment"] = {fg = c.grey, fmt = cfg.code_style.comments},
@@ -528,6 +529,16 @@ hl.plugins.ts_rainbow2 = {
     TSRainbowGreen = colors.Green,
     TSRainbowViolet = colors.Purple,
     TSRainbowCyan = colors.Cyan,
+}
+
+hl.plugins.rainbow_delimiters = {
+    RainbowDelimiterRed = colors.Red,
+    RainbowDelimiterYellow = colors.Yellow,
+    RainbowDelimiterBlue = colors.Blue,
+    RainbowDelimiterOrange = colors.Orange,
+    RainbowDelimiterGreen = colors.Green,
+    RainbowDelimiterViolet = colors.Purple,
+    RainbowDelimiterCyan = colors.Cyan,
 }
 
 hl.plugins.indent_blankline = {

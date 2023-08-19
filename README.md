@@ -114,6 +114,23 @@ require('onedark').setup  {
     -- Lualine options --
     lualine = {
         transparent = false, -- lualine center bar transparency
+        highlights = { -- set custom highlights for lualine
+            inactive = {
+                a = {}, -- each can accept fb and bg with a color as a string, i.e. bg = "#000000"
+                b = {},
+                c = {},
+            },
+            normal = {
+                a = {},
+                b = {},
+                c = {},
+            },
+            visual = { a = {} },
+            replace = { a = {} },
+            insert = { a = {} },
+            command = { a = {} },
+            terminal = { a = {} },
+        }, 
     },
 
     -- Custom Highlights --

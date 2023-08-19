@@ -63,6 +63,23 @@ local default_config = {
     -- Lualine options --
     lualine = {
         transparent = false, -- center bar (c) transparency
+        highlights = {
+            inactive = {
+                a = {},
+                b = {},
+                c = {},
+            },
+            normal = {
+                a = {},
+                b = {},
+                c = {},
+            },
+            visual = { a = {} },
+            replace = { a = {} },
+            insert = { a = {} },
+            command = { a = {} },
+            terminal = { a = {} },
+        }, -- set background color for lualine
     },
 
     -- Custom Highlights --

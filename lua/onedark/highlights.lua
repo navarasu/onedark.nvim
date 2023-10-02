@@ -552,6 +552,11 @@ hl.plugins.indent_blankline = {
     IndentBlanklineContextChar = { fg = c.grey, fmt = "nocombine" },
     IndentBlanklineContextStart = { sp = c.grey, fmt = "underline" },
     IndentBlanklineContextSpaceChar = { fmt = "nocombine" },
+
+    -- Ibl v3
+    IblIndent = { fg = c.bg1, fmt = "nocombine" },
+    IblWhitespace = { fmt = "nocombine" },
+    IblScope = { fmt = "nocombine" },
 }
 
 hl.plugins.mini = {

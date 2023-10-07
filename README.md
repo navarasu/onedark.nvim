@@ -218,6 +218,7 @@ require('lualine').setup {
   + [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
   + [Neotest](https://github.com/nvim-neotest/neotest)
   + [Barbecue](https://github.com/utilyre/barbecue.nvim)
+  + [IndentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

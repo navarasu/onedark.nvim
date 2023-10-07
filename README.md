@@ -1,6 +1,9 @@
 <h1 align="left">
 <span> &nbsp;&nbsp;&nbsp; </span>
-<img height="100" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/navarasu/onedark.nvim/assets/20145075/620d5f32-4788-4397-adb7-3fc3abc8bc29">
+  <img height="100" src="https://github.com/navarasu/onedark.nvim/assets/20145075/5dfe9607-977f-48d9-836f-88a556ec57a3">
+</picture>
 </h1>
 
 <h4><div align="right">

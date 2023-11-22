@@ -555,8 +555,8 @@ hl.plugins.indent_blankline = {
 
     -- Ibl v3
     IblIndent = { fg = c.bg1, fmt = "nocombine" },
-    IblWhitespace = { fmt = "nocombine" },
-    IblScope = { fmt = "nocombine" },
+    IblWhitespace = { fg = c.grey, fmt = "nocombine" },
+    IblScope = { fg = c.grey, fmt = "nocombine" },
 }
 
 hl.plugins.mini = {

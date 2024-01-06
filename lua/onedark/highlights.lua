@@ -185,6 +185,8 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@text.literal"] = colors.Green,
         ["@text.uri"] = {fg = c.cyan, fmt = 'underline'},
         ["@text.todo"] = {fg = c.red, fmt = cfg.code_style.comments},
+        ["@text.todo.unchecked"] = {fg = c.red, fmt = cfg.code_style.comments},
+        ["@text.todo.checked"] = {fg = c.green, fmt = cfg.code_style.comments},
         ["@text.math"] = colors.Fg,
         ["@text.reference"] = colors.Blue,
         ["@text.environment"] = colors.Fg,

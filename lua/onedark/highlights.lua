@@ -133,6 +133,7 @@ hl.syntax = {
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     hl.treesitter = {
+        -- nvim-treesitter@0.9.2 and after
         ["@annotation"] = colors.Fg,
         ["@attribute"] = colors.Cyan,
         ["@attribute.typescript"] = colors.Blue,
@@ -200,6 +201,36 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@variable.builtin"] = {fg = c.red, fmt = cfg.code_style.variables},
         ["@variable.member"] = colors.Cyan,
         ["@variable.parameter"] = colors.Red,
+        
+        -- Old configuration for nvim-treesiter@0.9.1 and below
+        ["@conditional"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@exception"] = colors.Purple,
+        ["@field"] = colors.Cyan,
+        ["@float"] = colors.Orange,
+        ["@include"] = colors.Purple,
+        ["@method"] = {fg = c.blue, fmt = cfg.code_style.functions},
+        ["@namespace"] = colors.Yellow,
+        ["@parameter"] = colors.Red,
+        ["@preproc"] = colors.Purple,
+        ["@punctuation.special"] = colors.Red,
+        ["@repeat"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@string.regex"] = {fg = c.orange, fmt = cfg.code_style.strings},
+        ["@text.strong"] = {fg = c.fg, fmt = 'bold'},
+        ["@text.emphasis"] = {fg = c.fg, fmt = 'italic'},
+        ["@text.underline"] = {fg = c.fg, fmt = 'underline'},
+        ["@text.strike"] = {fg = c.fg, fmt = 'strikethrough'},
+        ["@text.title"] = {fg = c.orange, fmt = 'bold'},
+        ["@text.literal"] = colors.Green,
+        ["@text.uri"] = {fg = c.cyan, fmt = 'underline'},
+        ["@text.todo"] = {fg = c.red, fmt = cfg.code_style.comments},
+        ["@text.todo.unchecked"] = {fg = c.red, fmt = cfg.code_style.comments},
+        ["@text.todo.checked"] = {fg = c.green, fmt = cfg.code_style.comments},
+        ["@text.math"] = colors.Fg,
+        ["@text.reference"] = colors.Blue,
+        ["@text.environment"] = colors.Fg,
+        ["@text.environment.name"] = colors.Fg,
+        ["@text.diff.add"] = colors.Green,
+        ["@text.diff.delete"] = colors.Red,
     }
     if vim.api.nvim_call_function("has", { "nvim-0.9" }) == 1 then
         hl.lsp = {

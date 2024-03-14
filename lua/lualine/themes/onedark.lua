@@ -14,19 +14,19 @@ local colors = {
 
 local one_dark = {
     inactive = {
-        a = {fg = colors.gray, bg = colors.bg, gui = 'bold'},
-        b = {fg = colors.gray, bg = colors.bg},
+        a = {fg = colors.gray, bg = cfg.lualine.transparent and c.none or colors.bg, gui = 'bold'},
+        b = {fg = colors.gray, bg = cfg.lualine.transparent and c.none or colors.bg},
         c = {fg = colors.gray, bg = cfg.lualine.transparent and c.none or c.bg1},
     },
     normal = {
-        a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
-        b = {fg = colors.fg, bg = c.bg3},
+        a = {fg = cfg.lualine.transparent and c.green or colors.bg, bg = cfg.lualine.transparent and c.none or colors.green, gui = 'bold'},
+        b = {fg = colors.fg, bg = cfg.lualine.transparent and c.none or c.bg3},
         c = {fg = colors.fg, bg = cfg.lualine.transparent and c.none or c.bg1},
     },
-    visual = {a = {fg = colors.bg, bg = colors.purple, gui = 'bold'}},
-    replace = {a = {fg = colors.bg, bg = colors.red, gui = 'bold'}},
-    insert = {a = {fg = colors.bg, bg = colors.blue, gui = 'bold'}},
-    command = {a = {fg = colors.bg, bg = colors.yellow, gui = 'bold'}},
-    terminal = {a = {fg = colors.bg, bg = colors.cyan, gui = 'bold'}},
+    visual = {a = {fg = cfg.lualine.transparent and c.purple or colors.bg, bg = cfg.lualine.transparent and c.none or colors.purple, gui = 'bold'}},
+    replace = {a = {fg = cfg.lualine.transparent and c.red or colors.bg, bg = cfg.lualine.transparent and c.none or colors.red, gui = 'bold'}},
+    insert = {a = {fg = cfg.lualine.transparent and c.blue or colors.bg, bg = cfg.lualine.transparent and c.none or colors.blue, gui = 'bold'}},
+    command = {a = {fg = cfg.lualine.transparent and c.yellow or colors.bg, bg = cfg.lualine.transparent and c.none or colors.yellow, gui = 'bold'}},
+    terminal = {a = {fg = cfg.lualine.transparent and c.cyan or colors.bg, bg = cfg.lualine.transparent and c.none or colors.cyan, gui = 'bold'}},
 }
 return one_dark;

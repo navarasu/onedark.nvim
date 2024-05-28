@@ -664,6 +664,14 @@ hl.plugins.mini = {
     MiniTrailspace = { bg = c.red },
 }
 
+hl.plugins.illuminate = {
+    illuminatedWord = { bg = c.bg2, fmt = "bold" },
+    illuminatedCurWord = { bg = c.bg2, fmt = "bold" },
+    IlluminatedWordText = { bg = c.bg2, fmt = "bold" },
+    IlluminatedWordRead = { bg = c.bg2, fmt = "bold" },
+    IlluminatedWordWrite = { bg = c.bg2, fmt = "bold" },
+}
+
 hl.langs.c = {
     cInclude = colors.Blue,
     cStorageClass = colors.Purple,

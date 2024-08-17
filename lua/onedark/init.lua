@@ -68,6 +68,7 @@ local default_config = {
     -- Custom Highlights --
     colors = {}, -- Override default colors
     highlights = {}, -- Override highlight groups
+    theme_colors = {}, -- Override colors per-theme
 
     -- Plugins Related --
     diagnostics = {

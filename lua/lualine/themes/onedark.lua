@@ -20,13 +20,28 @@ local one_dark = {
     },
     normal = {
         a = {fg = colors.bg, bg = colors.green, gui = 'bold'},
-        b = {fg = colors.fg, bg = c.bg3},
+        b = {fg = colors.greem, bg = c.bg3},
         c = {fg = colors.fg, bg = cfg.lualine.transparent and c.none or c.bg1},
     },
-    visual = {a = {fg = colors.bg, bg = colors.purple, gui = 'bold'}},
-    replace = {a = {fg = colors.bg, bg = colors.red, gui = 'bold'}},
-    insert = {a = {fg = colors.bg, bg = colors.blue, gui = 'bold'}},
-    command = {a = {fg = colors.bg, bg = colors.yellow, gui = 'bold'}},
-    terminal = {a = {fg = colors.bg, bg = colors.cyan, gui = 'bold'}},
+    visual = {
+    	a = {fg = colors.bg, bg = colors.purple, gui = 'bold'}
+        b = {fg = colors.purple, bg = colors.bg3},
+    },
+    replace = {
+        a = {fg = colors.bg, bg = colors.red, gui = 'bold'}
+        b = {fg = colors.red, bg = colors.bg3},
+    },
+    insert = {
+        a = {fg = colors.bg, bg = colors.blue, gui = 'bold'}
+        b = {fg = colors.blue, bg = colors.bg3},
+    },
+    command = {
+        a = {fg = colors.bg, bg = colors.yellow, gui = 'bold'}
+        b = {fg = colors.yellow, bg = colors.bg3},
+    },
+    terminal = {
+        a = {fg = colors.bg, bg = colors.cyan, gui = 'bold'}
+        b = {fg = colors.cyan, bg = colors.bg3},
+    },
 }
 return one_dark;

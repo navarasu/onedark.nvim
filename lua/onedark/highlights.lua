@@ -46,12 +46,17 @@ hl.common = {
     CursorLineNr = {fg = c.fg},
     LineNr = {fg = c.grey},
     Conceal = {fg = c.grey, bg = c.bg1},
+    Added = colors.Green,
+    Removed = colors.Red,
+    Changed = colors.Blue,
     DiffAdd = {fg = c.none, bg = c.diff_add},
     DiffChange = {fg = c.none, bg = c.diff_change},
     DiffDelete = {fg = c.none, bg = c.diff_delete},
     DiffText = {fg = c.none, bg= c.diff_text},
     DiffAdded = colors.Green,
+    DiffChanged = colors.Blue,
     DiffRemoved = colors.Red,
+    DiffDeleted = colors.Red,
     DiffFile = colors.Cyan,
     DiffIndexLine = colors.Grey,
     Directory = {fg = c.blue},
@@ -147,8 +152,11 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@constant.builtin"] = {fg = c.orange, fmt = cfg.code_style.constants},
         ["@constant.macro"] = {fg = c.orange, fmt = cfg.code_style.constants},
         ["@constructor"] = {fg = c.yellow, fmt = "bold"},
-        ["@diff.add"] = colors.Green,
-        ["@diff.delete"] = colors.Red,
+        ["@diff.add"] = hl.common.DiffAdded,
+        ["@diff.delete"] = hl.common.DiffDeleted,
+        ["@diff.plus"] = hl.common.DiffAdded,
+        ["@diff.minus"] = hl.common.DiffDeleted,
+        ["@diff.delta"] = hl.common.DiffChanged,
         ["@error"] = colors.Fg,
         ["@function"] = {fg = c.blue, fmt = cfg.code_style.functions},
         ["@function.builtin"] = {fg = c.cyan, fmt = cfg.code_style.functions},
@@ -605,17 +613,99 @@ hl.plugins.indent_blankline = {
 }
 
 hl.plugins.mini = {
+    MiniAnimateCursor = { fmt = "reverse,nocombine" },
+    MiniAnimateNormalFloat = hl.common.NormalFloat,
+
+    MiniClueBorder = hl.common.FloatBorder,
+    MiniClueDescGroup = hl.plugins.lsp.DiagnosticWarn,
+    MiniClueDescSingle = hl.common.NormalFloat,
+    MiniClueNextKey = hl.plugins.lsp.DiagnosticHint,
+    MiniClueNextKeyWithPostkeys = hl.plugins.lsp.DiagnosticError,
+    MiniClueSeparator = hl.plugins.lsp.DiagnosticInfo,
+    MiniClueTitle = colors.Cyan,
+
     MiniCompletionActiveParameter = { fmt = "underline" },
 
     MiniCursorword = { fmt = "underline" },
     MiniCursorwordCurrent = { fmt = "underline" },
+
+    MiniDepsChangeAdded = hl.common.Added,
+    MiniDepsChangeRemoved = hl.common.Removed,
+    MiniDepsHint = hl.plugins.lsp.DiagnosticHint,
+    MiniDepsInfo = hl.plugins.lsp.DiagnosticInfo,
+    MiniDepsMsgBreaking = hl.plugins.lsp.DiagnosticWarn,
+    MiniDepsPlaceholder = hl.syntax.Comment,
+    MiniDepsTitle = hl.syntax.Title,
+    MiniDepsTitleError = hl.common.DiffDelete,
+    MiniDepsTitleSame = hl.common.DiffText,
+    MiniDepsTitleUpdate = hl.common.DiffAdd,
+
+    MiniDiffSignAdd = colors.Green,
+    MiniDiffSignChange = colors.Blue,
+    MiniDiffSignDelete = colors.Red,
+    MiniDiffOverAdd = hl.common.DiffAdd,
+    MiniDiffOverChange = hl.common.DiffText,
+    MiniDiffOverContext = hl.common.DiffChange,
+    MiniDiffOverDelete = hl.common.DiffDelete,
+
+    MiniFilesBorder = hl.common.FloatBorder,
+    MiniFilesBorderModified = hl.plugins.lsp.DiagnosticWarn,
+    MiniFilesCursorLine = { bg = c.bg2 },
+    MiniFilesDirectory = hl.common.Directory,
+    MiniFilesFile = { fg = c.fg },
+    MiniFilesNormal = hl.common.NormalFloat,
+    MiniFilesTitle = colors.Cyan,
+    MiniFilesTitleFocused = { fg = c.cyan, fmt = "bold" },
+
+    MiniHipatternsFixme = { fg = c.bg0, bg = c.red, fmt = "bold" },
+    MiniHipatternsHack = { fg = c.bg0, bg = c.yellow, fmt = "bold" },
+    MiniHipatternsNote = { fg = c.bg0, bg = c.cyan, fmt = "bold" },
+    MiniHipatternsTodo = { fg = c.bg0, bg = c.purple, fmt = "bold" },
+
+    MiniIconsAzure = { fg = c.bg_blue },
+    MiniIconsBlue = { fg = c.blue },
+    MiniIconsCyan = { fg = c.cyan },
+    MiniIconsGreen = { fg = c.green },
+    MiniIconsGrey = { fg = c.fg },
+    MiniIconsOrange = { fg = c.orange },
+    MiniIconsPurple = { fg = c.purple },
+    MiniIconsRed = { fg = c.red },
+    MiniIconsYellow = { fg = c.yellow },
 
     MiniIndentscopeSymbol = { fg = c.grey },
     MiniIndentscopePrefix = { fmt = "nocombine" }, -- Make it invisible
 
     MiniJump = { fg = c.purple, fmt = "underline", sp = c.purple },
 
+    MiniJump2dDim = { fg = c.grey, fmt = "nocombine" },
     MiniJump2dSpot = { fg = c.red, fmt = "bold,nocombine" },
+    MiniJump2dSpotAhead = { fg = c.cyan, bg = c.bg0, fmt = "nocombine" },
+    MiniJump2dSpotUnique = { fg = c.yellow, fmt = "bold,nocombine" },
+
+    MiniMapNormal = hl.common.NormalFloat,
+    MiniMapSymbolCount = hl.syntax.Special,
+    MiniMapSymbolLine = hl.syntax.Title,
+    MiniMapSymbolView = hl.syntax.Delimiter,
+
+    MiniNotifyBorder = hl.common.FloatBorder,
+    MiniNotifyNormal = hl.common.NormalFloat,
+    MiniNotifyTitle = colors.Cyan,
+
+    MiniOperatorsExchangeFrom = hl.common.IncSearch,
+
+    MiniPickBorder = hl.common.FloatBorder,
+    MiniPickBorderBusy = hl.plugins.lsp.DiagnosticWarn,
+    MiniPickBorderText = { fg = c.cyan, fmt = "bold" },
+    MiniPickIconDirectory = hl.common.Directory,
+    MiniPickIconFile = hl.common.NormalFloat,
+    MiniPickHeader = hl.plugins.lsp.DiagnosticHint,
+    MiniPickMatchCurrent = { bg = c.bg2 },
+    MiniPickMatchMarked = { bg = c.diff_text },
+    MiniPickMatchRanges = hl.plugins.lsp.DiagnosticHint,
+    MiniPickNormal = hl.common.NormalFloat,
+    MiniPickPreviewLine = { bg = c.bg2 },
+    MiniPickPreviewRegion = hl.common.IncSearch,
+    MiniPickPrompt = hl.plugins.lsp.DiagnosticInfo,
 
     MiniStarterCurrent = { fmt = "nocombine" },
     MiniStarterFooter = { fg = c.dark_red, fmt = "italic" },
@@ -654,6 +744,14 @@ hl.plugins.mini = {
     MiniTestPass = { fg = c.green, fmt = "bold" },
 
     MiniTrailspace = { bg = c.red },
+}
+
+hl.plugins.illuminate = {
+    illuminatedWord = { bg = c.bg2, fmt = "bold" },
+    illuminatedCurWord = { bg = c.bg2, fmt = "bold" },
+    IlluminatedWordText = { bg = c.bg2, fmt = "bold" },
+    IlluminatedWordRead = { bg = c.bg2, fmt = "bold" },
+    IlluminatedWordWrite = { bg = c.bg2, fmt = "bold" },
 }
 
 hl.langs.c = {

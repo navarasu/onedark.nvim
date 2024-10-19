@@ -34,6 +34,8 @@ hl.common = {
     FoldColumn = {fg = c.fg, bg = cfg.transparent and c.none or c.bg1},
     Folded = {fg = c.fg, bg = cfg.transparent and c.none or c.bg1},
     SignColumn = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
+    WinBar = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
+    WinBarNC = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
     ToolbarLine = {fg = c.fg},
     Cursor = {fmt = "reverse"},
     vCursor = {fmt = "reverse"},
@@ -96,8 +98,8 @@ hl.common = {
     debugPC = {fg = c.bg0, bg = c.green},
     debugBreakpoint = {fg = c.bg0, bg = c.red},
     ToolbarButton = {fg = c.bg0, bg = c.bg_blue},
-    FloatBorder = {fg = c.grey, bg = c.bg1},
-    NormalFloat = {fg = c.fg, bg = c.bg1},
+    FloatBorder = colors.Cyan,
+    NormalFloat = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
 }
 
 hl.syntax = {
@@ -399,6 +401,11 @@ hl.plugins.ale = {
     ALEWarningSign = hl.plugins.lsp.DiagnosticWarn,
 }
 
+hl.plugins.lazygit = {
+   LazyGitBorder = colors.Cyan,
+   LazyGitFloat = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
+}
+
 hl.plugins.barbar = {
     BufferCurrent = { fmt = "bold" },
     BufferCurrentMod = { fg = c.orange, fmt = "bold,italic" },
@@ -409,6 +416,28 @@ hl.plugins.barbar = {
     BufferVisibleIndex = { fg = c.light_grey, bg = c.bg0 },
     BufferVisibleSign = { fg = c.light_grey, bg = c.bg0 },
     BufferVisibleTarget = { fg = c.light_grey, bg = c.bg0 },
+}
+
+hl.plugins.noice = {
+   NoiceCmdlinePopupBorder = colors.Cyan,
+   NoiceCmdlinePopupBorderLua = colors.Cyan,
+   NoiceCmdlinePopupBorderHelp = colors.Cyan,
+   NoiceCmdlinePopupBorderSearch = colors.Cyan,
+   NoiceCmdlinePopupBorderInput = colors.Cyan,
+   NoiceCmdlinePopupBorderCmdline = colors.Cyan,
+   NoiceCmdlinePopupBorderFilter = colors.Cyan,
+   NoiceCmdlinePopupBorderIncRename = colors.Cyan,
+   NoiceCmdlinePopupBorderCalculator = colors.Cyan,
+
+   NoiceCmdlinePopupTitle = colors.Red,
+   NoiceCmdlinePopupTitleLua = colors.Red,
+   NoiceCmdlinePopupTitleHelp = colors.Red,
+   NoiceCmdlinePopupTitleSearch = colors.Red,
+   NoiceCmdlinePopupTitleInput = colors.Red,
+   NoiceCmdlinePopupTitleCmdline = colors.Red,
+   NoiceCmdlinePopupTitleFilter = colors.Red,
+   NoiceCmdlinePopupTitleIncRename = colors.Red,
+   NoiceCmdlinePopupTitleCalculator = colors.Red,
 }
 
 hl.plugins.cmp = {
@@ -543,8 +572,8 @@ hl.plugins.telescope = {
     TelescopePreviewBorder = colors.Cyan,
     TelescopeMatching = { fg = c.orange, fmt = "bold" },
     TelescopePromptPrefix = colors.Green,
-    TelescopeSelection =  { bg =c.bg2 },
-    TelescopeSelectionCaret = colors.Yellow
+    TelescopeSelection =  {fg = c.bg0, bg = c.bg_blue},
+    TelescopeSelectionCaret = {fg = c.bg0, bg = c.bg_blue},
 }
 
 hl.plugins.dashboard = {

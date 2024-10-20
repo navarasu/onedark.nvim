@@ -32,7 +32,7 @@ hl.common = {
     Terminal = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
     EndOfBuffer = {fg = cfg.ending_tildes and c.bg2 or c.bg0, bg = cfg.transparent and c.none or c.bg0},
     FoldColumn = {fg = c.fg, bg = cfg.transparent and c.none or c.bg1},
-    Folded = {fg = c.fg, bg = cfg.transparent and c.none or c.bg1},
+    Folded = {fg = c.grey, bg = cfg.transparent and c.none or c.bg1},
     SignColumn = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
     WinBar = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
     WinBarNC = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},

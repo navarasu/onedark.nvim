@@ -420,6 +420,11 @@ hl.plugins.cmp = {
     CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
 }
 
+hl.plugins.blink = {
+    BlinkCmpMenu = colors.LightGrey,
+    BlinkCmpKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
+}
+
 hl.plugins.coc = {
     CocErrorSign = hl.plugins.lsp.DiagnosticError,
     CocHintSign = hl.plugins.lsp.DiagnosticHint,

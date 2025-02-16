@@ -904,6 +904,7 @@ function M.setup()
     -- define cmp and aerial kind highlights with lsp_kind_icons_color
     for kind, color in pairs(lsp_kind_icons_color) do
         hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
+        hl.plugins.cmp["BlinkCmpKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
         hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
         hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
     end

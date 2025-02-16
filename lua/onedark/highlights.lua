@@ -420,6 +420,11 @@ hl.plugins.cmp = {
     CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
 }
 
+hl.plugins.blink = {
+    BlinkCmpMenu = colors.LightGrey,
+    BlinkCmpKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
+}
+
 hl.plugins.coc = {
     CocErrorSign = hl.plugins.lsp.DiagnosticError,
     CocHintSign = hl.plugins.lsp.DiagnosticHint,
@@ -905,6 +910,7 @@ function M.setup()
     -- define cmp and aerial kind highlights with lsp_kind_icons_color
     for kind, color in pairs(lsp_kind_icons_color) do
         hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
+        hl.plugins.cmp["BlinkCmpKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
         hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
         hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
     end
@@ -935,11 +941,15 @@ function M.setup()
     end
 
     for group_name, group_settings in pairs(vim.g.onedark_config.highlights) do
-        vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
-            replace_color("guifg", group_settings.fg),
-            replace_color("guibg", group_settings.bg),
-            replace_color("guisp", group_settings.sp),
-            replace_color("gui", group_settings.fmt)))
+        if group_settings.link == nil then
+            vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
+                replace_color("guifg", group_settings.fg),
+                replace_color("guibg", group_settings.bg),
+                replace_color("guisp", group_settings.sp),
+                replace_color("gui", group_settings.fmt)))
+        else
+            vim.api.nvim_set_hl(0, group_name, { link = group_settings.link })
+        end
     end
 end
 

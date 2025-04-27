@@ -420,6 +420,14 @@ hl.plugins.cmp = {
     CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
 }
 
+hl.plugins.blink = {
+    BlinkCmpLabel = colors.Fg,
+    BlinkCmpLabelDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
+    BlinkCmpLabelMatch = colors.Cyan,
+    BlinkCmpDetail = colors.LightGrey,
+    BlinkCmpKind = { fg = c.purple },
+}
+
 hl.plugins.coc = {
     CocErrorSign = hl.plugins.lsp.DiagnosticError,
     CocHintSign = hl.plugins.lsp.DiagnosticHint,
@@ -905,6 +913,7 @@ function M.setup()
     -- define cmp and aerial kind highlights with lsp_kind_icons_color
     for kind, color in pairs(lsp_kind_icons_color) do
         hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
+        hl.plugins.blink["BlinkCmpKind" .. kind] = { fg = color }
         hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
         hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
     end

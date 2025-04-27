@@ -177,10 +177,12 @@ require('onedark').setup {
     green = '#00ffaa',            -- redefine an existing color
   },
   highlights = {
-    ["@keyword"] = {fg = '$green'},
-    ["@string"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
-    ["@function"] = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
-    ["@function.builtin"] = {fg = '#0059ff'}
+    ["@lsp.type.keyword"] = { fg = "$green" },
+    ["@lsp.type.property"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
+    ["@lsp.type.function"] =  {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
+    ["@lsp.type.method"] = { link = "@function" },
+  -- To add language specific config
+    ["@lsp.type.variable.go"] = { fg = "none" },
   }
 }
 ```

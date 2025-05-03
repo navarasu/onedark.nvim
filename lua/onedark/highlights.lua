@@ -545,6 +545,7 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName = colors.Blue,
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,
     TelescopePromptBorder = colors.Cyan,
@@ -554,6 +555,22 @@ hl.plugins.telescope = {
     TelescopePromptPrefix = colors.Green,
     TelescopeSelection =  { bg =c.bg2 },
     TelescopeSelectionCaret = colors.Yellow
+}
+
+hl.plugins.snacks = {
+    -- Dashboard
+    SnacksDashboardHeader = colors.Yellow,
+    SnacksDashboardFooter = { fg = c.dark_red, fmt = "italic" },
+    SnacksDashboardSpecial = { fg = c.dark_red, fmt = "bold" },
+    SnacksDashboardDesc = colors.Cyan,
+    SnacksDashboardIcon = colors.Cyan,
+    SnacksDashboardKey = colors.Blue,
+
+    -- Picker
+    SnacksPicker = hl.common.Normal,
+    SnacksPickerBorder = colors.Cyan,
+    SnacksPickerTitle = colors.Red,
+    SnacksPickerMatch = { fg = c.orange, fmt = "bold" },
 }
 
 hl.plugins.dashboard = {

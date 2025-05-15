@@ -449,6 +449,14 @@ hl.plugins.cmp = {
     CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
 }
 
+hl.plugins.blink = {
+    BlinkCmpLabel = colors.Fg,
+    BlinkCmpLabelDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
+    BlinkCmpLabelMatch = colors.Cyan,
+    BlinkCmpDetail = colors.LightGrey,
+    BlinkCmpKind = { fg = c.purple },
+}
+
 hl.plugins.coc = {
     CocErrorSign = hl.plugins.lsp.DiagnosticError,
     CocHintSign = hl.plugins.lsp.DiagnosticHint,
@@ -553,6 +561,7 @@ hl.plugins.neotest = {
 
 hl.plugins.nvim_tree = {
     NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
+    NvimTreeNormalFloat = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeEndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
     NvimTreeRootFolder = { fg = c.orange, fmt = "bold" },
@@ -565,6 +574,7 @@ hl.plugins.nvim_tree = {
     NvimTreeSymlink = colors.Purple,
     NvimTreeFolderName = colors.Blue,
 }
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,
     TelescopePromptBorder = colors.Cyan,
@@ -574,6 +584,22 @@ hl.plugins.telescope = {
     TelescopePromptPrefix = colors.Green,
     TelescopeSelection =  {fg = c.bg0, bg = c.bg_blue},
     TelescopeSelectionCaret = {fg = c.bg0, bg = c.bg_blue},
+}
+
+hl.plugins.snacks = {
+    -- Dashboard
+    SnacksDashboardHeader = colors.Yellow,
+    SnacksDashboardFooter = { fg = c.dark_red, fmt = "italic" },
+    SnacksDashboardSpecial = { fg = c.dark_red, fmt = "bold" },
+    SnacksDashboardDesc = colors.Cyan,
+    SnacksDashboardIcon = colors.Cyan,
+    SnacksDashboardKey = colors.Blue,
+
+    -- Picker
+    SnacksPicker = hl.common.Normal,
+    SnacksPickerBorder = colors.Cyan,
+    SnacksPickerTitle = colors.Red,
+    SnacksPickerMatch = { fg = c.orange, fmt = "bold" },
 }
 
 hl.plugins.dashboard = {
@@ -933,6 +959,7 @@ function M.setup()
     -- define cmp and aerial kind highlights with lsp_kind_icons_color
     for kind, color in pairs(lsp_kind_icons_color) do
         hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
+        hl.plugins.blink["BlinkCmpKind" .. kind] = { fg = color }
         hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
         hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
     end

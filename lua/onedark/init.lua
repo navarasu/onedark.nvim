@@ -46,7 +46,7 @@ local default_config = {
     style = 'dark',    -- choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     toggle_style_key = nil,
     toggle_style_list = M.styles_list,
-    transparent = false,     -- don't set background
+    --transparent = false,     -- don't set background
     term_colors = true,      -- if true enable the terminal
     ending_tildes = false,    -- show the end-of-buffer tildes
     cmp_itemkind_reverse = false,    -- reverse item kind highlights in cmp menu
@@ -60,9 +60,12 @@ local default_config = {
         variables = 'none'
     },
 
-    -- Lualine options --
-    lualine = {
-        transparent = false, -- center bar (c) transparency
+    -- Transparency options --
+    transparent = {
+        lualine = false, -- center bar (c) transparency
+		background = false, -- don't set background
+		statusline = false, -- non lualine statusline transparency
+		tabline = false, -- set tabline to be transparent
     },
 
     -- Custom Highlights --

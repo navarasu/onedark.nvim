@@ -746,7 +746,7 @@ hl.plugins.mini = {
     MiniStatuslineDevinfo = { fg = c.fg, bg = c.bg2 },
     MiniStatuslineFileinfo = { fg = c.fg, bg = c.bg2 },
     MiniStatuslineFilename = { fg = c.grey, bg = c.bg1 },
-    MiniStatuslineInactive = { fg = c.grey, bg = c.bg0 },
+    MiniStatuslineInactive = hl.common.StatusLineNC,
     MiniStatuslineModeCommand = { fg = c.bg0, bg = c.yellow, fmt = "bold" },
     MiniStatuslineModeInsert = { fg = c.bg0, bg = c.blue, fmt = "bold" },
     MiniStatuslineModeNormal = { fg = c.bg0, bg = c.green, fmt = "bold" },

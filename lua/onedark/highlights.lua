@@ -98,6 +98,8 @@ hl.common = {
     ToolbarButton = {fg = c.bg0, bg = c.bg_blue},
     FloatBorder = {fg = c.grey, bg = c.bg1},
     NormalFloat = {fg = c.fg, bg = c.bg1},
+    WinBar = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
+    WinBarNC = {fg = c.grey, bg = cfg.transparent and c.none or c.bg0},
 }
 
 hl.syntax = {
@@ -580,6 +582,14 @@ hl.plugins.dashboard = {
     DashboardFooter = { fg = c.dark_red, fmt = "italic"}
 }
 
+hl.plugins.dropbar = {
+    DropBarIconKind = { fg = c.yellow },
+    DropBarKind = { fg = c.fg },
+    DropBarMenuHoverIcon = { fmt = "reverse" },
+    DropBarWinBar = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
+    DropBarSeparator = { fg = c.grey },
+}
+
 hl.plugins.outline = {
     FocusedSymbol = { fg = c.purple, bg = c.bg2, fmt = "bold" },
     AerialLine = { fg = c.purple, bg = c.bg2, fmt = "bold" },
@@ -933,6 +943,7 @@ function M.setup()
         hl.plugins.blink["BlinkCmpKind" .. kind] = { fg = color }
         hl.plugins.outline["Aerial" .. kind .. "Icon"] = { fg = color }
         hl.plugins.navic["NavicIcons" .. kind] = { fg = color }
+        hl.plugins.dropbar["DropBarKind" .. kind] = { fg = color }
     end
 
     vim_highlights(hl.common)

@@ -42,7 +42,10 @@
 </div></p>
 
 ## Installation
-Install via your favourite package manager
+
+### For Neovim 0.9+ (Latest Version)
+
+Install the latest version from master:
 
 ```lua
 -- Using Lazy
@@ -53,7 +56,6 @@ Install via your favourite package manager
     require('onedark').setup {
       style = 'darker'
     }
-    -- Enable theme
     require('onedark').load()
   end
 }
@@ -67,6 +69,35 @@ Plug 'navarasu/onedark.nvim'
 ```lua
 -- Using Packer
 use 'navarasu/onedark.nvim'
+```
+
+### For Neovim 0.5-0.8 (Legacy Version)
+
+Pin to v0.1.0 for compatibility with older Neovim:
+
+```lua
+-- Using Lazy
+{
+  "navarasu/onedark.nvim",
+  version = "v0.1.0", -- Pin to legacy version
+  priority = 1000,
+  config = function()
+    require('onedark').setup {
+      style = 'darker'
+    }
+    require('onedark').load()
+  end
+}
+```
+
+```vim
+" Using Vim-Plug
+Plug 'navarasu/onedark.nvim', { 'tag': 'v0.1.0' }
+```
+
+```lua
+-- Using Packer
+use { 'navarasu/onedark.nvim', tag = 'v0.1.0' }
 ```
 
 ## Configuration

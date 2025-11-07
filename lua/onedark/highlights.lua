@@ -546,6 +546,14 @@ hl.plugins.nvim_tree = {
     NvimTreeFolderName = colors.Blue,
 }
 
+hl.plugins.oil_git = {
+    OilGitAdded = colors.Cyan,
+    OilGitModified = colors.Yellow,
+    OilGitRenamed = colors.Red,
+    OilGitUntracked = colors.Green,
+    OilGitIgnored = colors.Grey,
+}
+
 hl.plugins.telescope = {
     TelescopeBorder = colors.Red,
     TelescopePromptBorder = colors.Cyan,

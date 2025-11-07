@@ -30,7 +30,7 @@ local colors = {
 hl.common = {
     Normal = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
     Terminal = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
-    EndOfBuffer = {fg = cfg.ending_tildes and c.bg2 or c.bg0, bg = cfg.transparent and c.none or c.bg0},
+    EndOfBuffer = {fg = cfg.ending_tildes and c.grey or c.bg0, bg = cfg.transparent and c.none or c.bg0},
     FoldColumn = {fg = c.fg, bg = cfg.transparent and c.none or c.bg1},
     Folded = {fg = c.fg, bg = cfg.transparent and c.none or c.bg1},
     SignColumn = {fg = c.fg, bg = cfg.transparent and c.none or c.bg0},
@@ -59,6 +59,14 @@ hl.common = {
     DiffDeleted = colors.Red,
     DiffFile = colors.Cyan,
     DiffIndexLine = colors.Grey,
+
+    -- Git conflict markers
+    GitConflictCurrent = {bg = util.darken(c.green, 0.15, c.bg0)},
+    GitConflictCurrentLabel = {bg = util.darken(c.green, 0.25, c.bg0), fmt = "bold"},
+    GitConflictIncoming = {bg = util.darken(c.blue, 0.15, c.bg0)},
+    GitConflictIncomingLabel = {bg = util.darken(c.blue, 0.25, c.bg0), fmt = "bold"},
+    GitConflictAncestor = {bg = util.darken(c.purple, 0.15, c.bg0)},
+    GitConflictAncestorLabel = {bg = util.darken(c.purple, 0.25, c.bg0), fmt = "bold"},
     Directory = {fg = c.blue},
     ErrorMsg = {fg = c.red, fmt = "bold"},
     WarningMsg = {fg = c.yellow, fmt = "bold"},
@@ -67,7 +75,7 @@ hl.common = {
     IncSearch = {fg = c.bg0, bg = c.orange},
     Search = {fg = c.bg0, bg = c.bg_yellow},
     Substitute = {fg = c.bg0, bg = c.green},
-    MatchParen = {fg = c.none, bg = c.grey},
+    MatchParen = {fg = c.none, bg = c.bg3},
     NonText = {fg = c.grey},
     Whitespace = {fg = c.grey},
     SpecialKey = {fg = c.grey},

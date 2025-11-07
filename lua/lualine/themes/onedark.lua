@@ -14,8 +14,8 @@ local colors = {
 
 local one_dark = {
     inactive = {
-        a = {fg = colors.gray, bg = colors.bg, gui = 'bold'},
-        b = {fg = colors.gray, bg = colors.bg},
+        a = {fg = colors.gray, bg = c.bg1, gui = 'bold'},
+        b = {fg = colors.gray, bg = c.bg1},
         c = {fg = colors.gray, bg = cfg.lualine.transparent and c.none or c.bg1},
     },
     normal = {

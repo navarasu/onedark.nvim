@@ -1,0 +1,47 @@
+# Git Conflict Test File - onedark.nvim
+# Tests git conflict marker highlighting (fix #235)
+
+This file simulates a git merge conflict.
+The conflict markers should have colored backgrounds:
+- GREEN for HEAD/current changes (GitConflictCurrent/CurrentLabel)
+- BLUE for incoming changes (GitConflictIncoming/IncomingLabel)
+- PURPLE for ancestor/common changes (GitConflictAncestor/AncestorLabel)
+
+Normal content before conflict
+
+<<<<<<< HEAD
+This is the current branch content (should have GREEN background)
+This line is from HEAD
+Another line from the current branch
+||||||| merged common ancestors
+This is the common ancestor content (should have PURPLE background)
+This was in the original version
+=======
+This is the incoming branch content (should have BLUE background)
+This line is from the incoming branch
+Another line from the feature branch
+>>>>>>> feature-branch
+
+Normal content after conflict
+
+Here's another conflict example:
+
+<<<<<<< HEAD
+function calculateTotal(items) {
+  return items.reduce((sum, item) => sum + item.price, 0);
+}
+=======
+function calculateTotal(items) {
+  return items.map(i => i.price).reduce((a, b) => a + b, 0);
+}
+>>>>>>> refactor-calculate
+
+End of conflict test file.
+
+TESTING INSTRUCTIONS:
+1. Open this file with: nvim -u tests/test-init.lua tests/manual/test-conflict.txt
+2. Conflict markers (<<<<<<, ||||||, =======, >>>>>>>) should be BOLD
+3. Content sections should have colored backgrounds:
+   - HEAD section: Green tint
+   - Incoming section: Blue tint
+   - Ancestor section (if present): Purple tint

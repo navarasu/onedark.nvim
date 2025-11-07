@@ -140,119 +140,134 @@ hl.syntax = {
 
 if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
     hl.treesitter = {
-        -- nvim-treesitter@0.9.2 and after
-        ["@annotation"] = colors.Fg,
+        -- Modern standardized nvim-treesitter captures (Neovim 0.9+)
+        -- Reference: https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
+
+        -- Attributes
         ["@attribute"] = colors.Cyan,
-        ["@attribute.typescript"] = colors.Blue,
+        ["@attribute.builtin"] = colors.Blue,
+
+        -- Primitives
         ["@boolean"] = colors.Orange,
         ["@character"] = colors.Orange,
+        ["@character.special"] = colors.Red,
+        ["@number"] = colors.Orange,
+        ["@number.float"] = colors.Orange,
+
+        -- Comments
         ["@comment"] = {fg = c.grey, fmt = cfg.code_style.comments},
-        ["@comment.todo"] = {fg = c.red, fmt = cfg.code_style.comments},
-        ["@comment.todo.unchecked"] = {fg = c.red, fmt = cfg.code_style.comments},
-        ["@comment.todo.checked"] = {fg = c.green, fmt = cfg.code_style.comments},
+        ["@comment.documentation"] = {fg = c.light_grey, fmt = cfg.code_style.comments},
+        ["@comment.error"] = {fg = c.red, fmt = cfg.code_style.comments},
+        ["@comment.note"] = {fg = c.blue, fmt = cfg.code_style.comments},
+        ["@comment.todo"] = {fg = c.purple, fmt = cfg.code_style.comments},
+        ["@comment.warning"] = {fg = c.yellow, fmt = cfg.code_style.comments},
+
+        -- Constants
         ["@constant"] = {fg = c.orange, fmt = cfg.code_style.constants},
         ["@constant.builtin"] = {fg = c.orange, fmt = cfg.code_style.constants},
         ["@constant.macro"] = {fg = c.orange, fmt = cfg.code_style.constants},
+
+        -- Constructors
         ["@constructor"] = {fg = c.yellow, fmt = "bold"},
-        ["@diff.add"] = hl.common.DiffAdded,
-        ["@diff.delete"] = hl.common.DiffDeleted,
+
+        -- Diffs
         ["@diff.plus"] = hl.common.DiffAdded,
         ["@diff.minus"] = hl.common.DiffDeleted,
         ["@diff.delta"] = hl.common.DiffChanged,
-        ["@error"] = colors.Fg,
+
+        -- Functions
         ["@function"] = {fg = c.blue, fmt = cfg.code_style.functions},
         ["@function.builtin"] = {fg = c.cyan, fmt = cfg.code_style.functions},
+        ["@function.call"] = {fg = c.blue, fmt = cfg.code_style.functions},
         ["@function.macro"] = {fg = c.cyan, fmt = cfg.code_style.functions},
         ["@function.method"] = {fg = c.blue, fmt = cfg.code_style.functions},
+        ["@function.method.call"] = {fg = c.blue, fmt = cfg.code_style.functions},
+
+        -- Keywords
         ["@keyword"] = {fg = c.purple, fmt = cfg.code_style.keywords},
         ["@keyword.conditional"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.conditional.ternary"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.coroutine"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.debug"] = {fg = c.red, fmt = cfg.code_style.keywords},
         ["@keyword.directive"] = colors.Purple,
+        ["@keyword.directive.define"] = colors.Purple,
         ["@keyword.exception"] = colors.Purple,
         ["@keyword.function"] = {fg = c.purple, fmt = cfg.code_style.functions},
         ["@keyword.import"] = colors.Purple,
-        ["@keyword.operator"] =  {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.modifier"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.operator"] = {fg = c.purple, fmt = cfg.code_style.keywords},
         ["@keyword.repeat"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.return"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+        ["@keyword.type"] = {fg = c.purple, fmt = cfg.code_style.keywords},
+
+        -- Labels
         ["@label"] = colors.Red,
-        ["@markup.emphasis"] = {fg = c.fg, fmt = 'italic'},
-        ["@markup.environment"] = colors.Fg,
-        ["@markup.environment.name"] = colors.Fg,
+
+        -- Markup (Markdown, etc.)
+        ["@markup.strong"] = {fg = c.fg, fmt = 'bold'},
+        ["@markup.italic"] = {fg = c.fg, fmt = 'italic'},
+        ["@markup.strikethrough"] = {fg = c.fg, fmt = 'strikethrough'},
+        ["@markup.underline"] = {fg = c.fg, fmt = 'underline'},
         ["@markup.heading"] = {fg = c.orange, fmt = 'bold'},
+        ["@markup.heading.1"] = {fg = c.red, fmt = "bold"},
+        ["@markup.heading.2"] = {fg = c.purple, fmt = "bold"},
+        ["@markup.heading.3"] = {fg = c.orange, fmt = "bold"},
+        ["@markup.heading.4"] = {fg = c.red, fmt = "bold"},
+        ["@markup.heading.5"] = {fg = c.purple, fmt = "bold"},
+        ["@markup.heading.6"] = {fg = c.orange, fmt = "bold"},
         ["@markup.link"] = colors.Blue,
+        ["@markup.link.label"] = colors.Cyan,
         ["@markup.link.url"] = {fg = c.cyan, fmt = 'underline'},
         ["@markup.list"] = colors.Red,
+        ["@markup.list.checked"] = {fg = c.green, fmt = cfg.code_style.comments},
+        ["@markup.list.unchecked"] = {fg = c.red, fmt = cfg.code_style.comments},
         ["@markup.math"] = colors.Fg,
+        ["@markup.quote"] = {fg = c.grey, fmt = 'italic'},
         ["@markup.raw"] = colors.Green,
-        ["@markup.strike"] = {fg = c.fg, fmt = 'strikethrough'},
-        ["@markup.strong"] = {fg = c.fg, fmt = 'bold'},
-        ["@markup.underline"] = {fg = c.fg, fmt = 'underline'},
+        ["@markup.raw.block"] = colors.Green,
+
+        -- Modules
         ["@module"] = colors.Yellow,
+        ["@module.builtin"] = colors.Orange,
+
+        -- Misc
         ["@none"] = colors.Fg,
-        ["@number"] = colors.Orange,
-        ["@number.float"] = colors.Orange,
+        ["@conceal"] = colors.Grey,
+        ["@nospell"] = colors.Fg,
+        ["@spell"] = colors.Fg,
+
+        -- Operators
         ["@operator"] = colors.Fg,
-        ["@parameter.reference"] = colors.Fg,
+
+        -- Properties
         ["@property"] = colors.Cyan,
-        ["@punctuation.delimiter"] = colors.LightGrey,
+
+        -- Punctuation
         ["@punctuation.bracket"] = colors.LightGrey,
+        ["@punctuation.delimiter"] = colors.LightGrey,
+        ["@punctuation.special"] = colors.Red,
+
+        -- Strings
         ["@string"] = {fg = c.green, fmt = cfg.code_style.strings},
-        ["@string.regexp"] = {fg = c.orange, fmt = cfg.code_style.strings},
+        ["@string.documentation"] = {fg = c.green, fmt = cfg.code_style.strings},
         ["@string.escape"] = {fg = c.red, fmt = cfg.code_style.strings},
+        ["@string.regexp"] = {fg = c.orange, fmt = cfg.code_style.strings},
+        ["@string.special"] = {fg = c.dark_cyan, fmt = cfg.code_style.strings},
+        ["@string.special.path"] = {fg = c.green, fmt = cfg.code_style.strings},
         ["@string.special.symbol"] = colors.Cyan,
-        ["@tag"] = colors.Purple,
-        ["@tag.attribute"] = colors.Yellow,
-        ["@tag.delimiter"] = colors.Purple,
-        ["@text"] = colors.Fg,
-        ["@note"] = colors.Fg,
-        ["@warning"] = colors.Fg,
-        ["@danger"] = colors.Fg,
+        ["@string.special.url"] = {fg = c.cyan, fmt = 'underline'},
+
+        -- Types
         ["@type"] = colors.Yellow,
         ["@type.builtin"] = colors.Orange,
+        ["@type.definition"] = colors.Yellow,
+
+        -- Variables
         ["@variable"] = {fg = c.fg, fmt = cfg.code_style.variables},
         ["@variable.builtin"] = {fg = c.red, fmt = cfg.code_style.variables},
         ["@variable.member"] = colors.Cyan,
         ["@variable.parameter"] = colors.Red,
-        ["@markup.heading.1.markdown"] = {fg = c.red, fmt = "bold"},
-        ["@markup.heading.2.markdown"] = {fg = c.purple, fmt = "bold"},
-        ["@markup.heading.3.markdown"] = {fg = c.orange, fmt = "bold"},
-        ["@markup.heading.4.markdown"] = {fg = c.red, fmt = "bold"},
-        ["@markup.heading.5.markdown"] = {fg = c.purple, fmt = "bold"},
-        ["@markup.heading.6.markdown"] = {fg = c.orange, fmt = "bold"},
-        ["@markup.heading.1.marker.markdown"] = {fg = c.red, fmt = "bold"},
-        ["@markup.heading.2.marker.markdown"] = {fg = c.purple, fmt = "bold"},
-        ["@markup.heading.3.marker.markdown"] = {fg = c.orange, fmt = "bold"},
-        ["@markup.heading.4.marker.markdown"] = {fg = c.red, fmt = "bold"},
-        ["@markup.heading.5.marker.markdown"] = {fg = c.purple, fmt = "bold"},
-        ["@markup.heading.6.marker.markdown"] = {fg = c.orange, fmt = "bold"},
-
-        -- Old configuration for nvim-treesiter@0.9.1 and below
-        ["@conditional"] = {fg = c.purple, fmt = cfg.code_style.keywords},
-        ["@exception"] = colors.Purple,
-        ["@field"] = colors.Cyan,
-        ["@float"] = colors.Orange,
-        ["@include"] = colors.Purple,
-        ["@method"] = {fg = c.blue, fmt = cfg.code_style.functions},
-        ["@namespace"] = colors.Yellow,
-        ["@parameter"] = colors.Red,
-        ["@preproc"] = colors.Purple,
-        ["@punctuation.special"] = colors.Red,
-        ["@repeat"] = {fg = c.purple, fmt = cfg.code_style.keywords},
-        ["@string.regex"] = {fg = c.orange, fmt = cfg.code_style.strings},
-        ["@text.strong"] = {fg = c.fg, fmt = 'bold'},
-        ["@text.emphasis"] = {fg = c.fg, fmt = 'italic'},
-        ["@text.underline"] = {fg = c.fg, fmt = 'underline'},
-        ["@text.strike"] = {fg = c.fg, fmt = 'strikethrough'},
-        ["@text.title"] = {fg = c.orange, fmt = 'bold'},
-        ["@text.literal"] = colors.Green,
-        ["@text.uri"] = {fg = c.cyan, fmt = 'underline'},
-        ["@text.todo"] = {fg = c.red, fmt = cfg.code_style.comments},
-        ["@text.todo.unchecked"] = {fg = c.red, fmt = cfg.code_style.comments},
-        ["@text.todo.checked"] = {fg = c.green, fmt = cfg.code_style.comments},
-        ["@text.math"] = colors.Fg,
-        ["@text.reference"] = colors.Blue,
-        ["@text.environment"] = colors.Fg,
-        ["@text.environment.name"] = colors.Fg,
-        ["@text.diff.add"] = colors.Green,
-        ["@text.diff.delete"] = colors.Red,
+        ["@variable.parameter.builtin"] = {fg = c.orange, fmt = cfg.code_style.variables},
     }
     if vim.api.nvim_call_function("has", { "nvim-0.9" }) == 1 then
         hl.lsp = {

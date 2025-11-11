@@ -164,7 +164,7 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
 
         -- Comments
         ["@comment"] = {fg = c.grey, fmt = cfg.code_style.comments},
-        ["@comment.documentation"] = {fg = c.light_grey, fmt = cfg.code_style.comments},
+        ["@comment.documentation"] = {fg = c.grey, fmt = cfg.code_style.comments}, -- Same as regular comments for consistency
         ["@comment.error"] = {fg = c.red, fmt = cfg.code_style.comments},
         ["@comment.note"] = {fg = c.blue, fmt = cfg.code_style.comments},
         ["@comment.todo"] = {fg = c.purple, fmt = cfg.code_style.comments},

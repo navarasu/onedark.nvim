@@ -4,7 +4,25 @@ All notable changes to onedark.nvim will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased] - 2025-11-08
+## [Unreleased]
+
+Nothing yet!
+
+---
+
+## [v1.0.1] - 2025-11-08
+
+### 🐛 Fixed
+
+- **Comment color consistency**
+  - `@comment.documentation` now uses same grey color as `@comment`
+  - Fixes visual inconsistency in Ruby and other languages where comments above classes/methods appeared lighter
+  - All regular comments now visually consistent across all languages
+  - Special comment types (TODO, NOTE, ERROR, WARNING) still retain distinct colors
+
+---
+
+## [v1.0.0] - 2025-11-08
 
 ### 🚨 Breaking Changes
 

@@ -826,7 +826,7 @@ hl.plugins.mini = {
     MiniTrailspace = { bg = c.red },
 }
 
-hl.plugins.indentmini {
+hl.plugins.indentmini = {
     IndentLine = { fg = c.bg2 },
     IndentLineCurrent = { fg = c.grey },
 }

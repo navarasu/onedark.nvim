@@ -826,6 +826,11 @@ hl.plugins.mini = {
     MiniTrailspace = { bg = c.red },
 }
 
+hl.plugins.indentmini {
+    IndentLine = { fg = c.bg2 },
+    IndentLineCurrent = { fg = c.grey },
+}
+
 hl.plugins.illuminate = {
     illuminatedWord = { bg = c.bg2, fmt = "bold" },
     illuminatedCurWord = { bg = c.bg2, fmt = "bold" },

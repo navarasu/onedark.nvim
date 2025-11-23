@@ -10,14 +10,26 @@ Nothing yet!
 
 ---
 
-## [v1.0.1] - 2025-11-08
+## [v1.0.1] - 2025-11-24
 
 ### 🐛 Fixed
 
-- **Comment color consistency**
+- **Comment color consistency across all languages** (#255)
+  - Removed `@spell` and `@nospell` highlight definitions that were overriding comment colors
+  - Fixes issue where comments with spell checking enabled appeared in wrong color (lighter grey instead of correct grey)
+  - Affected multiple languages including Ruby, Python, JavaScript, Lua, and others
+  - All comments now display in consistent grey color regardless of spell checking or position
+
+### ✨ Added
+
+- **indentmini support** (#256)
+  - Added highlight groups for [indentmini.nvim](https://github.com/nvimdev/indentmini.nvim) plugin
+  - `IndentLine`, `IndentLineCurrent` highlights
+
+### 🔧 Improvements
+
+- **Comment documentation consistency**
   - `@comment.documentation` now uses same grey color as `@comment`
-  - Fixes visual inconsistency in Ruby and other languages where comments above classes/methods appeared lighter
-  - All regular comments now visually consistent across all languages
   - Special comment types (TODO, NOTE, ERROR, WARNING) still retain distinct colors
 
 ---

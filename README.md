@@ -272,6 +272,7 @@ require('lualine').setup {
   + [Barbecue](https://github.com/utilyre/barbecue.nvim)
   + [IndentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim)
   + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
+  + [indentmini](https://github.com/nvimdev/indentmini.nvim)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)

@@ -179,6 +179,18 @@ else
   tests_failed = tests_failed + 1
 end
 
+-- Test 11: Fix #254 - Tag highlights for JSX/TSX/HTML
+if test("Tag highlights exist (fix #254)", function()
+  assert_highlight_exists("@tag")
+  assert_highlight_exists("@tag.builtin")
+  assert_highlight_exists("@tag.attribute")
+  assert_highlight_exists("@tag.delimiter")
+end) then
+  tests_passed = tests_passed + 1
+else
+  tests_failed = tests_failed + 1
+end
+
 -- Summary
 print("\n" .. string.rep("=", 60))
 print(string.format("Test Results: %d passed, %d failed", tests_passed, tests_failed))

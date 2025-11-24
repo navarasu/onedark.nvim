@@ -10,6 +10,19 @@ Nothing yet!
 
 ---
 
+## [v1.0.3] - 2025-11-24
+
+### 🐛 Fixed
+
+- **JSX/TSX/HTML highlighting broken** (#254)
+  - Restored missing `@tag` highlight groups that were accidentally removed in v1.0.0
+  - Fixed broken syntax highlighting in JSX, TSX, HTML, and XML files
+  - Added `@tag`, `@tag.builtin`, `@tag.attribute`, and `@tag.delimiter` highlights
+  - Tags now properly display in purple, attributes in yellow
+  - Affected users were seeing degraded readability in React/TypeScript components
+
+---
+
 ## [v1.0.2] - 2025-11-24
 
 ### 🐛 Fixed

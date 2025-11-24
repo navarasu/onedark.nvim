@@ -263,6 +263,12 @@ if vim.api.nvim_call_function("has", { "nvim-0.8" }) == 1 then
         ["@string.special.symbol"] = colors.Cyan,
         ["@string.special.url"] = {fg = c.cyan, fmt = 'underline'},
 
+        -- Tags (HTML, JSX, TSX, XML)
+        ["@tag"] = colors.Purple,
+        ["@tag.builtin"] = colors.Purple,
+        ["@tag.attribute"] = colors.Yellow,
+        ["@tag.delimiter"] = colors.Purple,
+
         -- Types
         ["@type"] = colors.Yellow,
         ["@type.builtin"] = colors.Orange,

@@ -1,0 +1,39 @@
+# YAML configuration file
+# Comment at the top
+
+name: My Application
+version: 1.0.0
+
+# Server configuration
+server:
+  host: localhost
+  port: 8080
+  # Nested comment
+  ssl:
+    enabled: true
+    certificate: /path/to/cert.pem
+
+# Database settings
+database:
+  host: db.example.com
+  port: 5432
+  # Connection pool settings
+  pool:
+    min: 5
+    max: 20
+
+# Array of items
+features:
+  - authentication
+  - authorization
+  - logging
+  # - disabled-feature
+
+# Multi-line string
+description: |
+  This is a multi-line description
+  that spans several lines
+  and includes various details.
+
+# Inline mapping
+metadata: { author: "John Doe", date: "2024-01-01" }

@@ -10,7 +10,7 @@ Nothing yet!
 
 ---
 
-## [v1.0.1] - 2025-11-24
+## [v1.0.2] - 2025-11-24
 
 ### 🐛 Fixed
 
@@ -25,6 +25,10 @@ Nothing yet!
 - **indentmini support** (#256)
   - Added highlight groups for [indentmini.nvim](https://github.com/nvimdev/indentmini.nvim) plugin
   - `IndentLine`, `IndentLineCurrent` highlights
+
+---
+
+## [v1.0.1] - 2025-11-08
 
 ### 🔧 Improvements
 

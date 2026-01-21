@@ -134,6 +134,22 @@ colorscheme onedark
 
 > **Options:**  dark, darker, cool, deep, warm, warmer, light
 
+From 2023.07.09 onward, multiple colorschemes are available.
+If you install the plugin via lazy.nvim, you can just follow such a below example:
+
+```lua
+    "navarasu/onedark",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme onedark-dark]])
+    end,
+```
+
+> **Colorschemes:** onedark-dark, onedark-darker, onedark-cool, onedark-deep, onedark-dark, onedark-warm, onedark-warmer, onedark-light.
+> **Warning**: This method conflicts may with the `style`. Use either of them.
+
 ## Default Configuration
 
 ```lua

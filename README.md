@@ -48,6 +48,17 @@
 Install the latest version from master:
 
 ```lua
+-- Using vim.pack
+vim.pack.add({
+        "https://github.com/navarasu/onedark.nvim",
+        })
+require('onedark').setup {
+    style = 'darker'
+}
+require('onedark').load()
+```
+
+```lua
 -- Using Lazy
 {
   "navarasu/onedark.nvim",

@@ -843,6 +843,13 @@ hl.plugins.illuminate = {
     IlluminatedWordWrite = { bg = c.bg2, fmt = "bold" },
 }
 
+hl.plugins.sneak = {
+    Sneak = hl.common.Search,
+    SneakCurrent = hl.common.CurSearch,
+    SneakScope = { fg = c.bg0, bg = c.fg },
+    SneakLabel = hl.common.Search,
+}
+
 hl.langs.c = {
     cInclude = colors.Blue,
     cStorageClass = colors.Purple,

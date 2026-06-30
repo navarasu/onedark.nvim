@@ -284,6 +284,7 @@ require('lualine').setup {
   + [IndentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim)
   + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
   + [indentmini](https://github.com/nvimdev/indentmini.nvim)
+  + [sneak.vim](https://github.com/justinmk/vim-sneak)
 
 ## Reference
 * [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
